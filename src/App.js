@@ -9,6 +9,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import Cookies from 'universal-cookie';
 import Home from './components/Home';
 import UrlRedirect from './components/UrlRedirect';
+import AutomatedTradingPage from './components/AutomatedTradingPage';
 
 class App extends Component 
 {
@@ -55,6 +56,11 @@ class App extends Component
                     </Route>
                     <Route exact path="/holygrail">
                         <WelcomeDemoPageTwo
+                            getUserId={this.getUserId}
+                        />
+                    </Route>
+                    <Route exact path="/automated-trading">
+                        <AutomatedTradingPage
                             getUserId={this.getUserId}
                         />
                     </Route>

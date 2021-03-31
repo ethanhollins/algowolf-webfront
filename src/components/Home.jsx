@@ -21,7 +21,7 @@ class Home extends Component
                         <div className="inner text-center">
                             <h1 className="white-color">Welcome to the AlgoWolf Algorithmic Trading Platform</h1>
                             <h5 className="">Leading platform in Charting, Algorithms, Statistics and more!</h5>
-                            <a href="mailto:admin@algowolf.com" className="btn se-btn-white btn-rounded">Enquire about Live Automated Trading</a>
+                            <a href="/automated-trading" className="btn se-btn-white btn-rounded">Learn more about Live Automated Trading</a>
                         </div>
                     </div>
                 </div>

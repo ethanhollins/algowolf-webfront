@@ -56,6 +56,9 @@ class Navigation extends Component
                                 <a href="/" className="" >Home </a>
                             </li> */}
                             <li className="">
+                                <a href="/automated-trading" className="" >Automated Trading </a>
+                            </li>
+                            <li className="">
                                 <a href="/holygrail" className="" >Prison Paycheck </a>
                             </li>
                             {/* <li className="dropdown dd-left">

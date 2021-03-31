@@ -32,7 +32,7 @@ class WelcomeDemoPage extends Component
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h4 className="underline">WELCOME to the Prison Paycheck Algorithmic Demo & Training Platform (aka Holy Grail)</h4>
+                            <h4 className="underline">WELCOME to the Prison Paycheck Algorithmic Demonstration Platform (aka Holy Grail)<br/>including the LIVE Signal Charts on the EURUSD pair.</h4>
                             <p>Developed by AlgoWolf, this state of the art algorithmic Demo & Training Platform is exclusively for subscribers of Scott Phillip’s “Prison Paycheck” trading strategy.</p>
                             <p>You'll find this an invaluable aid to your comprehension of the Prison Paycheck strategy and to your ultimate trading success.</p>
                         </div>
@@ -45,7 +45,7 @@ class WelcomeDemoPage extends Component
                         <div className="col-md-12">
                             <h4 className="underline">What you get</h4>
                             <ul className="highlights">
-                                <li><i className="icon ion-checkmark"></i><strong>Live Signal Charts</strong> to see realtime order placements etc. on the EURUSD pair.</li>
+                                <li><i className="icon ion-checkmark"></i><strong>Live Signal Charts</strong> on the <strong>EURUSD</strong> pair as they happen in <strong>REAL TIME</strong> during the <strong>New York 3:00am - 8:00am</strong> trading session.</li>
                                 <li><i className="icon ion-checkmark"></i>The Latest <strong>Daily Trading Results</strong></li>
                                 <li><i className="icon ion-checkmark"></i>A <strong>Walkthrough</strong> of Each Day's <strong>Trading Setups</strong> With Pin Point Accuracy</li>
                                 <li><i className="icon ion-checkmark"></i><strong>Backtest Results</strong> Over Previous Months</li>
