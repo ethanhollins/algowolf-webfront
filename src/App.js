@@ -10,6 +10,7 @@ import Cookies from 'universal-cookie';
 import Home from './components/Home';
 import UrlRedirect from './components/UrlRedirect';
 import AutomatedTradingPage from './components/AutomatedTradingPage';
+import BetaTesters from './components/BetaTesters';
 
 class App extends Component 
 {
@@ -61,6 +62,11 @@ class App extends Component
                     </Route>
                     <Route exact path="/automated-trading">
                         <AutomatedTradingPage
+                            getUserId={this.getUserId}
+                        />
+                    </Route>
+                    <Route exact path="/automated-trading/beta-testers">
+                        <BetaTesters
                             getUserId={this.getUserId}
                         />
                     </Route>

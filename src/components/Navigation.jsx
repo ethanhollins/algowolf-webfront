@@ -55,11 +55,42 @@ class Navigation extends Component
                             {/* <li className="">
                                 <a href="/" className="" >Home </a>
                             </li> */}
-                            <li className="">
+                            {/* <li className="">
                                 <a href="/automated-trading" className="" >Automated Trading </a>
+                            </li> */}
+                            <li className="dropdown dd-left">
+                                <a href="/automated" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Automated Trading <span className="caret"></span></a>
+                                <ul className="dropdown-menu animated fadeIn">
+                                    <li>
+                                        <div className="yamm-content">
+                                            <div className="nav-col">
+                                                <ul>
+                                                    <li><a href="/automated-trading">Getting Started</a></li>
+                                                    <li><a href="/automated-trading/beta-testers">Beta Testers</a></li>
+                                                    <li><a href="/app">Goto App</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
-                            <li className="">
+                            {/* <li className="">
                                 <a href="/holygrail" className="" >Prison Paycheck </a>
+                            </li> */}
+                            <li className="dropdown dd-left">
+                                <a href="/automated" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Prison Paycheck <span className="caret"></span></a>
+                                <ul className="dropdown-menu animated fadeIn">
+                                    <li>
+                                        <div className="yamm-content">
+                                            <div className="nav-col">
+                                                <ul>
+                                                    <li><a href="/holygrail">Getting Started</a></li>
+                                                    <li><a href="/holygrail/demo">Goto Demo</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                             {/* <li className="dropdown dd-left">
                                 <a href="/automated" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Automated Trading <span className="caret"></span></a>
@@ -95,7 +126,7 @@ class Navigation extends Component
                                 </ul>
                             </li> */}
 
-                            <li><a href="/login">Sign In</a></li>
+                            <li><a href="/login">Log In</a></li>
                             <li className="nav-btn-wrap">
                                 <span className="nav-btn"><a href="/register" className="btn se-btn-black btn-rounded sign-up">Sign Up</a></span>
                             </li>
@@ -146,12 +177,12 @@ class Navigation extends Component
 
                 <img 
                     ref={this.setLightLogoRef}
-                    src={process.env.PUBLIC_URL + "images/light-logo.svg"} 
+                    src={process.env.PUBLIC_URL + "/images/light-logo.svg"} 
                     alt="AlgoWolf Logo" className="logo-default"
                 />
                 <img 
                     ref={this.setDarkLogoRef}
-                    src={process.env.PUBLIC_URL + "images/dark-logo.svg"} 
+                    src={process.env.PUBLIC_URL + "/images/dark-logo.svg"} 
                     alt="AlgoWolf Logo" 
                     className="logo-default"
                     style={{display: 'none'}}
@@ -167,7 +198,7 @@ class Navigation extends Component
 
                 <img 
                     ref={this.setDarkLogoRef}
-                    src={process.env.PUBLIC_URL + "images/dark-logo.svg"} 
+                    src={process.env.PUBLIC_URL + "/images/dark-logo.svg"} 
                     alt="AlgoWolf Logo"
                 />
 

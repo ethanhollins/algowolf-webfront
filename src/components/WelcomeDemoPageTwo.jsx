@@ -21,7 +21,7 @@ class WelcomeDemoPage extends Component
                         <div className="inner text-center">
                             <h1 className="">Welcome to the Prison Paycheck Demo</h1>
                             <h5 className="">Algorithmic Live Signal Charts & Demo exclusively for subscribers of Scott Phillip's "Prison Paycheck" system.</h5>
-                            <a href="/holygrail/demo" className="btn se-btn-black btn-rounded mt20">Goto Live Signal Charts</a>
+                            <a href="/holygrail/demo" className="btn se-btn-black btn-rounded mt20">Goto Demo & Live Signal Charts</a>
 
                         </div>
                     </div>
@@ -75,7 +75,7 @@ class WelcomeDemoPage extends Component
                     <div className="row text-center">
                         <h3>Automated LIVE Trading</h3>
                         <p>of the Prison Paycheck strategy is currently available for Beta testers.</p>
-                        <a href="mailto:admin@algowolf.com" className="btn se-btn-black btn-rounded">Enquire Today</a>
+                        <a href="/automated-trading" className="btn se-btn-black btn-rounded">Learn More</a>
                     </div>
                 </div>
             </section>
