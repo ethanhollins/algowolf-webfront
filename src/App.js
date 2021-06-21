@@ -7,13 +7,14 @@ import {
 import WelcomeDemoPageTwo from './components/WelcomeDemoPageTwo';
 import { config } from '@fortawesome/fontawesome-svg-core'
 import Cookies from 'universal-cookie';
-import Home from './components/Home';
 import UrlRedirect from './components/UrlRedirect';
 import AutomatedTradingPage from './components/AutomatedTradingPage';
 import BetaTesters from './components/BetaTesters';
 import Home2 from './components/Home2';
 import Strategies from './components/Strategies';
-import EwayTest from './components/EwayTest';
+import FAQ from './components/FAQ';
+import Features from './components/Features';
+import ContactUs from './components/ContactUs';
 
 class App extends Component 
 {
@@ -53,8 +54,20 @@ class App extends Component
                             getFirstName={this.getFirstName}
                         />
                     </Route>
-                    <Route exact path="/eway">
-                        <EwayTest 
+                    <Route exact path="/features">
+                        <Features 
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                        />
+                    </Route>
+                    <Route exact path="/faq">
+                        <FAQ 
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                        />
+                    </Route>
+                    <Route exact path="/contact-us">
+                        <ContactUs 
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                         />
@@ -140,7 +153,7 @@ class App extends Component
             };
     
             const res = await fetch(`${REACT_APP_API_URL}/authorize`, requestOptions);
-            console.log(res.status)
+            console.log(res.status);
             if (res.status === 200)
             {
                 // Redirect to App
