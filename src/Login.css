@@ -1,0 +1,622 @@
+
+label, input {
+    display: block;
+}
+
+.aw-login.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aw-login.container > div {
+    width: 400px;
+    height: 760px;
+}
+
+.register.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register.container > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: 730px;
+}
+
+.aw-login.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 100%;
+    /* max-width: 360px; */
+    padding: 25px 30px 25px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+}
+
+.aw-login.logo {
+    width: 100%;
+    height: 126px;
+}
+
+.aw-login.field-header {
+    margin-top: 10px;
+    color: rgb(80,80,80);
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.aw-login.field {
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.aw-login.field > span {
+    color: rgb(80,80,80);
+}
+
+.aw-login.field > span > a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+.aw-login.field > span > a:focus {
+    outline: none;
+    border: 2px solid rgb(80,80,80);
+    border-radius: 5px;
+}
+
+.aw-login.horiz {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.aw-login.logo > div > div > #algowolf {
+    margin-top: 20px;
+    width: 300px;
+}
+
+#register_logo {
+    margin-bottom: 10px;
+}
+
+#register_logo > div > div > #algowolf {
+    width: 200px;
+}
+
+.aw-login.header {
+    width: 100%;
+    color: rgb(80,80,80);
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.8em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+.aw-login.input {
+    width: 100%;
+    /* height: 100%; */
+    outline: none;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+    box-shadow: inset 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+    background-color: transparent;
+    padding: 20px 0px 20px 55px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.0em;
+    color: rgb(80,80,80);
+}
+
+.register.container .aw-login.input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.aw-login.input-parent {
+    display: flex;
+    align-items: center;
+}
+
+.aw-login.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aw-login.input-group-vertical {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.aw-login.input-group > .input {
+    width: 150px;
+    padding-left: 20px;
+}
+
+/* .aw-login.input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 45px;
+    border: 1px solid rgb(240,240,240);
+    border-radius: 30px;
+    background-color: rgb(240,240,240);
+    color: rgb(80,80,80);
+    margin-top: 5px;
+    padding-left: 55px;
+    padding-right: 20px;
+} */
+
+#submit {
+    margin-top: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #ffa801;
+    color: #FFF;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    border-color: #e99e12;
+    box-shadow: none;
+    border-bottom: calc(.2rem + .0625rem) solid rgba(0,0,0,0.2);
+}
+
+.aw-login.input:focus {
+    outline: none;
+    border: 2px solid #ffa801;
+}
+
+#submit:focus {
+    outline: none;
+    border: 2px solid rgb(80,80,80);
+}
+
+#submit:hover {
+    background-color: #e99e12;
+}
+
+.aw-login.icon {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    /* margin-top: -42px; */
+    margin-top: 6px;
+    margin-left: 20px;
+    color: rgb(80,80,80);
+}
+
+.aw-login.checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+input[type="checkbox"] {
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+}
+
+.aw-login.small-text {
+    font-size: 0.9em;
+}
+
+#email_icon {
+    margin-top: 5px;
+}
+
+.aw-login.separator {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.aw-login.create-account {
+    padding: 5px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.error {
+    color: #F00 !important;
+}
+
+/* 
+ * PROMO CSS 
+ */
+
+.promo.container {
+    width: 360px;
+    height: 100%;
+    margin-left: 30px;
+}
+
+/*
+ * ACCOUNT SETTINGS
+ */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    box-sizing: border-box;
+    height: 60px;
+    padding: 0px 40px 0px 40px;
+    color: #2c3e50;
+    background-color: #FFF;
+    border-bottom: 1px solid rgb(220,220,220);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-group > a {
+    text-decoration: none;
+}
+
+.nav-group > a:visited {
+    color: inherit;
+}
+
+.account-settings.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    /* height: calc(100vh - 60px); */
+    /* background-color: rgb(250,250,250); */
+}
+
+.account-settings.main {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.account-settings.row {
+    display: flex;
+    align-items: center;
+}
+
+.account-settings.nav-group {
+    display: flex;
+    align-items: center;
+}
+
+.account-settings.nav-group > * {
+    margin-right: 30px;
+}
+
+.account-settings.logo > div > div > #algowolf {
+    height: 30px;
+    /* margin: 20px; */
+}
+
+.account-settings.header {
+    color: #2c3e50;
+    font-size: 1.25em;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.account-settings.btn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.account-settings.btn > span {
+    font-size: 0.9em;
+    font-weight: 600;
+    /* margin-right: 10px; */
+}
+
+.account-settings.icon {
+    width: 18px;
+    height: 18px;
+}
+
+.account-settings.input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(220,220,220);
+    border-radius: 5px;
+    box-shadow: inset 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+    background-color: transparent;
+    padding: 12px 0px 12px 55px;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.0em;
+    color: rgb(80,80,80);
+}
+
+.account-settings.input:focus {
+    outline: none;
+    border: 2px solid #ffa801;
+}
+
+.account-settings.input.no-icon {
+    padding-left: 20px
+}
+
+.account-settings.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account-settings.input-group > .input {
+    width: 40%;
+    padding-left: 20px;
+}
+
+.account-settings.field {
+    width: 100%;
+    margin-bottom: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.account-settings.field.disabled > * {
+    color: rgb(180,180,180);
+}
+
+.account-settings.field > span {
+    color: rgb(80,80,80);
+}
+
+.account-settings.field > span > a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+.account-settings.field > span > a:focus {
+    outline: none;
+    border: 2px solid rgb(80,80,80);
+    border-radius: 5px;
+}
+
+.account-settings.horiz {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.account-settings.field-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: rgb(80,80,80);
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+
+.account-settings.link-text {
+    color: #000;
+    font-size: 1.0em;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.account-settings.link-text.disabled {
+    color: rgb(180,180,180);
+    cursor: default;
+}
+
+.account-settings.link-text.disabled:hover {
+    text-decoration: none;
+}
+
+.account-settings.small-text {
+    /* margin-left: 10px; */
+    font-size: 1.0em;
+}
+
+.account-settings.error-text {
+    color: #e74c3c;
+}
+
+.account-settings.success-text {
+    color: #2ecc71;
+}
+
+.account-settings.link-text:hover {
+    text-decoration: underline;
+}
+
+.account-settings.sub-field {
+    margin: 15px 20px 15px 20px;
+}
+
+.account-settings.item-header {
+    margin-right: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.account-settings.item-header.disabled {
+    color: rgb(180,180,180);
+}
+
+.account-settings.item-value {
+    margin-right: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.account-settings.item-value.disabled {
+    color: rgb(180,180,180);
+}
+
+.account-settings.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.account-settings .aw-login.icon {
+    margin-bottom: 18px;
+}
+
+.invite.main {
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.invite.message {
+    display: none;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #2ecc71;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+}
+
+.spreadsheet.body.invite {
+    max-height: 200px;
+    border: 1px solid rgb(240,240,240);
+    border-bottom: none;
+}
+
+.spreadsheet.row.invite {
+    width: 100%;
+}
+
+.cell.index.invite {
+    width: 10px !important;
+    min-width: 0 !important;
+}
+
+.cell.index.invite > .checkbox {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+.cell.index.invite > .checkmark {
+    border-radius: 3px;
+    border: 1px solid rgb(120,120,120);
+}
+
+.cell.index.invite > .checkbox .checkmark:after {
+    margin-bottom: 2px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.invite.btn-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.invite.btn {
+    margin-right: 20px;
+    padding: 3px 8px 3px 8px;
+    border: 1px solid rgb(80,80,80);
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.invite.btn.disabled {
+    color: rgb(220,220,220);
+    border-color: rgb(220,220,220);
+    cursor: default;
+}
+
+.invite.btn:not(.disabled):hover {
+    color: #ff8500;
+    border-color: #ff8500;
+}
+
+.popup.body.invite {
+    display: none;
+    width: 450px;
+    min-height: 0;
+    top: 0;
+    right: 0;
+}
+
+.popup.body.invite > .content {
+    height: 120px;
+}
+
+.invite.popup-message {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.invite.email-textbox {
+    width: calc(100% - 4px);
+    height: 100px;
+    resize: none;
+}
+
+.invite.sub-header {
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.popup.fade.invite {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+#green_text {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+#red_text  {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+
+
+

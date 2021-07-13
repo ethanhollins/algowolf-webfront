@@ -18,8 +18,10 @@ class Features extends Component
             <div className="home body">
                 
                 <Navigation2 
+                    checkAuthorization={this.props.checkAuthorization}
                     getUserId={this.props.getUserId}
                     getFirstName={this.props.getFirstName}
+                    getScreenWidth={this.props.getScreenWidth}
                 />
 
                 <div id="features-banner" className="banner body title">

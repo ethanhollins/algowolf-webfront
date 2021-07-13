@@ -5,16 +5,27 @@ import {
 } from 'react-router-dom';
 // Components
 import WelcomeDemoPageTwo from './components/WelcomeDemoPageTwo';
-import { config } from '@fortawesome/fontawesome-svg-core'
+import { config } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookies from 'universal-cookie';
 import UrlRedirect from './components/UrlRedirect';
 import AutomatedTradingPage from './components/AutomatedTradingPage';
 import BetaTesters from './components/BetaTesters';
 import Home2 from './components/Home2';
-import Strategies from './components/Strategies';
+import StrategiesPage from './components/StrategiesPage';
 import FAQ from './components/FAQ';
+import Login from './components/Login';
 import Features from './components/Features';
 import ContactUs from './components/ContactUs';
+import Register from './components/Register';
+import AccountSettings from './components/AccountSettings';
+import Logout from './components/Logout';
+import Tos from './components/Tos';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import RiskDisclosure from './components/RiskDisclosure';
+import CookiesPolicy from './components/CookiesPolicy';
+import Legal from './components/Legal';
+import HolyGrailPromo from './components/HolyGrailPromo';
 
 class App extends Component 
 {
@@ -23,16 +34,33 @@ class App extends Component
         super(props);
         config.autoAddCss = false
         this.cookies = new Cookies();
+
+        this.checkAuthorization = this.checkAuthorization.bind(this);
+        this.isBetaTester = this.isBetaTester.bind(this);
+        this.isPackagesInUse = this.isPackagesInUse.bind(this);
+        this.getStrategiesList = this.getStrategiesList.bind(this);
+        this.createStrategy = this.createStrategy.bind(this);
+        this.getScriptFile = this.getScriptFile.bind(this);
+        this.onResize = this.onResize.bind(this);
     }
 
     state = {
         user_id: null,
-        first_name: null
+        first_name: null,
+        screen_width: 0,
+        is_beta_tester: false
     }
 
-    async componentDidMount()
+    componentDidMount()
     {
-        await this.checkAuthorization();
+        this.onResize();
+
+        window.addEventListener("resize", this.onResize);
+    }
+
+    componentWillUnmount()
+    {
+        window.removeEventListener("resize", this.onResize);
     }
 
     render() {
@@ -44,52 +72,124 @@ class App extends Component
                     <Route exact path="/">
                         {/* <Home /> */}
                         <Home2 
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
+                            getStrategiesList={this.getStrategiesList}
+                            getScreenWidth={this.getScreenWidth}
+                            getIsBetaTester={this.getIsBetaTester}
+                            createStrategy={this.createStrategy}
+                            getScriptFile={this.getScriptFile}
+                        />
+                    </Route>
+                    <Route exact path="/login">
+                        <Login
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            setUser={this.setUser}
+                            getCookies={this.getCookies}
+                        />
+                    </Route>
+                    <Route exact path="/register">
+                        <Register
+                            getUserId={this.getUserId}
+                        />
+                    </Route>
+                    <Route exact path="/logout">
+                        <Logout
+                            setUser={this.setUser}
+                            getCookies={this.getCookies}
+                        />
+                    </Route>
+                    <Route exact path="/account-settings">
+                        <AccountSettings
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getHeaders={this.getHeaders}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
                     <Route exact path="/strategies">
-                        <Strategies 
+                        <StrategiesPage 
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
+                            getStrategiesList={this.getStrategiesList}
+                            getScreenWidth={this.getScreenWidth}
+                            getIsBetaTester={this.getIsBetaTester}
+                            getScriptFile={this.getScriptFile}
                         />
                     </Route>
-                    <Route exact path="/features">
+                    {/* <Route exact path="/features">
                         <Features 
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                         />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/faq">
                         <FAQ 
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
                     <Route exact path="/contact-us">
                         <ContactUs 
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
-                    <Route exact path="/register">
-                        <UrlRedirect
-                            url={"/register" + queryString}
+                    <Route exact path="/legal">
+                        <Legal 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
-                    <Route exact path="/account-settings">
-                        <UrlRedirect
-                            url={"/account-settings" + queryString}
+                    <Route exact path="/tos">
+                        <Tos 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
-                    <Route exact path="/login">
-                        <UrlRedirect
-                            url={"/login" + queryString}
+                    <Route exact path="/privacy-policy">
+                        <PrivacyPolicy 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
-                    <Route exact path="/logout">
-                        <UrlRedirect
-                            url={"/logout" + queryString}
+                    <Route exact path="/risk-disclosure">
+                        <RiskDisclosure 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/cookies-policy">
+                        <CookiesPolicy 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/holygrail/info">
+                        <HolyGrailPromo
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                            getScriptFile={this.getScriptFile}
                         />
                     </Route>
                     <Route exact path="/app">
@@ -132,6 +232,13 @@ class App extends Component
                 </Switch>
             </Router>
         )
+    }
+
+    onResize(e)
+    {
+        let { screen_width } = this.state;
+        screen_width = window.innerWidth;
+        this.setState({ screen_width });
     }
 
     async checkAuthorization()
@@ -177,6 +284,173 @@ class App extends Component
         this.setUser(user_id, first_name);
         return user_id;
     }
+
+    async isBetaTester()
+    {
+        const { REACT_APP_API_URL } = process.env;
+        const auth_token = this.getCookies().get('Authorization');
+        let { is_beta_tester } = this.state;
+
+        if (auth_token !== undefined)
+        {
+            var requestOptions = {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: '*/*',
+                    Authorization: 'Bearer ' + auth_token
+                },
+                credentials: 'include'
+            };
+
+            const res = await fetch(`${REACT_APP_API_URL}/v1/account`, requestOptions);
+            if (res.status === 200)
+            {
+                const data = await res.json();
+                if (data.beta_access)
+                {
+                    is_beta_tester = true;
+                }
+                else
+                {
+                    is_beta_tester = false;
+                }
+            }
+            else if (res.status === 403)
+            {
+                window.location = '/logout';
+            }
+            else
+            {
+                is_beta_tester = false;
+            }
+        }
+        else
+        {
+            is_beta_tester = false;
+        }
+
+        this.setState({ is_beta_tester });
+        return is_beta_tester;
+    }
+
+    async isPackagesInUse(packages)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        const auth_token = this.getCookies().get('Authorization');
+        if (auth_token !== undefined)
+        {
+            var requestOptions = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: '*/*',
+                    Authorization: 'Bearer ' + auth_token
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    packages: packages
+                })
+            };
+
+            const res = await fetch(`${REACT_APP_API_URL}/v1/package/available`, requestOptions);
+            if (res.status === 200)
+            {
+                const data = await res.json();
+                console.log(data);
+                return data.packages;
+            }
+            else if (res.status === 403)
+            {
+                window.location = '/logout';
+            }
+            else
+            {
+                return [];
+            }
+        }
+        else
+        {
+            return [];
+        }
+    }
+
+    async createStrategy(strategy_details)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        const auth_token = this.getCookies().get('Authorization');
+        if (auth_token !== undefined)
+        {
+            var requestOptions = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: '*/*',
+                    Authorization: 'Bearer ' + auth_token
+                },
+                credentials: 'include',
+                body: JSON.stringify(strategy_details)
+            };
+
+            const res = await fetch(`${REACT_APP_API_URL}/v1/strategy`, requestOptions);
+            if (res.status === 200)
+            {
+                const data = await res.json();
+                console.log(data);
+                return data.strategy_id;
+            }
+            else if (res.status === 403)
+            {
+                window.location = '/logout';
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    async getScriptFile(script_id, file_name)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        var requestOptions = {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: '*/*'
+            },
+            credentials: 'include'
+        };
+
+        const res = await fetch(`${REACT_APP_API_URL}/v1/scripts/${script_id}/${file_name}`, requestOptions);
+        if (res.status === 200)
+        {
+            const data = await res.json();
+            return data.item;
+        }
+        else if (res.status === 403)
+        {
+            window.location = '/logout';
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    async getStrategiesList()
+    {
+        console.log("getStrategiesList");
+        const packages = ['HolyGrail_opt_testing_comb'];
+        const is_beta_tester = await this.isBetaTester();
+        const packages_in_use = await this.isPackagesInUse(packages);
+        console.log(packages_in_use);
+        return packages_in_use;
+    }
     
     setUser = (user_id, first_name) =>
     {
@@ -193,6 +467,11 @@ class App extends Component
         return this.state.first_name;
     }
 
+    getIsBetaTester = () =>
+    {
+        return this.state.is_beta_tester;
+    }
+
     getCookies = () =>
     {
         return this.cookies;
@@ -205,6 +484,11 @@ class App extends Component
             Accept: '*/*',
             Authorization: 'Bearer ' + this.getCookies().get('Authorization')
         };
+    }
+
+    getScreenWidth = () =>
+    {
+        return this.state.screen_width;
     }
 
 }

@@ -14,27 +14,31 @@ class Footer extends Component
                         </div>
 
                         <div className="col-md-3 col-sm-3 col-xs-4">
-                            <h6 className="mtn">Automated Trading</h6>
+                            <h6 className="mtn">Trading</h6>
                             <ul>
-                                <li><a href="/automated-trading">Gettings Started</a></li>
-                                <li><a href="/automated-trading/beta-testers">Beta Testing</a></li>
-                                <li><a href="/app">Goto App</a></li>
+                                <li><a href="/app">Dashboard</a></li>
+                                <li><a href="/strategies">Strategies</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                <li><a href="/legal">Legal</a></li>
                             </ul>
                         </div>
 
                         <div className="col-md-3 col-sm-3 col-xs-4">
-                            <h6 className="mtn">Prison Paycheck</h6>
+                            <h6 className="mtn">Strategies</h6>
                             <ul>
-                                <li><a href="/holygrail">Getting Started</a></li>
+                                <li><a href="/holygrail">HolyGrail PRO</a></li>
                                 {/* <li><a href="/holygrail/instructions">Instructions</a></li> */}
-                                <li><a href="/holygrail/demo">Goto Live Signal Charts</a></li>
+                                <li><a href="/holygrail/demo">HolyGrail Live Charts</a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="row footer-bottom">
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <p>Copyright &copy; AlgoWolf. 2021. All Rights Reserved.</p>
+                            <p>AlgoWolf is a software development company and does not provide investment or brokerage services. </p>
+                            <p>By registering an account with this website or using this website or any of our products or services you agree that you unconditionally accept and abide by our <a href="/tos">Terms & Conditions</a> and the <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a>.</p>
+                            <p>EVERY TIME YOU USE OUR PRODUCTS OR SERVICE YOU AGREE THAT IN ALL CASES ALGOWOLF BEARS NO RESPONSIBILITY FOR LOSSES INCURRED, AND OFFERS NO GUARANTEES OR EXPECTATIONS OF OUR ALGORITHM PERFORMANCE OR STABILITY.</p>
                         </div>
                     </div>
                 </div>
