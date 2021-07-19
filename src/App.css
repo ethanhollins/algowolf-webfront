@@ -1409,6 +1409,10 @@
 
 @media screen and (max-width : 580px)
 {
+    html, body {
+        overflow-x: hidden;
+    }
+
     .nav.logo-parent {
         padding-left: 0;
     }
