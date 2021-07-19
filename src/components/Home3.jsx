@@ -5,7 +5,7 @@ import Navigation2 from './Navigation2';
 import Strategies from './Strategies';
 import Banner from './Banner';
 
-class Home2 extends Component
+class Home3 extends Component
 {
 
     render()
@@ -41,8 +41,8 @@ class Home2 extends Component
                                     sit back and relax as it does all the work for you.
                                 </div>
                                 <div className="home s1-btn-group">
-                                    <div className="home s1-b1 feat-btn">Sign up</div>
-                                    <div className="home s1-b2 feat-btn">Sign in</div>
+                                    <a className="home s1-b1 feat-btn" href="/register">Sign up</a>
+                                    <a className="home s1-b2 feat-btn" href="/login">Sign in</a>
                                 </div>
                             </div>
                             <div className="col-md-5 col-md-offset-1 col-sm-12">
@@ -227,7 +227,7 @@ class Home2 extends Component
                             <div className="home s1-header">
                                 See Our Pricing
                             </div>
-                            <div className="home s4-b1 feat-btn">Pricing</div>
+                            <a className="home s4-b1 feat-btn" href="/pricing">Pricing</a>
                         </div>
                         </div>
                     </div>
@@ -246,4 +246,4 @@ class Home2 extends Component
 
 }
 
-export default withRouter(Home2);
+export default withRouter(Home3);

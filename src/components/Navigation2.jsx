@@ -73,8 +73,6 @@ class Home2 extends Component
                             Dashboard
                         </a>
                         <a className="nav-links link-btn" href="/">Home</a>
-                        {/* <a className="nav-links link-btn" href="/strategies">Strategies</a> */}
-                        {/* <a className="nav-links link-btn" href="/faq">FAQ</a> */}
                         <a className="nav-links link-btn" href="/pricing">Pricing</a>
                         <a className="nav-links link-btn" href="/contact-us">Contact Us</a>
                         <a className="nav-links link-btn" href="/legal">Legal</a>
@@ -140,8 +138,8 @@ class Home2 extends Component
             return (
                 <div className="nav right">
                     <div className="nav login-group">
-                        <a className="nav login-btn" href="/login">Sign In</a>
-                        <a className="nav signup-btn" href="/register">Sign Up</a>
+                        <a className="nav login-btn" href="/login">Sign in</a>
+                        <a className="nav signup-btn" href="/register">Sign up</a>
                     </div>
                 </div>
             );

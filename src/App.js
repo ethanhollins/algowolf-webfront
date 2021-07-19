@@ -6,16 +6,13 @@ import {
 // Components
 import WelcomeDemoPageTwo from './components/WelcomeDemoPageTwo';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookies from 'universal-cookie';
 import UrlRedirect from './components/UrlRedirect';
 import AutomatedTradingPage from './components/AutomatedTradingPage';
 import BetaTesters from './components/BetaTesters';
-import Home2 from './components/Home2';
 import StrategiesPage from './components/StrategiesPage';
 import FAQ from './components/FAQ';
 import Login from './components/Login';
-import Features from './components/Features';
 import ContactUs from './components/ContactUs';
 import Register from './components/Register';
 import AccountSettings from './components/AccountSettings';
@@ -27,6 +24,7 @@ import CookiesPolicy from './components/CookiesPolicy';
 import Legal from './components/Legal';
 import HolyGrailPromo from './components/HolyGrailPromo';
 import Home3 from './components/Home3';
+import Pricing from './components/Pricing';
 
 class App extends Component 
 {
@@ -181,6 +179,19 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/pricing">
+                        <Pricing 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getStrategiesList={this.getStrategiesList}
+                            getScreenWidth={this.getScreenWidth}
+                            getIsBetaTester={this.getIsBetaTester}
+                            createStrategy={this.createStrategy}
+                            getScriptFile={this.getScriptFile}
+                            getIsBetaTester={this.getIsBetaTester}
                         />
                     </Route>
                     <Route exact path="/holygrail/info">
