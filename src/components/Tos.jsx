@@ -71,9 +71,9 @@ class Tos extends Component
                         <p>Failed payments will automatically revoke your access to the subscribed algorithm. </p>
                         <p>The system will retry the charge for a total of 5 days after the initial payment attempt unless you cancel the subscription from the dashboard on our website. </p>
                         <p>Your subscription will be cancelled if the system is not able to capture the payment within 5 days. </p>
-                        <p>You can update your payment method or card details in the <a href="#">Billing</a> section on your account dashboard to prevent the automatic cancellation.</p>
+                        <p>You can update your payment method or card details in the <a href="/account-settings">Billing</a> section on your account dashboard to prevent the automatic cancellation.</p>
                         <p><strong>Chargebacks:</strong></p>
-                        <p>You hereby agree to not process any chargebacks on your purchase from AlgoWolf, rather speak to the AlgoWolf support team at <a href="#">support@algowolf.com</a> to resolve any issue.</p>
+                        <p>You hereby agree to not process any chargebacks on your purchase from AlgoWolf, rather speak to the AlgoWolf support team at <a href="mailto:support@algowolf.com">support@algowolf.com</a> to resolve any issue.</p>
                         <p>In no event shall AlgoWolf be accountable for any or all financial losses or costs from the use of any of our software or Algorithms. Any chargeback initiated by the customer will be investigated to the fullest extent, and that customer will no longer be able to purchase any items from our company. </p>
                         <p>Any additional purchases will be refunded immediately. Do not attempt to make any fraudulent purchases. If we receive any fraudulent chargebacks, we will immediately deactivate your account and prosecute to the fullest extent of the law.</p>
                         <p><strong>Refund Policy & Terms:</strong></p>
@@ -82,7 +82,7 @@ class Tos extends Component
                         <p>This means if you purchase a product or subscription plan and you are unhappy with it, as long as it is within 14-days of the initial purchase date we will issue a refund minus any refund fees.</p>
                         <p>On the same day that we action your refund the algorithmic product will be deactivated and you will no longer be able to use it.</p>
                         <ul>
-                            <li>If you wish to request a refund send an email requesting a refund within the prescribed 14-day period to:  <a href="#">support@algowolf.com</a></li>
+                            <li>If you wish to request a refund send an email requesting a refund within the prescribed 14-day period to:  <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                         </ul>
                         <p><strong>Refund Limitations</strong></p>
                         <p>In order to protect ourselves against fraud and misuse, the following limitations apply which make refunds void and not possible.</p>
@@ -113,7 +113,7 @@ class Tos extends Component
                         </ul>
                         <p><strong>Support:</strong></p>
                         <ul>
-                            <li>All customers who have purchased a subscription to our products are entitled to full product support and can contact us at <a href="#">support@algowolf.com</a></li>
+                            <li>All customers who have purchased a subscription to our products are entitled to full product support and can contact us at <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                             <li>The service level we provide is a 12 hour response time, but during busy periods this may be longer.</li>
                             <li><strong>Non-Paid Software Product Support</strong> - All customers who have use of any demo, free or trial products will have limited support only. </li>
                             <li>We do not provide the source code for any of our algorithmic or digital products unless otherwise stated on the product page.</li>
@@ -181,7 +181,7 @@ class Tos extends Component
                         <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you must stop using the Service.</p>
                         <p>The current version of these terms of service was modified on <strong>1st July 2021.</strong></p>
                         <p><strong>Contact:</strong></p>
-                        <p>If you have any questions about these Terms, please contact us send in an email with your query at <a href="#">support@algowolf.com</a></p>
+                        <p>If you have any questions about these Terms, please contact us send in an email with your query at <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p>AlgoWolf is a trading name of Tymraft Pty Ltd</p>
                         <p>All contents © 2021 AlgoWolf. All rights reserved.</p>
                         <p><strong>The following documents form part of the Terms & Conditions and must be read & accepted in conjunction with the above:</strong></p>

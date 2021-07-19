@@ -26,6 +26,7 @@ import RiskDisclosure from './components/RiskDisclosure';
 import CookiesPolicy from './components/CookiesPolicy';
 import Legal from './components/Legal';
 import HolyGrailPromo from './components/HolyGrailPromo';
+import Home3 from './components/Home3';
 
 class App extends Component 
 {
@@ -70,8 +71,7 @@ class App extends Component
             <Router component={App}>
                 <Switch>
                     <Route exact path="/">
-                        {/* <Home /> */}
-                        <Home2 
+                        <Home3 
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
@@ -190,6 +190,8 @@ class App extends Component
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
                             getScriptFile={this.getScriptFile}
+                            getStrategiesList={this.getStrategiesList}
+                            getIsBetaTester={this.getIsBetaTester}
                         />
                     </Route>
                     <Route exact path="/app">
@@ -260,12 +262,10 @@ class App extends Component
             };
     
             const res = await fetch(`${REACT_APP_API_URL}/authorize`, requestOptions);
-            console.log(res.status);
             if (res.status === 200)
             {
                 // Redirect to App
                 const data = await res.json();
-                console.log(data);
                 user_id = data.user_id;
                 first_name = data.first_name;
             }
@@ -357,7 +357,6 @@ class App extends Component
             if (res.status === 200)
             {
                 const data = await res.json();
-                console.log(data);
                 return data.packages;
             }
             else if (res.status === 403)
@@ -396,7 +395,6 @@ class App extends Component
             if (res.status === 200)
             {
                 const data = await res.json();
-                console.log(data);
                 return data.strategy_id;
             }
             else if (res.status === 403)
@@ -444,11 +442,9 @@ class App extends Component
 
     async getStrategiesList()
     {
-        console.log("getStrategiesList");
         const packages = ['HolyGrail_opt_testing_comb'];
         const is_beta_tester = await this.isBetaTester();
         const packages_in_use = await this.isPackagesInUse(packages);
-        console.log(packages_in_use);
         return packages_in_use;
     }
     

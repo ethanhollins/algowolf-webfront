@@ -60,7 +60,7 @@ class CookiesPolicy extends Component
                         <p><strong>Changes</strong></p>
                         <p>We may change the type of third-party service providers that place cookies on the Site and amend this Cookies Policy at any time by posting the amended version on the Site. Unless additional notice or consent is required by applicable laws, this will serve as your notification of these changes.</p>
                         <p><strong>Contact Us</strong></p>
-                        <p>If you have questions about this Cookies Policy or the way personal information is processed or used in connection with the use of our Software Applications or websites, please address your queries to: <a href="#">support@algowolf.com</a></p>
+                        <p>If you have questions about this Cookies Policy or the way personal information is processed or used in connection with the use of our Software Applications or websites, please address your queries to: <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p><strong>The following documents must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/tos"><strong>TERMS OF USE & CONDITIONS OF SERVICE POLICY</strong></a></p>
                         <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>

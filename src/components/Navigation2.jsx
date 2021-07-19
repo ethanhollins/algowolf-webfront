@@ -32,7 +32,7 @@ class Home2 extends Component
 
             {this.getNav()}
 
-            <div className="nav-links separator"></div>
+            { !this.props.isNoBorder ? <div className="nav-links separator"></div> : <React.Fragment/>}
 
             </React.Fragment>
         );
@@ -68,13 +68,14 @@ class Home2 extends Component
 
                 <div ref={this.setDropdownParentRef} className="nav-links dropdown-parent">
                     <div className="nav-links dropdown">
-                        <div className="nav-links link-btn">
+                        <a href="/app" className="nav-links link-btn">
                             <FontAwesomeIcon className='nav-links btn-icon' icon={faSlidersH} />
                             Dashboard
-                        </div>
+                        </a>
                         <a className="nav-links link-btn" href="/">Home</a>
-                        <a className="nav-links link-btn" href="/strategies">Strategies</a>
-                        <a className="nav-links link-btn" href="/faq">FAQ</a>
+                        {/* <a className="nav-links link-btn" href="/strategies">Strategies</a> */}
+                        {/* <a className="nav-links link-btn" href="/faq">FAQ</a> */}
+                        <a className="nav-links link-btn" href="/pricing">Pricing</a>
                         <a className="nav-links link-btn" href="/contact-us">Contact Us</a>
                         <a className="nav-links link-btn" href="/legal">Legal</a>
                     </div>
@@ -103,14 +104,15 @@ class Home2 extends Component
                 </div>
     
                 <div className="nav-links body">
-                    <div className="nav-links link-btn">
+                    <a href="/app" className="nav-links link-btn">
                         <FontAwesomeIcon className='nav-links btn-icon' icon={faSlidersH} />
                         Dashboard
-                    </div>
+                    </a>
                     {/* <div className="nav-links vert-separator" /> */}
                     <a className="nav-links link-btn" href="/">Home</a>
-                    <a className="nav-links link-btn" href="/strategies">Strategies</a>
-                    <a className="nav-links link-btn" href="/faq">FAQ</a>
+                    {/* <a className="nav-links link-btn" href="/strategies">Strategies</a> */}
+                    {/* <a className="nav-links link-btn" href="/faq">FAQ</a> */}
+                        <a className="nav-links link-btn" href="/pricing">Pricing</a>
                     <a className="nav-links link-btn" href="/contact-us">Contact Us</a>
                     <a className="nav-links link-btn" href="/legal">Legal</a>
                 </div>

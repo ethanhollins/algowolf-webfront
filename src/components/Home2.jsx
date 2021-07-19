@@ -7,6 +7,39 @@ import Banner from './Banner';
 
 class Home2 extends Component
 {
+    constructor(props)
+    {
+        super(props);
+
+        this.setBannerImgRef = elem => {
+            this.bannerImg = elem;
+        }
+
+        this.images = [];
+        this.imageItems = [];
+        this.setImageRef = elem => {
+            this.images.push(elem);
+        }
+        this.setImageItemRef = elem => {
+            this.imageItems.push(elem);
+        }
+
+        this.onScroll = this.onScroll.bind(this);
+    }
+
+    state = {
+        current_image: 0
+    }
+
+    componentDidMount()
+    {
+        window.addEventListener("scroll", this.onScroll);
+
+        setTimeout(() => {
+            this.onImageTransition()
+        }, (5)*1000);
+    }
+
     render()
     {
         return (
@@ -35,6 +68,24 @@ class Home2 extends Component
                     getScriptFile={this.props.getScriptFile}
                 />
                 
+            </div>
+
+            <div ref={this.setBannerImgRef} className="home banner-img">
+                <div ref={this.setImageRef} className="opaque">
+                    <img ref={this.setImageItemRef} className="home banner-img-background" src={process.env.PUBLIC_URL + "/images/relax.jpg"}  alt="Banner Background Image" />
+                    <img ref={this.setImageItemRef} className="home banner-img-main" src={process.env.PUBLIC_URL + "/images/relax.jpg"}  alt="Banner Image" />
+                    <div className="home banner-img-shadow"></div>
+                </div>
+                <div ref={this.setImageRef}>
+                    <img ref={this.setImageItemRef} className="home banner-img-background" src={process.env.PUBLIC_URL + "/images/golf.jpg"}  alt="Banner Background Image" />
+                    <img ref={this.setImageItemRef} className="home banner-img-main" src={process.env.PUBLIC_URL + "/images/golf.jpg"}  alt="Banner Image" />
+                    <div className="home banner-img-shadow"></div>
+                </div>
+                <div ref={this.setImageRef}>
+                    <img ref={this.setImageItemRef} className="home banner-img-background" src={process.env.PUBLIC_URL + "/images/picnic.jpg"}  alt="Banner Background Image" />
+                    <img ref={this.setImageItemRef} className="home banner-img-main" src={process.env.PUBLIC_URL + "/images/picnic.jpg"}  alt="Banner Image" />
+                    <div className="home banner-img-shadow"></div>
+                </div>
             </div>
 
             <section id="first-section" className="se-section features-section">
@@ -82,6 +133,51 @@ class Home2 extends Component
             </React.Fragment>
 
         );
+    }
+
+    onImageTransition(e)
+    {
+        let { current_image } = this.state;
+
+        current_image += 1;
+
+        if (current_image >= this.images.length)
+        {
+            current_image = 0;
+        }
+
+        for (let i=0; i < this.images.length; i++)
+        {
+            if (!this.images[i])
+            {
+                continue;
+            }
+            else if (i === current_image)
+            {
+                this.images[i].className = "opaque";
+            }
+            else
+            {
+                this.images[i].className = "";
+            }
+        }
+
+        this.setState({ current_image });
+
+        setTimeout(() => {
+            this.onImageTransition()
+        }, (5)*1000);
+    }
+
+    onScroll(e)
+    {
+        for (let elem of this.imageItems)
+        {
+            if (elem)
+            {
+                elem.style.top = "calc(50% + " + Math.max(-elem.clientHeight/2, (window.scrollY - this.images[0].parentNode.offsetTop + elem.clientHeight)/9) + "px)";
+            }
+        }
     }
 
 }

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from './Footer';
 import Graph from './Graph';
-import Navigation2 from './Navigation2';
 import moment from "moment";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faTimesCircle } from '@fortawesome/pro-solid-svg-icons';
+import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
 
 class ContactUs extends Component
 {
@@ -27,16 +29,23 @@ class ContactUs extends Component
         infoValues: {},
         totalBank: 25000,
         commsPrice: 4.2,
-        tradingMonths: 12
+        tradingMonths: 12,
+        strategies: []
     }
 
     async componentDidMount()
     {
+        this.props.checkAuthorization();
+
         setTimeout(() => {
             this.onImageTransition()
         }, (5)*1000);
 
+        let { strategies } = this.state;
+        strategies = await this.props.getStrategiesList();
         await this.onStartup();
+
+        this.setState({ strategies });
     }
 
     render()
@@ -72,8 +81,10 @@ class ContactUs extends Component
                         <div className="promo header-background"/>
                         <div className="promo header-label-group">
                             <div className="promo title"><span>HolyGrail Pro</span></div>
-                            <div>Home</div>
-                            <div className="sm-hide">Purchase $495/m</div>
+                            <a href="/">Home</a>
+                            <div className="sm-hide">
+                                {this.getDashboardHeaderBtn()}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,7 +313,7 @@ class ContactUs extends Component
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Buy Now
+                                                {this.getDashboardHeaderBtn()}
                                             </div>
                                         </div>
                                     </div>
@@ -414,6 +425,23 @@ class ContactUs extends Component
             this.updateValues(data, oldData, totalBank, commsPrice, tradingMonths);
         }
         
+    }
+
+    async onAddToDashboard(e)
+    {
+        const strategy_package = e.target.getAttribute('name') + '.v1_0_0';
+
+        // TEMP
+        const name = "HolyGrail Pro";
+
+        await this.props.createStrategy({
+            name: name,
+            package: strategy_package
+        })
+
+        let { strategies } = this.state;
+        strategies = await this.props.getStrategiesList();
+        this.setState({ strategies });
     }
 
     async onStartup() 
@@ -649,6 +677,62 @@ class ContactUs extends Component
         const sqn100 = Math.sqrt(100) * mu / std;
 
         return [sqn, sqn100];
+    }
+
+    getDashboardHeaderBtn = () =>
+    {
+        const pkg = 'HolyGrail_opt_testing_comb';
+        const user_id = this.props.getUserId();
+        const is_beta_tester = this.props.getIsBetaTester();
+        const { strategies } = this.state;
+        
+        let dashboard_btn;
+        if (!user_id)
+        {
+            dashboard_btn = (
+                <div>
+
+                <FontAwesomeIcon className='promo header-icon' icon={faTimesCircle} />
+                Currently Unavailable
+
+                </div>
+            );
+        }
+        else if (strategies.includes(pkg))
+        {
+            dashboard_btn = (
+                <a href="/app">
+
+                <FontAwesomeIcon className='promo header-icon' icon={faCheckCircle} />
+                Added
+
+                </a>
+            );
+        }
+        else if (is_beta_tester)
+        {
+            dashboard_btn = (
+                <div onClick={this.onAddToDashboard.bind(this)}>
+
+                <FontAwesomeIcon className='promo header-icon' icon={faPlusCircle} />
+                Add to Dashboard
+
+                </div>
+            );
+        }
+        else
+        {
+            dashboard_btn = (
+                <div>
+
+                <FontAwesomeIcon className='promo header-icon' icon={faTimesCircle} />
+                Currently Unavailable
+                
+                </div>
+            );
+        }
+
+        return dashboard_btn;
     }
 
 }

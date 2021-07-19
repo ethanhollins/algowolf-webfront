@@ -10,7 +10,9 @@ class Footer extends Component
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 col-sm-3 col-xs-4">
-                            <img src="/images/dark-logo.svg" alt="" className="footer-logo"/>
+                            <a href="/">
+                                <img src="/images/dark-logo.svg" alt="AlgoWolf Logo" className="footer-logo"/>
+                            </a>
                         </div>
 
                         <div className="col-md-3 col-sm-3 col-xs-4">
@@ -26,8 +28,7 @@ class Footer extends Component
                         <div className="col-md-3 col-sm-3 col-xs-4">
                             <h6 className="mtn">Strategies</h6>
                             <ul>
-                                <li><a href="/holygrail">HolyGrail PRO</a></li>
-                                {/* <li><a href="/holygrail/instructions">Instructions</a></li> */}
+                                <li><a href="/holygrail/info">HolyGrail PRO</a></li>
                                 <li><a href="/holygrail/demo">HolyGrail Live Charts</a></li>
                             </ul>
                         </div>
@@ -38,7 +39,7 @@ class Footer extends Component
                             <p>Copyright &copy; AlgoWolf. 2021. All Rights Reserved.</p>
                             <p>AlgoWolf is a software development company and does not provide investment or brokerage services. </p>
                             <p>By registering an account with this website or using this website or any of our products or services you agree that you unconditionally accept and abide by our <a href="/tos">Terms & Conditions</a> and the <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a>.</p>
-                            <p>EVERY TIME YOU USE OUR PRODUCTS OR SERVICE YOU AGREE THAT IN ALL CASES ALGOWOLF BEARS NO RESPONSIBILITY FOR LOSSES INCURRED, AND OFFERS NO GUARANTEES OR EXPECTATIONS OF OUR ALGORITHM PERFORMANCE OR STABILITY.</p>
+                            <p>EVERY TIME YOU USE OUR PRODUCTS OR SERVICE YOU AGREE THAT IN ALL CASES ALGOWOLF BEARS NO RESPONSIBILITY FOR LOSSES INCURRED, AND OFFERS NO GUARANTEES OR EXPECTATIONS OF ANY ALGORITHM PERFORMANCE OR STABILITY.</p>
                         </div>
                     </div>
                 </div>

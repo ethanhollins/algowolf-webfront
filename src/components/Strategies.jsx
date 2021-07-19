@@ -21,7 +21,6 @@ class Strategies extends Component
 
         const data = await this.props.getScriptFile("HolyGrail_Pro", "SystemResults.csv");
         equityCurve = this.generateEquityCurve(data);
-        console.log(equityCurve);
         isLoaded = true;
 
         this.setState({ strategies, equityCurve, isLoaded });
@@ -61,8 +60,8 @@ class Strategies extends Component
                 {this.getStrategyElems()}
 
                 <div className="cat-strategies item">
-                    <a className="cat-strategies item-header-group" href="#">
-                        <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon_classic.jpg"}/>
+                    <a className="cat-strategies item-header-group" href="/holygrail/demo">
+                        <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon_classic.jpg"} alt="Strategy Icon"/>
                         <div className="cat-strategies title">
                             <span className="cat-strategies item-header">HolyGrail Live Charts</span>
                         </div>
@@ -78,12 +77,12 @@ class Strategies extends Component
                 </div>
                 <div className="cat-strategies item">
                     <div className="cat-strategies btn-group">
-                        <div className='cat-strategies cat-btn-parent'>
+                        <a className='cat-strategies cat-btn-parent' href="/holygrail/demo">
                             <FontAwesomeIcon className='cat-strategies cat-btn' style={{color: "#e67e22"}} icon={faArrowCircleRightSolid} />
                             <div className="cat-strategies anim-text">
                                 <span>Goto Page</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -98,8 +97,8 @@ class Strategies extends Component
                 {this.getStrategyElems()}
 
                 <div className="cat-strategies item">
-                    <a className="cat-strategies item-header-group" href="#">
-                        <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon_classic.jpg"}/>
+                    <a className="cat-strategies item-header-group" href="/holygrail/demo">
+                        <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon_classic.jpg"} alt="Strategy Icon"/>
                         <div className="cat-strategies title">
                             <span className="cat-strategies item-header">HolyGrail Live Charts</span>
                         </div>
@@ -110,12 +109,12 @@ class Strategies extends Component
                         </div>
                     </div>
                     <div className="cat-strategies btn-group">
-                        <div className='cat-strategies cat-btn-parent'>
+                        <a className='cat-strategies cat-btn-parent' href="/holygrail/demo">
                             <FontAwesomeIcon className='cat-strategies cat-btn' style={{color: "#e67e22"}} icon={faArrowCircleRightSolid} />
                             <div className="cat-strategies anim-text">
                                 <span>Goto Page</span>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -187,8 +186,8 @@ class Strategies extends Component
                     <React.Fragment key={i}>
 
                     <div className="cat-strategies item">
-                        <a className="cat-strategies item-header-group" href="#">
-                            <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon.jpg"}/>
+                        <a className="cat-strategies item-header-group" href="/holygrail/info">
+                            <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon.jpg"} alt="Strategy Icon"/>
                             <div className="cat-strategies title">
                                 <span className="cat-strategies item-header">HolyGrail PRO</span>
                                 <div className="cat-strategies strategy-label"><span>AlgoWolf's Choice</span></div>
@@ -239,8 +238,8 @@ class Strategies extends Component
             {
                 result.push(
                     <div key={i} className="cat-strategies item">
-                        <a className="cat-strategies item-header-group" href="#">
-                            <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon.jpg"}/>
+                        <a className="cat-strategies item-header-group" href="/holygrail/info">
+                            <img className="cat-strategies icon" src={process.env.PUBLIC_URL + "/holygrail_icon.jpg"} alt="Strategy Icon"/>
                             <div className="cat-strategies title">
                                 <span className="cat-strategies item-header">HolyGrail PRO</span>
                                 <div className="cat-strategies strategy-label"><span>AlgoWolf's Choice</span></div>
@@ -302,14 +301,7 @@ class Strategies extends Component
 
         let { strategies } = this.state;
         strategies = await this.props.getStrategiesList();
-        console.log("Strategies: ");
-        console.log(strategies);
         this.setState({ strategies });
-    }
-
-    async onStartup() 
-    {
-        
     }
 
     generateEquityCurve(data)

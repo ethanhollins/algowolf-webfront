@@ -97,7 +97,7 @@ class PrivacyPolicy extends Component
                         <p><strong>Changes To This Notice:</strong></p>
                         <p>We reserve the right to revise or to modify this Notice. In such event, we will post a prominent notice on this website prior to the change becoming effective. Should the change have the effect of introducing a purpose for the use of Your personal information, which would be inconsistent with this notice, and where required by applicable law, we may either notify You or provide You with an opportunity to opt-out from such use.</p>
                         <p><strong>Contacting Us</strong></p>
-                        <p>You may contact us anytime by addressing your queries to: <a href="#">support@algowolf.com</a></p>
+                        <p>You may contact us anytime by addressing your queries to: <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p><strong>The following documents must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/tos"><strong>TERMS OF USE & CONDITIONS OF SERVICE POLICY</strong></a></p>
                         <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>
