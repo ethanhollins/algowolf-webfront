@@ -17,7 +17,7 @@ label, input {
 
 .aw-login.container > div {
     width: 400px;
-    height: 760px;
+    height: 800px;
 }
 
 .register.container {
@@ -617,6 +617,26 @@ nav {
     font-weight: 600;
 }
 
+@media screen and (max-width : 576px)
+{
+    .aw-login.container {
+        position: relative;
+    }
+    
+    .register.container > div {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 60px;
+    }
 
+    .aw-login.input-group {
+        flex-direction: column;
+    }
+
+    .aw-login.input-group > .input {
+        width: 100%;
+    }
+}
 
 

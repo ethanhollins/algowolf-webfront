@@ -10,6 +10,8 @@ class Home3 extends Component
 
     render()
     {
+        console.log(this.props.getUserId());
+
         return (
             <React.Fragment>
 
@@ -40,10 +42,18 @@ class Home3 extends Component
                                     Build your own trading strategies with our state of the art tools and 
                                     sit back and relax as it does all the work for you.
                                 </div>
-                                <div className="home s1-btn-group">
-                                    <a className="home s1-b1 feat-btn" href="/register">Sign up</a>
-                                    <a className="home s1-b2 feat-btn" href="/login">Sign in</a>
-                                </div>
+                                {
+                                    this.props.getUserId() === null ?
+                                    
+                                    <React.Fragment>
+                                    <div className="home s1-btn-group">
+                                        <a className="home s1-b1 feat-btn" href="/register">Sign up</a>
+                                        <a className="home s1-b2 feat-btn" href="/login">Sign in</a>
+                                    </div>
+                                    </React.Fragment>
+
+                                    : <React.Fragment/>
+                                }
                             </div>
                             <div className="col-md-5 col-md-offset-1 col-sm-12">
                                 <img className="home s1-img" src={process.env.PUBLIC_URL + "/images/relax-image.svg"}  alt="Relax Image" />
