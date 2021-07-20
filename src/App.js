@@ -25,6 +25,7 @@ import Legal from './components/Legal';
 import HolyGrailPromo from './components/HolyGrailPromo';
 import Home3 from './components/Home3';
 import Pricing from './components/Pricing';
+import GettingStarted from './components/GettingStarted';
 
 class App extends Component 
 {
@@ -203,6 +204,14 @@ class App extends Component
                             getScriptFile={this.getScriptFile}
                             getStrategiesList={this.getStrategiesList}
                             getIsBetaTester={this.getIsBetaTester}
+                        />
+                    </Route>
+                    <Route exact path="/getting-started">
+                        <GettingStarted
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
                     <Route exact path="/app">

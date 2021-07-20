@@ -142,7 +142,7 @@ class ContactUs extends Component
                         </div>
                         <div className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                             <h3>Returns Calculator</h3>
-                            <p>Find out how much this strategy could have made you.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="#">Risk Disclosure and Disclaimer agreement</a> for more information.</p>
+                            <p>Find out how much this strategy could have made you.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.</p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
                                 <div>
                                     <div className="promo input-parent">
@@ -190,8 +190,8 @@ class ContactUs extends Component
                                         />
                                     </div>
                                 </div>
-                                <div>
-                                    Resulting Bank: ${ 
+                                <div className="promo calc-result">
+                                    <strong>Resulting Bank:</strong> ${ 
                                         isLoaded ? (totalBank + (infoValues["equity_ret_pa_comms"]/100 * (tradingMonths/12)) * totalBank).toFixed(2) 
                                         : ""
                                     }<br/>
@@ -274,6 +274,12 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">New and Improved</h2>
                             <p>We have developed an improved version of the Prison Paycheck (aka. Holy Grail) strategy which lets you automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-10 col-md-offset-1">
+                            <h2 className="mtn">Getting Started</h2>
+                            <p>Go to <a href="/getting-started">this page</a> to learn how to get started with your Dashboard.</p>
                         </div>
                     </div>
                 </div>

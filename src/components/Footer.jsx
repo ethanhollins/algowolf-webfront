@@ -19,17 +19,17 @@ class Footer extends Component
                             <h6 className="mtn">Trading</h6>
                             <ul>
                                 <li><a href="/app">Dashboard</a></li>
-                                <li><a href="/strategies">Strategies</a></li>
-                                <li><a href="/contact-us">Contact Us</a></li>
-                                <li><a href="/legal">Legal</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/pricing">Pricing</a></li>
+                                <li><a href="/getting-started">Getting Started</a></li>
                             </ul>
                         </div>
 
                         <div className="col-md-3 col-sm-3 col-xs-4">
-                            <h6 className="mtn">Strategies</h6>
+                            <h6 className="mtn">Other Pages</h6>
                             <ul>
-                                <li><a href="/holygrail/info">HolyGrail PRO</a></li>
-                                <li><a href="/holygrail/demo">HolyGrail Live Charts</a></li>
+                                <li><a href="/contact-us">Contact Us</a></li>
+                                <li><a href="/legal">Legal</a></li>
                             </ul>
                         </div>
                     </div>
