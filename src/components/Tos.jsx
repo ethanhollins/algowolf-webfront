@@ -58,7 +58,7 @@ class Tos extends Component
                         </ul>
                         <p><strong>Cancellation of service:</strong></p>
                         <ul>
-                            <li>You may cancel your AlgoWolf subscription at any time from the <a href="#">Billing</a> section on your dashboard on our website. You will continue to have access to our product or service until the end of your billing period and you won't be billed for the subsequent months.</li>
+                            <li>You may cancel your AlgoWolf subscription at any time from the Billing section in your account settings on our website. You will continue to have access to our product or service until the end of your billing period and you won't be billed for the subsequent months.</li>
                             <li>Users may cancel their subscription any time before a free trial ends or before the next billing cycle.</li>
                             <li>It's your sole responsibility to evaluate the merits of any trial period given and make an educated decision about keeping or cancelling the subscription. </li>
                             <li>We reserve the right to refuse service to anyone at any time for any reason. This includes access to our website, algorithmic software and trading platform.</li>
@@ -66,21 +66,21 @@ class Tos extends Component
                         <p><strong>Payment:</strong></p>
                         <p>When you purchase any subscription to our products you can pay using one of the major credit or debit cards for secure & fast payment. We use the services of secure payment providers to bill for our products online. These companies will have access to your personal and payment information. </p>
                         <p>When paying by card, we do not ever have any access to your card details.</p>
-                        <p>The third party payment gateway company we use is <a href="https://www.eway.com.au/">Eway</a>. We share information with these companies only to the extent necessary for the purposes of processing payments you make via our marketplace.</p>
+                        <p>The third party payment gateway company we use is <a target="_blank" href="https://www.nab.com.au/">NAB Transact</a>. We share information with these companies only to the extent necessary for the purposes of processing payments you make via our marketplace.</p>
                         <p><strong>Failed Payments:</strong></p>
                         <p>Failed payments will automatically revoke your access to the subscribed algorithm. </p>
                         <p>The system will retry the charge for a total of 5 days after the initial payment attempt unless you cancel the subscription from the dashboard on our website. </p>
                         <p>Your subscription will be cancelled if the system is not able to capture the payment within 5 days. </p>
-                        <p>You can update your payment method or card details in the <a href="/account-settings">Billing</a> section on your account dashboard to prevent the automatic cancellation.</p>
+                        <p>You can update your payment method or card details in the Billing section in your account settings to prevent the automatic cancellation.</p>
                         <p><strong>Chargebacks:</strong></p>
                         <p>You hereby agree to not process any chargebacks on your purchase from AlgoWolf, rather speak to the AlgoWolf support team at <a href="mailto:support@algowolf.com">support@algowolf.com</a> to resolve any issue.</p>
-                        <p>In no event shall AlgoWolf be accountable for any or all financial losses or costs from the use of any of our software or Algorithms. Any chargeback initiated by the customer will be investigated to the fullest extent, and that customer will no longer be able to purchase any items from our company. </p>
+                        <p>In no event shall AlgoWolf be accountable for any financial losses or costs from the use of any of our software or Algorithms. Any chargeback initiated by the customer will be investigated to the fullest extent, and that customer will no longer be able to purchase any items from our company. </p>
                         <p>Any additional purchases will be refunded immediately. Do not attempt to make any fraudulent purchases. If we receive any fraudulent chargebacks, we will immediately deactivate your account and prosecute to the fullest extent of the law.</p>
                         <p><strong>Refund Policy & Terms:</strong></p>
                         <p>We offer a 14-day refund option for any software or algorithmic products that state on the product page the words <strong>14-Day Refund Option.</strong></p>
                         <p><strong>After the 14-day period, the customer will no longer be eligible to receive a refund.</strong></p>
                         <p>This means if you purchase a product or subscription plan and you are unhappy with it, as long as it is within 14-days of the initial purchase date we will issue a refund minus any refund fees.</p>
-                        <p>On the same day that we action your refund the algorithmic product will be deactivated and you will no longer be able to use it.</p>
+                        <p>On the same day that we action your refund the product will be deactivated and you will no longer be able to use it.</p>
                         <ul>
                             <li>If you wish to request a refund send an email requesting a refund within the prescribed 14-day period to:  <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                         </ul>
@@ -88,7 +88,7 @@ class Tos extends Component
                         <p>In order to protect ourselves against fraud and misuse, the following limitations apply which make refunds void and not possible.</p>
                         <ul>
                             <li>The 14-day refund option is ONLY available to the first or initial payment of a product or subscription plan.</li>
-                            <li>If a customer has use of a trial period of a product and then goes ahead and subscribes to it, they will not be able to request a refund.</li>
+                            <li>If a customer has use of a trial period of a product and then goes ahead and subscribes to it, they will NOT be able to request a refund.</li>
                             <li>A refund request <strong>is not available</strong> for products that have been previously refunded by the customer and again purchased at a later date.</li>
                             <li>Any product that states it is <strong>non-refundable</strong> on the product page.</li>
                             <li>Free & trial downloads cannot be refunded.</li>
@@ -114,7 +114,7 @@ class Tos extends Component
                         <p><strong>Support:</strong></p>
                         <ul>
                             <li>All customers who have purchased a subscription to our products are entitled to full product support and can contact us at <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
-                            <li>The service level we provide is a 12 hour response time, but during busy periods this may be longer.</li>
+                            <li>The service level we provide is a 24 hour response time, but during busy periods this may be longer.</li>
                             <li><strong>Non-Paid Software Product Support</strong> - All customers who have use of any demo, free or trial products will have limited support only. </li>
                             <li>We do not provide the source code for any of our algorithmic or digital products unless otherwise stated on the product page.</li>
                             <li>We do not offer any form of modifications to our algorithmic products except those which are available on your account’s dashboard or Control Panel</li>
@@ -150,9 +150,9 @@ class Tos extends Component
                         <p><strong>Further Client’s Warranties and Representations:</strong></p>
                         <p>The Client warrants and represents that You:</p>
                         <ul>
-                            <li>Are carrying out and will at any time carry out any use of our algorithms on a well thought-out basis and not as gambling or a wager.</li>
+                            <li>Are carrying out and will at any time carry out any use of any algorithms on a well thought-out basis and not as gambling or a wager.</li>
                             <li>Have adequate and sufficient knowledge and understanding of the instruments and transactions to be carried on and is familiar with the regulations of the relevant markets, transactions and products;</li>
-                            <li>Have thoroughly tested any Algorithm, API, trading strategy, tool, function, programming code, specific order, setting or combination thereof as well as any third party software or software on the demo account, and found such to be satisfactory before use of any such on your live account.</li>
+                            <li>Have thoroughly tested any algorithm, API, trading strategy, tool, function, programming code, specific order, setting or combination thereof as well as any third party software or software on the demo account, and found such to be satisfactory before use of any such on your live account.</li>
                             <li>Are in compliance with all laws to which You are subject, including, without limitation, all tax laws and regulations, exchange control requirements and registration requirements and have obtained all necessary consents, licenses, etc. from competent authorities to enter into and perform all your obligations under the Conditions or any provisions thereof;</li>
                             <li>Are not under any legal disability and are not subject to any law or regulation which would prevent You to enter into and perform all your obligations under the Conditions or any provisions thereof.</li>
                             <li>Are responsible for setting your own password in accordance with the instructions that we provide to you (which together with your email address are known as your “Account Sign In Details”) as well as keeping all information in your Account confidential. </li>
@@ -182,7 +182,7 @@ class Tos extends Component
                         <p>The current version of these terms of service was modified on <strong>1st July 2021.</strong></p>
                         <p><strong>Contact:</strong></p>
                         <p>If you have any questions about these Terms, please contact us send in an email with your query at <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
-                        <p>AlgoWolf is a trading name of Tymraft Pty Ltd</p>
+                        <p>AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131</p>
                         <p>All contents © 2021 AlgoWolf. All rights reserved.</p>
                         <p><strong>The following documents form part of the Terms & Conditions and must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>

@@ -45,7 +45,7 @@
     font-family: Poppins, sans-serif;
     font-size: 2em;
     font-weight: 600;
-    color: #f4a53b;
+    color: #ffa801;
 }
 
 .home.s1-desc {
@@ -103,7 +103,7 @@
     font-family: Poppins, sans-serif;
     font-size: 1.75em;
     font-weight: 600;
-    color: #f4a53b;
+    color: #ffa801;
 }
 
 .home.feat-header2 {
@@ -111,15 +111,15 @@
     font-size: 2em;
     font-weight: 600;
     line-height: 1.1em;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .home.feat-header3 {
     font-family: Poppins, sans-serif;
-    font-size: 1.75em;
+    font-size: 1.5em;
     font-weight: 600;
     line-height: 1.1em;
-    margin-top: 30px;
+    margin-top: 40px;
     color: #3c3c3c;
 }
 
@@ -704,6 +704,24 @@
     transform: translate(-50%,-50%);
 }
 
+.promo.graph-header-parent {
+    margin-bottom: 30px;
+}
+
+.promo.graph-header {
+    font-family: Poppins, sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.promo.graph-sub-header {
+    font-family: Poppins, sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
 .promo.header-group {
     position: relative;
     display: flex;
@@ -795,6 +813,10 @@
     margin-right: 7px;
 }
 
+.promo.results-table-parent {
+    margin-top: 20px
+}
+
 .promo.results-table {
     font-size: 1.2em;
 }
@@ -819,6 +841,19 @@
     margin-top: 20px;
     font-family: Poppins, sans-serif;
     font-size: 1.5em;
+}
+
+.feature-desc > div {
+    margin-top: 20px;
+}
+
+.feature-desc ul {
+    margin-left: 20px;
+}
+
+.feature-desc li {
+    margin-top: 20px;
+    list-style-type: disc;
 }
 
 @keyframes slidein {
@@ -903,7 +938,7 @@
 
 .pricing.parent {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -956,6 +991,7 @@
 
 .pricing.header-notice {
     width: 100%;
+    height: 45px;
     text-align: center;
     font-size: 1.25em;
     font-family: Poppins, sans-serif;
@@ -963,6 +999,10 @@
     padding-bottom: 10px;
     color: #fff;
     background-color: #0868b1;
+}
+
+.pricing.header-notice.black {
+    background-color: #2d3436;
 }
 
 .pricing.title-group {
@@ -1250,6 +1290,23 @@
     color: #fff;
     border-radius: 30px;
     cursor: pointer;
+}
+
+#resulting_bank {
+    color: #27ae60;
+}
+
+#gpr_info {
+    font-size: 0.8em;
+}
+
+#gpr_info_asterisks {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+#pricing_footnote {
+    font-size: 0.9em;
 }
 
 @media screen and (max-width : 1200px)

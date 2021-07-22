@@ -134,8 +134,6 @@ class Pricing extends Component
 
             </div>
 
-            <div id="first-section"></div>
-
             <Footer/>
 
             </React.Fragment>

@@ -44,7 +44,7 @@ class RiskDisclosure extends Component
                         <p>NO REPRESENTATION IS MADE THAT ANY TRADING STRATEGY WILL OR IS LIKELY TO ACHIEVE PROFITS OR LOSSES SIMILAR TO THOSE SHOWN. PAST RESULTS ARE NOT INDICATIVE OF FUTURE PERFORMANCE.</p>
                         <p>Algowolf is not responsible for any losses that may occur due to any bugs or faults in our software and is provided strictly on a “as is” and “with all its faults” basis. Customers use our software at their own risk.</p>
                         <p><strong>YOU SPECIFICALLY ACKNOWLEDGE AND AGREE THAT ANY USE OF THIS WEBSITE, OUR PRODUCTS OR SERVICES IS AT YOUR OWN RISK.</strong></p>
-                        <p>AlgoWolf is a trading name of Tymraft Pty Ltd</p>
+                        <p>AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131</p>
                         <p>All contents © 2021 AlgoWolf. All rights reserved.</p>
                         <p><strong>The following documents must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/tos"><strong>TERMS OF USE & CONDITIONS OF SERVICE POLICY</strong></a></p>

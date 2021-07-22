@@ -41,6 +41,23 @@ class Register extends Component
         notify_me: true
     }
 
+    async componentDidMount()
+    {
+        const user_id = await this.props.checkAuthorization();
+        if (user_id !== null)
+        {
+            const query_string = new URLSearchParams(window.location.search);
+            if (query_string.get("redirect"))
+            {
+                window.location.href = query_string.get("redirect");
+            }
+            else
+            {
+                window.location = '/';
+            }
+        }
+    }
+
     render()
     {
         return (

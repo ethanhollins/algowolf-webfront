@@ -37,7 +37,7 @@ class ContactUs extends Component
                     <div className="row">
                         <div className="col-md-12">
                             <h4 className="underline">Got any questions or need help?</h4>
-                            <p><strong>Support Team:</strong> <a href="#">support@algowolf.com</a></p>
+                            <p><strong>Support Team:</strong> <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         </div>
                     </div>
                 </div>

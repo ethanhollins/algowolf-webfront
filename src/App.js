@@ -91,6 +91,7 @@ class App extends Component
                     </Route>
                     <Route exact path="/register">
                         <Register
+                            checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                         />
                     </Route>

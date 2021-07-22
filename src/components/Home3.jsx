@@ -10,8 +10,6 @@ class Home3 extends Component
 
     render()
     {
-        console.log(this.props.getUserId());
-
         return (
             <React.Fragment>
 
@@ -70,17 +68,17 @@ class Home3 extends Component
                             <div className="home s2-parent section-centered">
                                 <div className="home s2-body1 col-md-6 col-sm-12">
                                     <div className="home feat-header1">Innovate</div>
-                                    <div className="home feat-header2">Get the Hedge Fund Edge</div>
+                                    <div className="home feat-header2">The Quant Edge</div>
                                     <div className="home feat-header3">Visualize your Strategies with our modern charts</div>
                                     <div className="home feat-body">
                                         We provide comprehensive backtesting tools to visualize buy 
                                         and sell trades as well as custom bar info and chart drawings 
-                                        to make your experience in creating a money-making algorithm 
+                                        to make your experience in creating a successful algorithm 
                                         as easy as possible.
                                     </div>
                                     <div className="home feat-header3">Learn from professionals with our free interactive tutorials</div>
                                     <div className="home feat-body">
-                                        Our learning resources are design to teach new algo traders as well 
+                                        Our learning resources are designed to teach new algo traders as well 
                                         as veterans. Take advantage of our online tutorials to write your 
                                         first automated strategy, or learn exactly how professionals have 
                                         used machine learning to revolutionize the trading world. 

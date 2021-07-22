@@ -28,7 +28,7 @@ class ContactUs extends Component
         commsValues: null,
         infoValues: {},
         totalBank: 25000,
-        commsPrice: 4.2,
+        commsPrice: 2.1,
         tradingMonths: 12,
         strategies: []
     }
@@ -80,7 +80,7 @@ class ContactUs extends Component
                         <div className="promo header-shadow"/>
                         <div className="promo header-background"/>
                         <div className="promo header-label-group">
-                            <div className="promo title"><span>HolyGrail Pro</span></div>
+                            <div className="promo title"><span>HG Pro</span></div>
                             <a href="/">Home</a>
                             <div className="sm-hide">
                                 {this.getDashboardHeaderBtn()}
@@ -93,8 +93,19 @@ class ContactUs extends Component
             <section className="se-section single-feature">
                 <div className="container feature-desc">
                     <div className="row">
+                        <div className="col-md-10 col-md-offset-1">
+                            <h2 className="mtn">New and Improved</h2>
+                            <p>
+                                <strong>HG Pro</strong> is an improved version of the Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.
+                            </p>
+                            <p>
+                                To see how much you'll gain, use the calculator below.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="row">
                         <div className="col col-md-5 col-md-offset-1 col-xs-12 col-xs-offset-0">
-                            <h3>Equity Returns %</h3>
+                            <div className="promo graph-header-parent"><span className="promo graph-header">Equity Returns %</span></div>
                             { isLoaded ?
                                 <Graph
                                     key="Equity"
@@ -117,7 +128,7 @@ class ContactUs extends Component
                             }
                         </div>
                         <div className="col col-md-5 col-md-offset-0 col-xs-12 col-xs-offset-0">
-                            <h3>Commission Costs %</h3>
+                            <div className="promo graph-header-parent"><span className="promo graph-header">Commission Costs %</span></div>
                             { isLoaded ?
                                 <Graph
                                     key="Commissions"
@@ -142,11 +153,14 @@ class ContactUs extends Component
                         </div>
                         <div className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                             <h3>Returns Calculator</h3>
-                            <p>Find out how much this strategy could have made you.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.</p>
+                            <p>
+                                Find out how much this strategy could have made you. Based on trade risk of 1%.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.
+                                Not recommended for trading banks less than US$15,000.
+                            </p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
                                 <div>
                                     <div className="promo input-parent">
-                                        <span>Your Bank Size ($)</span>
+                                        <span>Your Bank Size $</span>
                                         <input 
                                             ref={this.setPasswordRef}
                                             type="number" className="promo input" 
@@ -162,14 +176,14 @@ class ContactUs extends Component
                                 </div>
                                 <div>
                                     <div className="promo input-parent">
-                                        <span>Commissions Price Per Lot ($)</span>
+                                        <span>Your Broker's Commission Price Per Lot $ (One Side)</span>
                                         <input 
                                             ref={this.setPasswordRef}
                                             type="number" className="promo input" 
                                             name="commission-price" id="number" 
                                             placeholder="Commissions Price Per Lot One side ($)"
                                             required onChange={this.handleChange} 
-                                            defaultValue={4.2}
+                                            defaultValue={2.1}
                                             min={0} max={10} step={0.1}
                                             onChange={this.onCalcChange.bind(this)}
                                         />
@@ -191,45 +205,41 @@ class ContactUs extends Component
                                     </div>
                                 </div>
                                 <div className="promo calc-result">
-                                    <strong>Resulting Bank:</strong> ${ 
-                                        isLoaded ? (totalBank + (infoValues["equity_ret_pa_comms"]/100 * (tradingMonths/12)) * totalBank).toFixed(2) 
+                                    <strong>Resulting Bank:</strong> <span id="resulting_bank">${ 
+                                        isLoaded ? this.convertMonetary((totalBank + (infoValues["equity_ret_pa_comms"]/100 * (tradingMonths/12)) * totalBank)) 
                                         : ""
-                                    }<br/>
-                                    {/* Resulting Compounded Bank: { 
-                                        isLoaded ? (totalBank + (((infoValues["equity_ret_comp_comms"]/100) / (infoValues["total_days"]/365)) * (tradingMonths/12)) * totalBank).toFixed(2) 
-                                        : ""
-                                    } */}
+                                    }</span><br/>
                                 </div>
                             </div>
                         </div>
-                        <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
-                            <h3>Overall Results</h3>
+                        <div className="promo results-table-parent col col-md-6 col-md-offset-3 col-xs-12 col-xs-offset-0">
+                            <h3>Performance Metrics</h3>
                             {
                                 isLoaded ? 
-                                <table className="promo results-table col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                                <table className="promo results-table col col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0">
                                     <tbody>
                                         <tr>
-                                            <td className="promo stat-type">Total Equity Return %</td>
+                                            <td className="promo stat-type">Total Gross Equity Return %</td>
                                             <td className="promo stat-value">{infoValues["equity_ret"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Total Equity Return % <span className="stat-type-small">inc. Commissions</span></td>
+                                            <td className="promo stat-type">Total Net Equity Return % <span className="stat-type-small">inc. Comms</span></td>
                                             <td className="promo stat-value">{infoValues["equity_ret_comms"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Total Compounded Equity Return % <span className="stat-type-small"> inc. Commissions</span></td>
+                                            <td className="promo stat-type">Total Net Compounded Equity Return % <span className="stat-type-small"> inc. Comms</span></td>
                                             <td className="promo stat-value">{infoValues["equity_ret_comp_comms"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Equity Return % <span className="stat-type-small">per annum</span></td>
+                                            <td className="promo stat-type">Gross Equity Return % <span className="stat-type-small">per annum</span></td>
                                             <td className="promo stat-value">{infoValues["equity_ret_pa"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Equity Return % <span className="stat-type-small">per annum inc. Commissions</span></td>
+                                            <td className="promo stat-type">Net Equity Return % <span className="stat-type-small">per annum inc. Comms</span></td>
                                             <td className="promo stat-value">{infoValues["equity_ret_pa_comms"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">GPR <span className="stat-type-small">By Monthly Returns</span></td>
+                                            <td className="promo stat-type">GPR <strong>*</strong> <span className="stat-type-small">By Monthly Returns</span></td>
                                             <td className="promo stat-value">{infoValues["gpr"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
@@ -256,6 +266,8 @@ class ContactUs extends Component
                                 </table>
                                 : <React.Fragment/>
                             }
+                            <p id="gpr_info"><strong id="gpr_info_asterisks">*</strong> The Gain to Pain ratio (GPR) was popularised in the Market Wizards series by Jack Schwagger. It is the sum of all monthly returns divided by the absolute value of the sum of all monthly losses. Generally speaking, GPR's greater than 1.0 are very good, and those above 2.0 are considered excellent.</p>
+
                         </div>
                     </div>
                 </div>
@@ -265,15 +277,21 @@ class ContactUs extends Component
                 <div className="container feature-desc">
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1">
-                            <h2 className="mtn">Why AlgoWolf?</h2>
-                            <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you.</p>
-                            <p>With just a few clicks; add your broker, set your trade risk, turn on the script and away you go. It switches itself on and off for the session and automatically commences the next day at the set time without you having to lift a finger.</p>
+                            <h2 className="mtn">What's so good about HG Pro?</h2>
+                            <ul>
+                                <li>Only <strong>takes high probability setups</strong>, thereby significantly reducing the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish).</li>
+                                <li><strong>Trades significantly longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
+                                <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
+                                <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>
+                                <li>Virtually <strong>impossible for human traders</strong> to match.</li>
+                            </ul>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1">
-                            <h2 className="mtn">New and Improved</h2>
-                            <p>We have developed an improved version of the Prison Paycheck (aka. Holy Grail) strategy which lets you automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.</p>
+                            <h2 className="mtn">Why AlgoWolf?</h2>
+                            <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you.</p>
+                            <p>With just a few clicks; add your broker, set your trade risk, turn on the script and away you go. It switches itself on and off for the session and automatically commences the next day at the set time without you having to lift a finger.</p>
                         </div>
                     </div>
                     <div className="row">
@@ -289,11 +307,11 @@ class ContactUs extends Component
                 <div className="container feature-desc">
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
-                            <h2 className="mtn">Pricing</h2>
+                            <h2 className="mtn">Pricing *</h2>
                             <div className="pricing parent">
                                 <div className="col-md-6 col-xs-12">
                                     <div className="pricing body">
-                                        <div className="pricing header-notice">Only 25 Available Places</div>
+                                        <div className="pricing header-notice">Initial Release 25 Available Places</div>
                                         <div className="pricing header-group">
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Standard</div>
@@ -309,13 +327,13 @@ class ContactUs extends Component
                                             </div>
                                         </div>
                                         <div className="pricing features-group">
-                                            <div>Live Trade the HolyGrail Pro Algorithm</div>
+                                            <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
-                                            <div>Personalize to Your Own Requirements</div>
-                                            <div>Immediate access to Improvements/Updates</div>
-                                            <div>Access to New Strategies in this Package</div>
-                                            <div>Up to 100K Tradable Bank</div>
-                                            <div>14 Day Cash Back Guarantee</div>
+                                            <div>Personalize to Your Risk Management</div>
+                                            <div>Up to 100K Tradable Bank at 1% risk</div>
+                                            <div>1 Trading Account</div>
+                                            <div>No Lock-in Contracts</div>
+                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
@@ -326,6 +344,7 @@ class ContactUs extends Component
                                 </div>
                                 <div className="col-md-6 col-xs-12 col-xs-offset-0">
                                     <div id="pricing-black" className="pricing body">
+                                        {/* <div className="pricing header-notice black"></div> */}
                                         <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Professional Client</div>
@@ -342,13 +361,13 @@ class ContactUs extends Component
                                             </div>
                                         </div>
                                         <div className="pricing features-group">
-                                            <div>Live Trade the HolyGrail Pro Algorithm</div>
+                                            <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
-                                            <div>Personalize to Your Own Requirements</div>
-                                            <div>Immediate access to Improvements/Updates</div>
-                                            <div>Access to New Strategies in this Package</div>
-                                            <div>Scalable Tradable Bank</div>
-                                            <div>14 Day Cash Back Guarantee</div>
+                                            <div>Personalize to Your Risk Management</div>
+                                            <div>Scalable Bank 100K+ (POA)</div>
+                                            <div>Up to 10 Simultaneous Trading Accounts</div>
+                                            <div>No Lock-in Contracts</div>
+                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
@@ -358,6 +377,7 @@ class ContactUs extends Component
                                     </div>
                                 </div>
                             </div>
+                            <span id="pricing_footnote"><strong id="gpr_info_asterisks">*</strong> Not recommended for trading banks less than US$15,000.</span>
                         </div>
                     </div>
                 </div>
@@ -454,13 +474,14 @@ class ContactUs extends Component
     {
         const data = await this.props.getScriptFile("HolyGrail_Pro", "SystemResults.csv");
         const oldData = await this.props.getScriptFile("HolyGrail_Pro", "OldSystemResults.csv")
-        this.updateValues(data, oldData, 25000, 4.2, 12);
+        this.updateValues(data, oldData, 25000, 2.1, 12);
 
         this.setState({ data, oldData });
     }
 
     updateValues(data, oldData, totalBank, commsPrice, tradingMonths)
     {
+        commsPrice *= 2;
         const equityValues = this.generateEquityCurve(data);
         const ret_info = this.getEquityReturn(data, totalBank, commsPrice);
 
@@ -468,10 +489,10 @@ class ContactUs extends Component
         const old_comms_cost = this.getCommissionsCost(Object.values(oldData["Risk (Pips)"]), totalBank, commsPrice);
         const commsValues = [{
             y: pro_comms_cost,
-            x: "Pro"
+            x: "HG Pro"
         }, {
             y: old_comms_cost,
-            x: "Old"
+            x: "Old HolyGrail"
         }];
 
         const equity_ret_comp_comms = this.getCompoundedCommsReturn(data, totalBank, commsPrice);
@@ -739,6 +760,12 @@ class ContactUs extends Component
         }
 
         return dashboard_btn;
+    }
+
+    convertMonetary = (value) => 
+    {
+        let val = (value/1).toFixed(2)
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
     }
 
 }

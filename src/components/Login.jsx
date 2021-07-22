@@ -38,6 +38,18 @@ class Login extends Component
             loginCheck = true;
             this.setState({ loginCheck });
         }
+        else
+        {
+            const query_string = new URLSearchParams(window.location.search);
+            if (query_string.get("redirect"))
+            {
+                window.location.href = query_string.get("redirect");
+            }
+            else
+            {
+                window.location = '/';
+            }
+        }
     }
 
     render()
@@ -197,7 +209,17 @@ class Login extends Component
             })
             console.log(data);
             this.props.setUser(data.user_id, null);
-            window.location = '/';
+
+            const query_string = new URLSearchParams(window.location.search);
+            if (query_string.get("redirect"))
+            {
+                window.location.href = query_string.get("redirect");
+            }
+            else
+            {
+                window.location = '/';
+            }
+
         }
         else
         {
