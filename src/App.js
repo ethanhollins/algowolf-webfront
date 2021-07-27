@@ -93,6 +93,8 @@ class App extends Component
                         <Register
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
+                            setUser={this.setUser}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/logout">
@@ -105,6 +107,7 @@ class App extends Component
                         <AccountSettings
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
                             getHeaders={this.getHeaders}
                             getScreenWidth={this.getScreenWidth}
                         />
@@ -205,6 +208,7 @@ class App extends Component
                             getScriptFile={this.getScriptFile}
                             getStrategiesList={this.getStrategiesList}
                             getIsBetaTester={this.getIsBetaTester}
+                            createStrategy={this.createStrategy}
                         />
                     </Route>
                     <Route exact path="/getting-started">
@@ -463,7 +467,7 @@ class App extends Component
 
     async getStrategiesList()
     {
-        const packages = ['HolyGrail_opt_testing_comb'];
+        const packages = ['HolyGrail_Pro'];
         const is_beta_tester = await this.isBetaTester();
         const packages_in_use = await this.isPackagesInUse(packages);
         return packages_in_use;

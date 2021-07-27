@@ -1112,8 +1112,42 @@
     color: #fff;
 }
 
+.getting-started.body h1 {
+    margin-bottom: 30px;
+}
+
+.getting-started.body *:not(h1) {
+    font-size: 12pt;
+}
+
+.getting-started.body ol {
+    list-style-type: lower-alpha;
+}
+
+.getting-started.body ol li {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.getting-started.body ul {
+    list-style-type: disc;
+}
+
+.getting-started.body ul li {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 #pricing-black .pricing.purchase-group:hover {
     background-color: #2d3436;
+}
+
+#pricing-orange .pricing.purchase-group:hover {
+    background-color: #f7a50e;
 }
 
 #features-separator {
@@ -1307,6 +1341,10 @@
 
 #pricing_footnote {
     font-size: 0.9em;
+}
+
+#add_to_dashboard > *{
+    pointer-events: none;
 }
 
 @media screen and (max-width : 1200px)

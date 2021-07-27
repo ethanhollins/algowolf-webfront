@@ -284,7 +284,7 @@ class Register extends Component
             if (status === 200)
             {
                 this.props.getCookies().remove('Authorization');
-                this.props.setUserId(null);
+                this.props.setUser(null, null);
                 if (this.props.history.location.search)
                 {
                     this.props.history.push('/login' + this.props.history.location.search);

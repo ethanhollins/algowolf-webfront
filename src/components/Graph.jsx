@@ -24,10 +24,10 @@ class Graph extends Component
         this.createGraph(this.props.data);
     }
 
-    // componentDidUpdate()
-    // {
-    //     this.updateData();
-    // }
+    componentDidUpdate()
+    {
+        this.updateData();
+    }
 
     render()
     {
@@ -139,7 +139,7 @@ class Graph extends Component
     {
         let { chart } = this.state;
 
-        if (!chart.data.datasets && this.props.data)
+        if (this.props.isGraphUpdate())
         {
             chart.data.datasets = [{
                 label: this.props.label,
@@ -150,6 +150,7 @@ class Graph extends Component
                 fill: true
             }];
             chart.update();
+            this.props.setGraphUpdate(false)
         }
     }
 

@@ -164,7 +164,7 @@ class AccountSettings extends Component
 
     async retrieveAccountInfo()
     {
-        const { REACT_APP_API_URL } = process.env;
+        const { REACT_APP_API_URL, REACT_APP_FRONT_BASE_URL } = process.env;
 
         const reqOptions = {
             method: 'GET',
@@ -183,7 +183,7 @@ class AccountSettings extends Component
         }
         else if (res.status === 403)
         {
-            window.location = '/logout';
+            window.location = '/login?redirect=' + encodeURIComponent(REACT_APP_FRONT_BASE_URL + '/account-settings');
         }
     }
 

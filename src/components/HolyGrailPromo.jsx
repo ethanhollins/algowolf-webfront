@@ -30,7 +30,8 @@ class ContactUs extends Component
         totalBank: 25000,
         commsPrice: 2.1,
         tradingMonths: 12,
-        strategies: []
+        strategies: [],
+        is_graph_update: false
     }
 
     async componentDidMount()
@@ -54,24 +55,40 @@ class ContactUs extends Component
 
         return (
             <React.Fragment>
-
-            {/* <div className="home body">
-                
-            </div> */}
             
             <div className="promo header-group">
                 <div className="promo banner-img">
                     <div ref={this.setImageRef} className="opaque">
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/relax.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/relax.jpg"} />
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
                     </div>
                     <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/golf.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/golf.jpg"} />
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_9.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_9.jpg"} />
                     </div>
                     <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/picnic.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/picnic.jpg"} />
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_13.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_13.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_16.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_16.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_14.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_14.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_20.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_20.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_2.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_2.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_22.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_22.jpg"} />
                     </div>
                 </div>
                 
@@ -123,9 +140,12 @@ class ContactUs extends Component
                                         'rgba(52, 152, 219, 1.0)'
                                     ]}
                                     getScreenWidth={this.props.getScreenWidth}
+                                    isGraphUpdate={this.isGraphUpdate}
+                                    setGraphUpdate={this.setGraphUpdate}
                                 />
                                 : <React.Fragment/>
                             }
+                            <div className="promo graph-sub-header">From Jan 2020 - Current</div>
                         </div>
                         <div className="col col-md-5 col-md-offset-0 col-xs-12 col-xs-offset-0">
                             <div className="promo graph-header-parent"><span className="promo graph-header">Commission Costs %</span></div>
@@ -147,20 +167,23 @@ class ContactUs extends Component
                                         'rgba(231, 76, 60,1.0)'
                                     ]}
                                     getScreenWidth={this.props.getScreenWidth}
+                                    isGraphUpdate={this.isGraphUpdate}
+                                    setGraphUpdate={this.setGraphUpdate}
                                 />
                                 : <React.Fragment/>
                             }
+                            <div className="promo graph-sub-header">Commission Total over 18 Months (More is worse)</div>
                         </div>
                         <div className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                             <h3>Returns Calculator</h3>
                             <p>
-                                Find out how much this strategy could have made you. Based on trade risk of 1%.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.
+                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong> In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.
                                 Not recommended for trading banks less than US$15,000.
                             </p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
                                 <div>
                                     <div className="promo input-parent">
-                                        <span>Your Bank Size $</span>
+                                        <span>Your Trading Bank Size $</span>
                                         <input 
                                             ref={this.setPasswordRef}
                                             type="number" className="promo input" 
@@ -239,6 +262,10 @@ class ContactUs extends Component
                                             <td className="promo stat-value">{infoValues["equity_ret_pa_comms"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
+                                            <td className="promo stat-type">Net Compounded Equity Return % <span className="stat-type-small">per annum inc. Comms</span></td>
+                                            <td className="promo stat-value">{infoValues["equity_ret_pa_comp_comms"].toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
                                             <td className="promo stat-type">GPR <strong>*</strong> <span className="stat-type-small">By Monthly Returns</span></td>
                                             <td className="promo stat-value">{infoValues["gpr"].toFixed(2)}</td>
                                         </tr>
@@ -259,6 +286,10 @@ class ContactUs extends Component
                                             <td className="promo stat-value">{infoValues["win_perc"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
+                                            <td className="promo stat-type">Maximum Monthly Drawdown %</td>
+                                            <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
                                             <td className="promo stat-type">Maximum Drawdown %</td>
                                             <td className="promo stat-value">{infoValues["drawdown"].toFixed(2)}</td>
                                         </tr>
@@ -266,7 +297,7 @@ class ContactUs extends Component
                                 </table>
                                 : <React.Fragment/>
                             }
-                            <p id="gpr_info"><strong id="gpr_info_asterisks">*</strong> The Gain to Pain ratio (GPR) was popularised in the Market Wizards series by Jack Schwagger. It is the sum of all monthly returns divided by the absolute value of the sum of all monthly losses. Generally speaking, GPR's greater than 1.0 are very good, and those above 2.0 are considered excellent.</p>
+                            <p id="gpr_info"><strong id="gpr_info_asterisks">*</strong> The Gain to Pain ratio (GPR) was popularised in the Market Wizards series by Jack Schwager. It is the sum of all monthly returns divided by the absolute value of the sum of all monthly losses. Generally speaking, GPR's greater than 1.0 are very good, and those above 2.0 are considered excellent.</p>
 
                         </div>
                     </div>
@@ -290,28 +321,22 @@ class ContactUs extends Component
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">Why AlgoWolf?</h2>
-                            <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you.</p>
+                            <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you. No more sitting in front of a screen for hours on end every day and no more costly human error due to frustration, fatigue and inexperience. AlgoWolf is your ultimate trader!</p>
                             <p>With just a few clicks; add your broker, set your trade risk, turn on the script and away you go. It switches itself on and off for the session and automatically commences the next day at the set time without you having to lift a finger.</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-10 col-md-offset-1">
-                            <h2 className="mtn">Getting Started</h2>
-                            <p>Go to <a href="/getting-started">this page</a> to learn how to get started with your Dashboard.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="se-section single-feature">
-                <div className="container feature-desc">
+            <section className="se-section single-feature pricing-page">
+                <div className="home container">
                     <div className="row">
-                        <div className="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                        <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
                             <h2 className="mtn">Pricing *</h2>
-                            <div className="pricing parent">
-                                <div className="col-md-6 col-xs-12">
-                                    <div className="pricing body">
-                                        <div className="pricing header-notice">Initial Release 25 Available Places</div>
+                            <div className="pricing parent pricing-page">
+                                <div className="col-md-4 col-xs-12">
+                                    <div className="pricing body pricing-page">
+                                        <div className="pricing header-notice">Initial Release Limited to 25 Places</div>
                                         <div className="pricing header-group">
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Standard</div>
@@ -330,54 +355,94 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div>Up to 100K Tradable Bank at 1% risk</div>
+                                            <div>Up to 1% Risk</div>
+                                            <div>Up to 60K Tradable Bank<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
                                             <div>1 Trading Account</div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                {this.getDashboardHeaderBtn()}
+                                                Currently Unavailable
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-6 col-xs-12 col-xs-offset-0">
-                                    <div id="pricing-black" className="pricing body">
-                                        {/* <div className="pricing header-notice black"></div> */}
-                                        <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
+                                <div className="col-md-4 col-xs-12 col-xs-offset-0">
+                                    <div id="pricing-orange" className="pricing body pricing-page">
+                                        <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
                                             <div className="pricing title-group">
-                                                <div className="pricing title">Professional Client</div>
-                                                <div className="pricing subtitle">+100K Trading Bank Size</div>
+                                                <div className="pricing title">Professional</div>
                                             </div>
-                                            <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
+                                            <div className="pricing header-circle" style={{ backgroundColor: "#f7a50e" }}>
                                                 <div className="pricing price-group">
-                                                    <div className="pricing price-small">Contact Us</div>
-                                                    {/* <div className="pricing price-currency">USD</div> */}
+                                                    <div className="pricing price">495</div>
+                                                    <div className="pricing price-currency">USD</div>
                                                 </div>
-                                                {/* <div className="pricing price-period">
+                                                <div className="pricing price-period">
                                                     per month
-                                                </div> */}
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="pricing features-group">
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div>Scalable Bank 100K+ (POA)</div>
+                                            <div>Up to 5% Risk</div>
+                                            <div>Up to 120K Tradable Bank<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
+                                            <div>5 Trading Accounts</div>
+                                            <div>No Lock-in Contracts</div>
+                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
+                                        </div>
+                                        <div className="pricing purchase-group">
+                                            <div className="pricing purchase-btn">
+                                                Currently Unavailable
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4 col-xs-12 col-xs-offset-0">
+                                    <div id="pricing-black" className="pricing body pricing-page">
+                                        <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
+                                            <div className="pricing title-group">
+                                                <div className="pricing title">Hedge Fund</div>
+                                            </div>
+                                            <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
+                                                <div className="pricing price-group">
+                                                    <div className="pricing price-small">Contact Us</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="pricing features-group">
+                                            <div>Live Trade the HG Pro Algorithm</div>
+                                            <div>Automatic Order Execution</div>
+                                            <div>Personalize to Your Risk Management</div>
+                                            <div>Up to 5% Risk</div>
+                                            <div>Scalable Bank 100K+ (POA)<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
                                             <div>Up to 10 Simultaneous Trading Accounts</div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Enquire Now
+                                                Currently Unavailable
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <span id="pricing_footnote"><strong id="gpr_info_asterisks">*</strong> Not recommended for trading banks less than US$15,000.</span>
+                        </div>
+                        <span id="pricing_footnote"><strong id="gpr_info_asterisks">*</strong> Not recommended for trading banks less than US$15,000.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section className="se-section single-feature">
+                <div className="container feature-desc">
+                    <div className="row">
+                        <div className="col-md-10 col-md-offset-1">
+                            <h2 className="mtn">Getting Started</h2>
+                            <p>Go to <a href="/getting-started">this page</a> to learn how to get started with your Dashboard.</p>
                         </div>
                     </div>
                 </div>
@@ -458,16 +523,18 @@ class ContactUs extends Component
         const strategy_package = e.target.getAttribute('name') + '.v1_0_0';
 
         // TEMP
-        const name = "HolyGrail Pro";
+        const name = "HG Pro";
 
         await this.props.createStrategy({
             name: name,
             package: strategy_package
         })
 
-        let { strategies } = this.state;
-        strategies = await this.props.getStrategiesList();
-        this.setState({ strategies });
+        // let { strategies } = this.state;
+        // strategies = await this.props.getStrategiesList();
+        // this.setState({ strategies });
+
+        window.location = '/app';
     }
 
     async onStartup() 
@@ -481,9 +548,13 @@ class ContactUs extends Component
 
     updateValues(data, oldData, totalBank, commsPrice, tradingMonths)
     {
+        let { is_graph_update } = this.state;
+        is_graph_update = true;
+
         commsPrice *= 2;
         const equityValues = this.generateEquityCurve(data);
         const ret_info = this.getEquityReturn(data, totalBank, commsPrice);
+        const monthly_dd = this.getMonthlyDrawdown(data);
 
         const pro_comms_cost = this.getCommissionsCost(Object.values(data["Risk (Pips)"]).slice(0, 287), totalBank, commsPrice);
         const old_comms_cost = this.getCommissionsCost(Object.values(oldData["Risk (Pips)"]), totalBank, commsPrice);
@@ -496,6 +567,7 @@ class ContactUs extends Component
         }];
 
         const equity_ret_comp_comms = this.getCompoundedCommsReturn(data, totalBank, commsPrice);
+        const equity_ret_pa_comp_comms = this.getCompoundedCommsReturnByMonths(data, totalBank, commsPrice, 12);
 
         const total_days = this.getTotalDays(data);
 
@@ -509,16 +581,18 @@ class ContactUs extends Component
         infoValues['equity_ret_comp_comms'] = equity_ret_comp_comms;
         infoValues['equity_ret_pa'] = ret_info[2];
         infoValues['equity_ret_pa_comms'] = ret_info[3];
+        infoValues['equity_ret_pa_comp_comms'] = equity_ret_pa_comp_comms;
         infoValues['gpr'] = gpr;
         infoValues['expectancy'] = expectancy;
         infoValues['sqn'] = sqn_info[0];
         infoValues['sqn100'] = sqn_info[1];
         infoValues['win_perc'] = ret_info[4];
         infoValues['drawdown'] = ret_info[5];
+        infoValues['monthly_drawdown'] = monthly_dd;
         infoValues['total_days'] = total_days;
 
         const isLoaded = true;
-        this.setState({ equityValues, commsValues, infoValues, isLoaded });
+        this.setState({ equityValues, commsValues, infoValues, isLoaded, is_graph_update });
     }
     
     generateEquityCurve(data)
@@ -534,7 +608,7 @@ class ContactUs extends Component
             total += parseFloat(data["R Profit"][i]);
             values.push({
                 y: total,
-                x: (i+1).toString()
+                x: moment(data["Date.1"][i]).format("YYYY-MM-DD HH:mm:ss")
             });
         }
         return values;
@@ -629,6 +703,29 @@ class ContactUs extends Component
         return Math.round((total_ret / totalBank) * 10000) / 100;
     }
 
+    getCompoundedCommsReturnByMonths(data, totalBank, commsPrice, num_months)
+    {
+        const dates = Object.values(data["Date.1"]);
+        let total_ret = 0;
+        const end_date = moment(dates[dates.length-1]);
+
+        for (let i=Object.keys(data["Risk (Pips)"]).length-1; i >= 0; i--)
+        {
+            if (moment.duration(end_date.diff(moment(dates[i]))).asDays() > 365)
+            {
+                break;
+            }
+
+            const risk_pips = parseFloat(data["Risk (Pips)"][i]);
+            const r_profit = parseFloat(data["R Profit"][i]);
+            const comms = (totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice
+
+            total_ret = total_ret + (totalBank + total_ret) * (r_profit/100) - ((totalBank + total_ret) / totalBank) * comms
+        }
+
+        return Math.round((total_ret / totalBank) * 10000) / 100;
+    }
+
     mean(x)
     {
         let total = 0;
@@ -671,6 +768,22 @@ class ContactUs extends Component
         return monthly_ret;
     }
 
+    getMonthlyDrawdown(data)
+    {
+        const monthly_ret = Object.values(this.getMonthlyReturn(data));
+
+        let drawdown = 0;
+        for (let i of monthly_ret)
+        {
+            if (i < drawdown)
+            {
+                drawdown = i;
+            }
+        }
+
+        return drawdown;
+    }
+
     getGpr(data)
     {
         const monthly_ret = Object.values(this.getMonthlyReturn(data));
@@ -708,7 +821,7 @@ class ContactUs extends Component
 
     getDashboardHeaderBtn = () =>
     {
-        const pkg = 'HolyGrail_opt_testing_comb';
+        const pkg = 'HolyGrail_Pro';
         const user_id = this.props.getUserId();
         const is_beta_tester = this.props.getIsBetaTester();
         const { strategies } = this.state;
@@ -739,11 +852,9 @@ class ContactUs extends Component
         else if (is_beta_tester)
         {
             dashboard_btn = (
-                <div onClick={this.onAddToDashboard.bind(this)}>
-
-                <FontAwesomeIcon className='promo header-icon' icon={faPlusCircle} />
-                Add to Dashboard
-
+                <div id="add_to_dashboard" name={"HolyGrail_Pro"} onClick={this.onAddToDashboard.bind(this)}>
+                    <FontAwesomeIcon className='promo header-icon' icon={faPlusCircle} />
+                    Add to Dashboard
                 </div>
             );
         }
@@ -766,6 +877,16 @@ class ContactUs extends Component
     {
         let val = (value/1).toFixed(2)
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    }
+
+    isGraphUpdate = () =>
+    {
+        return this.state.is_graph_update;
+    }
+
+    setGraphUpdate = (is_graph_update) =>
+    {
+        this.setState({ is_graph_update });
     }
 
 }

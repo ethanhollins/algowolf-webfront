@@ -223,19 +223,13 @@ class Login extends Component
         }
         else
         {
-            this.errorMsg.textContent = data.message;
+            this.errorMsg.textContent = "The email or password you entered is incorrect.";
             this.password.value = "";
 
-            if (data.message === "Incorrect email.")
-            {
-                this.email.style.borderColor = '#e74c3c';
-                this.email.style.borderWidth = '2px';
-            }
-            else if (data.message === "Incorrect password.")
-            {
-                this.password.style.borderColor = '#e74c3c';
-                this.password.style.borderWidth = '2px';
-            }
+            this.email.style.borderColor = '#e74c3c';
+            this.email.style.borderWidth = '2px';
+            this.password.style.borderColor = '#e74c3c';
+            this.password.style.borderWidth = '2px';
         }
     }
 }
