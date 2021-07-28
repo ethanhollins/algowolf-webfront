@@ -21,9 +21,11 @@ class Logout extends Component
 
     async handleLogout()
     {
+        const { REACT_APP_APP_BASE_URL, REACT_APP_FRONT_BASE_URL } = process.env;
+
         this.props.getCookies().remove('Authorization');
         this.props.setUser(null, null);
-        this.props.history.push('/');
+        window.location.href = REACT_APP_APP_BASE_URL + "/logout?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL)
     }
 }
 

@@ -31,6 +31,7 @@ class Login extends Component
 
     async componentDidMount()
     {
+        const { REACT_APP_APP_BASE_URL, REACT_APP_FRONT_BASE_URL } = process.env;
         let { loginCheck } = this.state;
         const user_id = await this.props.checkAuthorization();
         if (user_id === null)
@@ -41,13 +42,14 @@ class Login extends Component
         else
         {
             const query_string = new URLSearchParams(window.location.search);
+            const auth_token = this.getCookies().get('Authorization');
             if (query_string.get("redirect"))
             {
-                window.location.href = query_string.get("redirect");
+                window.location.href = REACT_APP_APP_BASE_URL + "/login?set_token=" + encodeURIComponent(auth_token) + "&redirect=" + encodeURIComponent(query_string.get("redirect"));
             }
             else
             {
-                window.location = '/';
+                window.location.href = REACT_APP_APP_BASE_URL + "/login?set_token=" + encodeURIComponent(auth_token) + "&redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL);
             }
         }
     }
