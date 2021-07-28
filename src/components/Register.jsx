@@ -152,6 +152,18 @@ class Register extends Component
                             </label>
                             <div className="aw-login small-text">Notify me by email about AlgoWolf updates.</div>
                         </div>
+
+                        <div className="aw-login horiz field">
+                            {/* <label className='aw-login checkbox'>
+                                <input 
+                                    type='checkbox' 
+                                    defaultChecked={true}
+                                    onChange={this.onCheckboxInputChange.bind(this)}
+                                />
+                                <div className='aw-login checkmark'></div>
+                            </label> */}
+                            <div className="aw-login small-text">By continuing, you acknowledge you have read and agree to the <a href="/tos" target="_blank">Terms of Use</a> as well as <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/cookies-policy" target="_blank">Cookies Policy</a></div>
+                        </div>
     
                         {/* <div className="aw-login field">
                             <span className="aw-login small-text">
