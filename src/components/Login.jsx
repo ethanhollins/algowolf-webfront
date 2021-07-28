@@ -181,7 +181,7 @@ class Login extends Component
     {
         this.resetErrors();
 
-        const { REACT_APP_API_URL } = process.env;
+        const { REACT_APP_API_URL, REACT_APP_APP_BASE_URL, REACT_APP_FRONT_BASE_URL } = process.env;
         event.preventDefault();
         const raw = JSON.stringify({
             'email': this.state.email,
@@ -206,18 +206,17 @@ class Login extends Component
         {
             this.props.getCookies().set('Authorization', data.token, {
                 path: '/'
-            })
-            console.log(data);
+            });
             this.props.setUser(data.user_id, null);
 
             const query_string = new URLSearchParams(window.location.search);
             if (query_string.get("redirect"))
             {
-                window.location.href = query_string.get("redirect");
+                window.location.href = REACT_APP_APP_BASE_URL + "/login?set_token=" + encodeURIComponent(data.token) + "&redirect=" + encodeURIComponent(query_string.get("redirect"));
             }
             else
             {
-                window.location = '/';
+                window.location.href = REACT_APP_APP_BASE_URL + "/login?set_token=" + encodeURIComponent(data.token) + "&redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL);
             }
 
         }
