@@ -21,7 +21,6 @@ class Footer extends Component
                                 <li><a href="/app">Dashboard</a></li>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/pricing">Pricing</a></li>
-                                <li><a href="/getting-started">Getting Started</a></li>
                             </ul>
                         </div>
 

@@ -39,7 +39,7 @@ class GettingStarted extends Component
                                     <li>Select “My Brokers”.</li>
                                     <li>Click on “Add Broker” and select a broker you have an account with. You can connect both live and demo accounts.
                                         <ul>
-                                            <li>This is where the process will change from broker to broker. The instructions for each broker will be provided on the page you end up on. You may be required to login, some brokers require you to generate a token.</li>
+                                            <li>The instructions for each broker will be provided on the page you end up on. You may be required to login, some brokers require you to generate a token.</li>
                                             <li>Follow the instructions and you should be redirected back to your Dashboard on completion.</li>
                                             <li>Note: If adding multiple accounts be sure to note the account type & its number to easily identify them later.</li>
                                         </ul>
@@ -59,15 +59,15 @@ class GettingStarted extends Component
                                     <li>
                                         You can organise your brokerage accounts by navigating back to the Main Menu button and selecting “My Brokers”.
                                         <ul>
-                                            <li>Here you will see your connected brokers and options to change the broker name and account names.</li>
-                                            <li>You can add your own description to your broker’s account to make it easy to identify. Be sure to clearly identify between Demo and any Live account you may have added. You can also delete brokers here if required.</li>
+                                            <li>Here you will see your connected brokers and options to change the broker name and account names for easy identification.</li>
+                                            <li>You can also delete brokers here if required.</li>
                                         </ul>
                                     </li>
                                     <li>“Apply & Save” to make any changes.</li>
                                     <li>When you first use your Dashboard, you will find a user icon with “Papertrader” next to it. ("Paper Trader" is an in-house account which allows you to watch & record trading setups live although no actual trades are placed with a broker). To switch accounts, click on the dropdown and select your new broker’s account.</li>
                                     <li>Whenever using your Dashboard it is important to always select the correct Broker Account from the accounts menu next to the blue My Dashboard label. </li>
                                     <li>
-                                        Whenever you start a strategy or make any changes to strategy settings etc. these changes will only be applied to the account you have selected.
+                                        Whenever make any changes to strategy settings etc. these changes will only be applied to the account you have selected.
                                         <br/>This means if you are using multiple accounts, any changes must be made individually for each account.
                                     </li>
                                 </ol>
@@ -115,35 +115,34 @@ class GettingStarted extends Component
                                         <ul>
                                             <li>
                                                 <strong>Broker’s Bank:</strong> This field is automatically taken from the balance of the account you have with your broker (This converts your bank into $US dollars & updates at the commencement of each trading session and is used for the entire session)
-                                                <br/>At all times ensure you hold sufficient funds in your “Brokers Bank” to cover any margin as required by your “Trading Bank” calculation & selected “Risk”. 
+                                                <br/>At all times ensure you hold sufficient funds in your “Brokers Bank” to cover any margin as required by your “Usable Bank” calculation & selected “Risk”. 
                                             </li>
                                             <li>
-                                                <strong>Fixed Bank:</strong> (This field may be left blank) This variable allows you to limit the size you want your “Trading Bank” balance value to be when determining your position size. Useful for when you want to use less than your “Broker’s Bank” balance to calculate your position size.
-                                                <br/>With Fixed Bank enabled, it ensures your position sizes are always determined by this value but will never be greater than your “Broker’s Bank”. If your “Fixed Bank” value is greater than your “Broker’s Bank” then your “Trading Bank” calculation will default to using your “Broker’s Bank” balance.
-                                                <br/>If “Fixed Bank” is not enabled then any gains will compound position sizes on each new trading session.
+                                                <strong>Fixed Bank:</strong> (This field may be left blank) This variable allows you to limit the size you want your “Usable Bank” balance value to be when determining your position size. Useful for when you want to use <em>less</em> than your “Broker’s Bank” balance to calculate your position size.
+                                                <br/>With Fixed Bank enabled, it ensures your position sizes are always determined by this value but will never be greater than your “Broker’s Bank”. If your “Fixed Bank” value is greater than your “Broker’s Bank” then your “Usable Bank” calculation will default to using your “Broker’s Bank” balance.
+                                                <br/>If “Fixed Bank” is <em>not</em> enabled then any gains will compound position sizes on each new trading session.
                                             </li>
                                             <li>
-                                                <strong>Maximum Bank:</strong> This variable allows you to limit the size you want your “Total Bank” balance value to be when determining your position size. Useful for when you want to use less than your “Broker’s Bank” balance to calculate your position size or as a failsafe maximum if you put the incorrect value in the “External Bank” or “Fixed Bank” sections.
+                                                <strong>Maximum Bank:</strong> This is the maximum bank size allowed by your subscription plan. To see how to allocate your maximum bank size for multiple simultaneous accounts see <a href="/faq" target="_blank">FAQ</a>.
                                             </li>
                                             <li>
-                                                <strong>Cut Off:</strong> If enabled, this value determines the maximum drawdown you’re prepared to allow your account to drop to in the event of a run of losses. If at the commencement of a trading session your Broker’s bank is less than the Cut Off value then your trading script will be prevented from placing trades.
+                                                <strong>Cut Off:</strong> (This field may be left blank) If enabled, this value determines the maximum drawdown you’re prepared to allow your account to drop to in the event of a run of losses. If at the commencement of a trading session your Broker’s bank is less than the Cut Off value then your trading script will be prevented from placing trades.
                                                 <br/>Familiarise yourself with your strategy’s normal drawdown expectations and allow reasonable leeway (i.e. It might be 20% - 30% from the high)  Every trading strategy has its drawdown periods so chose a value that ensures you’re not prematurely taken out of the game and potentially miss out on the recovery phase.
                                                 <br/>Note: Be sure to update this value if deposits or withdrawals are made to your account.
                                             </li>
                                             <li>
-                                                <strong>Trading Bank:</strong> This is the value upon which your trade position size is calculated in conjunction with your selected “Risk”.
-                                                <br/>(i.e. Trading Bank = Brokers Bank <em>overridden by Maximum Bank or Fixed Bank where applicable</em>)
-                                                <br/>Ensure your “Trading Bank” total is sufficient to place the <em>minimum</em> lot size order or you order will be rejected by your broker.
+                                                <strong>Usable Bank:</strong> This is the value upon which your trade position size is calculated in conjunction with your selected “Risk”.
+                                                <br/>(i.e. Usable Bank = Brokers Bank <em>overridden by Maximum Bank or Fixed Bank where applicable</em>)
+                                                <br/>Ensure your Usable Bank” total is sufficient to place the <em>minimum</em> lot size order or you order will be rejected by your broker.
                                             </li>
                                             <li>
                                                 <strong>Leverage:</strong> This value determines how much margin you are required to maintain in your account to execute the trade and controls the amount of “Risk” you may take on a trade.
                                                 <br/>Obtain this setting from your Broker. This will vary between Brokers and is regulated by law in many countries. E.g. Retail clients in Australia or UK might be limited to a maximum of 30:1 leverage.
                                                 <br/>Ensure you select this value correctly so your position size is properly calculated; otherwise if your margin requirements are not met your broker will disallow the trade. If in doubt use the default value of 30:1 or less
-                                                <br/>Our Leverage calculator allows for a small leeway of “Risk” capacity to help ensure your trading bank margin is not maxed out during a session.
                                             </li>
                                             <li>
-                                                <strong>Risk (%):</strong> This number determines your position size risk as a percentage of your “Total Bank” and is limited by your margin requirements (See “Leverage”).
-                                                <br/>E.g. If you want your position size risk to be half-a-percent of your “Total Bank”, set this to <strong>0.5</strong>. Your total risk in $US dollars is then shown in “$Risk”.
+                                                <strong>Risk (%):</strong> This number determines your position size risk as a percentage of your "Usable Bank" and is limited by your margin requirements (See “Leverage”).
+                                                <br/>E.g. If you want your position size risk to be half-a-percent of your "Usable Bank", set this to <strong>0.5</strong>. Your total risk in $US dollars is then shown in “$Risk”.
                                             </li>
                                             <li>
                                                 <strong>Risk ($):</strong> This field shows your total risk in $US dollars as determined by the %value you entered in “Risk %”.

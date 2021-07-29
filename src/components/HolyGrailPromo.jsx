@@ -59,6 +59,10 @@ class ContactUs extends Component
             <div className="promo header-group">
                 <div className="promo banner-img">
                     <div ref={this.setImageRef} className="opaque">
+                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_4.jpg"} />
+                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_4.jpg"} />
+                    </div>
+                    <div ref={this.setImageRef}>
                         <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
                         <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
                     </div>
@@ -99,6 +103,9 @@ class ContactUs extends Component
                         <div className="promo header-label-group">
                             <div className="promo title"><span>HG Pro</span></div>
                             <a href="/">Home</a>
+                            <a className="hidden-xs hidden-sm" href="#calculator">Calculator</a>
+                            <a className="hidden-xs hidden-sm" href="#pricing">Pricing</a>
+                            <a className="hidden-xs hidden-sm" href="#getting_started">Getting Started</a>
                             <div className="sm-hide">
                                 {this.getDashboardHeaderBtn()}
                             </div>
@@ -148,7 +155,7 @@ class ContactUs extends Component
                             <div className="promo graph-sub-header">From Jan 2020 - Current</div>
                         </div>
                         <div className="col col-md-5 col-md-offset-0 col-xs-12 col-xs-offset-0">
-                            <div className="promo graph-header-parent"><span className="promo graph-header">Commission Costs %</span></div>
+                            <div className="promo graph-header-parent"><span className="promo graph-header">Commission Fees %</span></div>
                             { isLoaded ?
                                 <Graph
                                     key="Commissions"
@@ -172,12 +179,12 @@ class ContactUs extends Component
                                 />
                                 : <React.Fragment/>
                             }
-                            <div className="promo graph-sub-header">Commission Total over 18 Months (More is worse)</div>
+                            <div className="promo graph-sub-header">Broker Commission Fees over 18 Months (More is worse)</div>
                         </div>
-                        <div className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                        <div id="calculator" className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                             <h3>Returns Calculator</h3>
                             <p>
-                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong> In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a> for more information.
+                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong> In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
                                 Not recommended for trading banks less than US$15,000.
                             </p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
@@ -286,12 +293,12 @@ class ContactUs extends Component
                                             <td className="promo stat-value">{infoValues["win_perc"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Maximum Monthly Drawdown %</td>
-                                            <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
-                                        </tr>
-                                        <tr>
                                             <td className="promo stat-type">Maximum Drawdown %</td>
                                             <td className="promo stat-value">{infoValues["drawdown"].toFixed(2)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="promo stat-type">Maximum End of Month Drawdown %</td>
+                                            <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -310,8 +317,8 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">What's so good about HG Pro?</h2>
                             <ul>
-                                <li>Only <strong>takes high probability setups</strong>, thereby significantly reducing the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish).</li>
-                                <li><strong>Trades significantly longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
+                                <li>Only <strong>takes high probability setups</strong>, which significantly reduces the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish).</li>
+                                <li><strong>Trades considerably longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
                                 <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
                                 <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>
                                 <li>Virtually <strong>impossible for human traders</strong> to match.</li>
@@ -328,7 +335,7 @@ class ContactUs extends Component
                 </div>
             </section>
 
-            <section className="se-section single-feature pricing-page">
+            <section id="pricing" className="se-section single-feature pricing-page">
                 <div className="home container">
                     <div className="row">
                         <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
@@ -355,9 +362,9 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div>Up to 1% Risk</div>
-                                            <div>Up to 60K Tradable Bank<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
-                                            <div>1 Trading Account</div>
+                                            <div><strong>Risk up to 1%</strong> of Tradable Bank</div>
+                                            <div><strong>Up to 50K Tradable Bank</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
+                                            <div>Up to <strong>1 Trading Account</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
@@ -388,9 +395,9 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div>Up to 5% Risk</div>
-                                            <div>Up to 120K Tradable Bank<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
-                                            <div>5 Trading Accounts</div>
+                                            <div><strong>Risk up to 5%</strong> of Tradable Bank</div>
+                                            <div><strong>Up to 100K Tradable Bank</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
+                                            <div>Up to <strong>5 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
@@ -417,9 +424,9 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div>Up to 5% Risk</div>
-                                            <div>Scalable Bank 100K+ (POA)<br/><em>(Tradable Bank = Your Bank x Risk %)</em></div>
-                                            <div>Up to 10 Simultaneous Trading Accounts</div>
+                                            <div><strong>Risk up to 5%</strong> of Tradable Bank</div>
+                                            <div><strong>Scalable Bank 100K+ (POA)</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
+                                            <div>Up to <strong>10 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
@@ -437,12 +444,12 @@ class ContactUs extends Component
                 </div>
             </section>
 
-            <section className="se-section single-feature">
+            <section id="getting_started" className="se-section single-feature">
                 <div className="container feature-desc">
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">Getting Started</h2>
-                            <p>Go to <a href="/getting-started">this page</a> to learn how to get started with your Dashboard.</p>
+                            <p>Go to <a href="/getting-started" target="_blank">this page</a> to learn how to get started with your Dashboard.</p>
                         </div>
                     </div>
                 </div>

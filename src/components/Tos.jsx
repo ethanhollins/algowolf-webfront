@@ -58,7 +58,7 @@ class Tos extends Component
                         </ul>
                         <p><strong>Cancellation of service:</strong></p>
                         <ul>
-                            <li>You may cancel your AlgoWolf subscription at any time from the Billing section in your account settings on our website. You will continue to have access to our product or service until the end of your billing period and you won't be billed for the subsequent months.</li>
+                            <li>You may cancel your AlgoWolf subscription at any time from the <a href="/account-settings" target="_blank">Billing</a> section in your account settings on our website. You will continue to have access to our product or service until the end of your billing period and you won't be billed for the subsequent months.</li>
                             <li>Users may cancel their subscription any time before a free trial ends or before the next billing cycle.</li>
                             <li>It's your sole responsibility to evaluate the merits of any trial period given and make an educated decision about keeping or cancelling the subscription. </li>
                             <li>We reserve the right to refuse service to anyone at any time for any reason. This includes access to our website, algorithmic software and trading platform.</li>

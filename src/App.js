@@ -199,7 +199,7 @@ class App extends Component
                             getIsBetaTester={this.getIsBetaTester}
                         />
                     </Route>
-                    <Route exact path="/holygrail/info">
+                    <Route exact path="/hgpro">
                         <HolyGrailPromo
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
@@ -225,8 +225,8 @@ class App extends Component
                         />
                     </Route>
                     <Route exact path="/holygrail">
-                        <WelcomeDemoPageTwo
-                            getUserId={this.getUserId}
+                        <UrlRedirect
+                            url={"/holygrail/demo" + queryString}
                         />
                     </Route>
                     <Route exact path="/automated-trading">
