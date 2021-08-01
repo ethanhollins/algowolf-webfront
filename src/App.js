@@ -130,14 +130,6 @@ class App extends Component
                             getFirstName={this.getFirstName}
                         />
                     </Route> */}
-                    <Route exact path="/faq">
-                        <FAQ 
-                            checkAuthorization={this.checkAuthorization}
-                            getUserId={this.getUserId}
-                            getFirstName={this.getFirstName}
-                            getScreenWidth={this.getScreenWidth}
-                        />
-                    </Route>
                     <Route exact path="/contact-us">
                         <ContactUs 
                             checkAuthorization={this.checkAuthorization}
@@ -209,6 +201,14 @@ class App extends Component
                             getStrategiesList={this.getStrategiesList}
                             getIsBetaTester={this.getIsBetaTester}
                             createStrategy={this.createStrategy}
+                        />
+                    </Route>
+                    <Route exact path="/hgpro/faq">
+                        <FAQ 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
                     <Route exact path="/getting-started">

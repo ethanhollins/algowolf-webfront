@@ -123,10 +123,10 @@ class GettingStarted extends Component
                                                 <br/>If “Fixed Bank” is <em>not</em> enabled then any gains will compound position sizes on each new trading session.
                                             </li>
                                             <li>
-                                                <strong>Maximum Bank:</strong> This is the maximum bank size allowed by your subscription plan. To see how to allocate your maximum bank size for multiple simultaneous accounts see <a href="/faq" target="_blank">FAQ</a>.
+                                                <strong>Maximum Bank:</strong> This is the maximum bank size allowed by your subscription plan. To see how to allocate your maximum bank size for multiple simultaneous accounts see <a href="/hgpro/faq" target="_blank">FAQ</a>.
                                             </li>
                                             <li>
-                                                <strong>Cut Off:</strong> (This field may be left blank) If enabled, this value determines the maximum drawdown you’re prepared to allow your account to drop to in the event of a run of losses. If at the commencement of a trading session your Broker’s bank is less than the Cut Off value then your trading script will be prevented from placing trades.
+                                                <strong>Drawdown Limit:</strong> (This field may be left blank) If enabled, this value determines the maximum drawdown you’re prepared to allow your account to drop to in the event of a run of losses. If at the commencement of a trading session your Broker’s bank is less than the Drawdown Limit value then your trading script will be prevented from placing trades.
                                                 <br/>Familiarise yourself with your strategy’s normal drawdown expectations and allow reasonable leeway (i.e. It might be 20% - 30% from the high)  Every trading strategy has its drawdown periods so chose a value that ensures you’re not prematurely taken out of the game and potentially miss out on the recovery phase.
                                                 <br/>Note: Be sure to update this value if deposits or withdrawals are made to your account.
                                             </li>
@@ -166,9 +166,9 @@ class GettingStarted extends Component
                                     <li>Review the “Control Panel” information you entered for this account regarding your bank information, risk and position size and confirm any changes you make.</li>
                                     <li>Prior to starting the script ensure no previous positions are open and no pending orders are on the account you wish to trade.</li>
                                     <li>
-                                        Click on “Start” - Once the script has started you will see “Strategy Running”. This may take a couple of minutes to commence.
+                                        Click on <strong>“Start”</strong> - Once the script has started you will see “Strategy Running”. This may take a couple of minutes to commence.
                                         <ul>
-                                            <li><strong>Note:</strong> The script automatically trades the session times programmed in the algorithm and will automatically <strong>restart</strong> trading those times when the next session begins the following day.</li>
+                                            <li><strong>Note:</strong> The script automatically trades the session times programmed in the algorithm and will automatically <strong>restart</strong> trading those times when the next session begins the following day or after the weekend.</li>
                                             <li>This means you do not have to restart the script manually every trading session.</li>
                                             <li>Unless interrupted by maintenance or server issues the script should continue to trade each session, every day and every week until you click on “Stop” to stop the script.</li>
                                             <li>From time to time it may be necessary for us to close down trading during a session to update the platform. Any open position would continue to trade until either the set stop loss or profit target hit. Alternatively you can manage your position through your broker’s platform. Generally any updates will be scheduled out of trading hours. In some cases this may mean you will need to restart the script.</li>
@@ -177,7 +177,7 @@ class GettingStarted extends Component
                                         </ul>
                                     </li>
                                     <li>
-                                        Once started, you can always press the “Stop” button to stop trading at any time. Be mindful that it can sometimes take a minute for the strategy to fully stop. “Strategy Stopped” will be visible once the trading script has switched off.
+                                        Once started, you can always press the <strong>“Stop”</strong> button to stop trading at any time. Be mindful that it can sometimes take a minute for the strategy to fully stop. “Strategy Stopped” will be visible once the trading script has switched off.
                                         <br/>If you stop your strategy part way through a session you can manage any open position through your broker’s platform.
                                     </li>
                                 </ol>
@@ -191,7 +191,7 @@ class GettingStarted extends Component
                                     5. Watch your Strategy in Action
                                     <div className="popup getting-started header-border"/>
                                 </h1>
-                                <p>Congratulations! You have successfully connected your broker, selected the correct broker account and started your strategy with your own personalized settings. Now it's time to watch your strategy work in action… or just sit back and relax and let the  algorithm do all the work for you!</p>
+                                <p>Congratulations! You have successfully connected your broker, selected the correct broker account and started your strategy with your own personalized settings. Now it's time to sit back and relax and let the algorithm do all the work for you!</p>
                                 <ul>
                                     <li>Your charts will show if there are any pending orders and open trades. The stop loss and take profit associated with these orders/trades is also shown.</li>
                                     <li>Your Strategy may also provide chart information located in the Chart Info window. This information appears when you select a Chart by clicking on it and hover over a bar.</li>
@@ -199,6 +199,7 @@ class GettingStarted extends Component
                                     <li>Old Drawings and Chart Info will automatically be deleted once the total number meets the allowed limitations. This is to preserve your overall experience and keep the application running smoothly.</li>
                                     <li>Send any enquiries to <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                                 </ul>
+                                <p>For more info see <a href="/hgpro/faq">FAQ</a></p>
                                 <h6>We look forward to working with you and wish you the best of success!</h6>
                             </div>
                         </div>

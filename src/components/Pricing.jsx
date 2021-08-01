@@ -28,7 +28,6 @@ class Pricing extends Component
                     <div className="home container">
                         <div className="row">
                             <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
-                                <h2 className="mtn">Pricing</h2>
                                 <div className="pricing parent pricing-page">
                                     <div className="col-md-4 col-xs-12">
                                         <div className="pricing body pricing-page">
@@ -127,6 +126,50 @@ class Pricing extends Component
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="se-section single-feature">
+                    <div className="container">
+                        <div className="row">
+                            <h2 className="mtn">Additional Compute Costs</h2>
+                            <div className="pricing compute-table-parent">
+                                <table className="pricing compute-table">
+                                    <thead>
+                                        <tr>
+                                            <td>GPUS</td>
+                                            <td>VCPUS</td>
+                                            <td>RAM</td>
+                                            <td>TEMPORARY STORAGE</td>
+                                            <td>ON-DEMAND PRICE</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1x RTX 6000</td>
+                                            <td>6</td>
+                                            <td>46 GiB</td>
+                                            <td>685 GiB</td>
+                                            <td>$1.25 / hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2x RTX 6000</td>
+                                            <td>12</td>
+                                            <td>92 GiB</td>
+                                            <td>1.38 TiB</td>
+                                            <td>$2.50 / hr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4x RTX 6000</td>
+                                            <td>24</td>
+                                            <td>184 GiB</td>
+                                            <td>2.79 TiB</td>
+                                            <td>$5.00 / hr</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

@@ -106,6 +106,7 @@ class ContactUs extends Component
                             <a className="hidden-xs hidden-sm" href="#calculator">Calculator</a>
                             <a className="hidden-xs hidden-sm" href="#pricing">Pricing</a>
                             <a className="hidden-xs hidden-sm" href="#getting_started">Getting Started</a>
+                            <a className="hidden-xs hidden-sm" href="/hgpro/faq" target="_blank">FAQ</a>
                             <div className="sm-hide">
                                 {this.getDashboardHeaderBtn()}
                             </div>
@@ -362,11 +363,11 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
+                                            <div><strong>Up to 50K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
                                             <div><strong>Risk up to 1%</strong> of Tradable Bank</div>
-                                            <div><strong>Up to 50K Tradable Bank</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
                                             <div>Up to <strong>1 Trading Account</strong></div>
                                             <div>No Lock-in Contracts</div>
-                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
+                                            <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
@@ -395,11 +396,11 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Risk up to 5%</strong> of Tradable Bank</div>
-                                            <div><strong>Up to 100K Tradable Bank</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
+                                            <div><strong>Up to 100K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
+                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq">FAQ</a>)</div>
                                             <div>Up to <strong>5 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
-                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
+                                            <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
@@ -424,11 +425,11 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Risk up to 5%</strong> of Tradable Bank</div>
-                                            <div><strong>Scalable Bank 100K+ (POA)</strong><br/><em>(Tradable Bank = Your Bank x Risk %)</em><br/>See how this is calculated: <a href="/faq">FAQ</a></div>
+                                            <div><strong>Scalable Bank 100K+ (POA)</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
+                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq">FAQ</a>)</div>
                                             <div>Up to <strong>10 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
-                                            <div>14-Day Refund Option (see <a target="_blank" href="/tos">T&Cs</a>)</div>
+                                            <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
@@ -570,7 +571,7 @@ class ContactUs extends Component
             x: "HG Pro"
         }, {
             y: old_comms_cost,
-            x: "Old HolyGrail"
+            x: "Original HolyGrail"
         }];
 
         const equity_ret_comp_comms = this.getCompoundedCommsReturn(data, totalBank, commsPrice);
