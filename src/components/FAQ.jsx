@@ -493,7 +493,7 @@ class FAQ extends Component
                                             <div className="panel-body">
                                                 <p>First check you haven’t reached your subscription account limit. If you are on the “Standard” subscription only one account may be operated at a time. “Professional” allows up to 5 to be simultaneously run. Generally a ‘pop-up’ will remind you that you have reached your limit.</p>
                                                 <p>Check which of your accounts are running (inc.”Paper Trader”) and “Stop” at least one before attempting to “Start” another.</p>
-                                                <p>Once the script has started you will see “Strategy Running”. Allow a couple of minutes for this to commence.</p>
+                                                <p>Once the script has started you will see “Strategy Running”. This may take 3-4 minutes to commence if it's your first time starting the script or if there are updates.</p>
                                             </div>
                                         </div>
                                     </div>
