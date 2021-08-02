@@ -50,7 +50,7 @@ class FAQ extends Component
                                                 <p>This question is at the top for a reason.</p>
                                                 <p>No problem of course with taking out any profits <em>whenever</em> you want (unless you want to compound them)… but <strong>if you’re expecting consistent weekly income you’re probably in the wrong game and should stop now!</strong></p>
                                                 <p>Trading is much like the seasons of the year… sometimes long periods of gloom punctuated by days of glorious sunshine.</p>
-                                                <p>Professional traders generally gauge performance quarterly or over longer periods to allow for these cycles… while keeping a watch during the slow times to ensure the expected maximum drawdowns are not unreasonably exceeded. (See <a href="/getting-started">Getting Started</a> guide for instructions on how to set “Drawdown Limit”)</p>
+                                                <p>Professional traders generally gauge performance quarterly or over longer periods to allow for these cycles… while keeping a watch during the slow times to ensure the expected maximum drawdowns are not unreasonably exceeded. (See <a href="/getting-started" target="_blank">Getting Started</a> guide for instructions on how to set “Drawdown Limit”)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse2-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>See the <a href="/getting-started">Getting Started</a> guide for step by step instructions.</p>
+                                                <p>See the <a href="/getting-started" target="_blank">Getting Started</a> guide for step by step instructions.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -504,7 +504,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse33-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading33-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Check you’re on the dashboard of the main app and not the Demo platform. Go to <a href="https://app.algowolf.com/">https://app.algowolf.com/</a></p>
+                                                <p>Check you’re on the dashboard of the main app and not the Demo platform. Go to <a href="https://app.algowolf.com/" target="_blank">https://app.algowolf.com/</a></p>
                                             </div>
                                         </div>
                                     </div>

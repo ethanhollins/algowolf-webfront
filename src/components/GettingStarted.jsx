@@ -88,7 +88,7 @@ class GettingStarted extends Component
                                     3. Adding Your Strategy
                                     <div className="popup getting-started header-border"/>
                                 </h1>
-                                <p>On the <a href="/holygrail/info">HG Pro Info Page</a>, click on the <strong>Add to Dashboard</strong> button, and once purchased, the HG Pro strategy will be automatically added to your dashboard which you will be redirected to.</p>
+                                <p>On the <a href="/hgpro" target="_blank">HG Pro Info Page</a>, click on the <strong>Add to Dashboard</strong> button, and once purchased, the HG Pro strategy will be automatically added to your dashboard which you will be redirected to.</p>
                             </div>
                         </div>
                     </section>
@@ -99,7 +99,7 @@ class GettingStarted extends Component
                                     4. Control Panel
                                     <div className="popup getting-started header-border"/>
                                 </h1>
-                                <strong>Setting Strategy Inputs:</strong> Follow this carefully as these fields determine your position size, risk and margin requirements. At ALL times you are solely responsible for ensuring any trades made through your dashboard are within your risk profile and accept full responsibility for any loss of funds. (See <a href="/risk-disclosure">Risk Disclaimer</a>)
+                                <strong>Setting Strategy Inputs:</strong> Follow this carefully as these fields determine your position size, risk and margin requirements. At ALL times you are solely responsible for ensuring any trades made through your dashboard are within your risk profile and accept full responsibility for any loss of funds. (See <a href="/risk-disclosure" target="_blank">Risk Disclaimer</a>)
                                 <br/>If you do not fully understand any of the following inputs do NOT use this platform.
                                 <ol>
                                     <li>Select the broker account you wish to set the Strategy Inputs.</li>
@@ -205,7 +205,7 @@ class GettingStarted extends Component
                                     <li>Old Drawings and Chart Info will automatically be deleted once the total number meets the allowed limitations. This is to preserve your overall experience and keep the application running smoothly.</li>
                                     <li>Send any enquiries to <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                                 </ul>
-                                <p>For more info see <a href="/hgpro/faq">FAQ</a></p>
+                                <p>For more info see <a href="/hgpro/faq" target="_blank">FAQ</a></p>
                                 <h6>We look forward to working with you and wish you the best of success!</h6>
                             </div>
                         </div>
