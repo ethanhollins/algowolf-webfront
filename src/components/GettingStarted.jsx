@@ -141,12 +141,18 @@ class GettingStarted extends Component
                                                 <br/>Ensure you select this value correctly so your position size is properly calculated; otherwise if your margin requirements are not met your broker will disallow the trade. If in doubt use the default value of 30:1 or less
                                             </li>
                                             <li>
+                                                <strong>Maximum Risk (%):</strong> The maximum Risk % your leverage allows.
+                                            </li>
+                                            <li>
                                                 <strong>Risk (%):</strong> This number determines your position size risk as a percentage of your "Usable Bank" and is limited by your margin requirements (See “Leverage”).
                                                 <br/>E.g. If you want your position size risk to be half-a-percent of your "Usable Bank", set this to <strong>0.5</strong>. Your total risk in $US dollars is then shown in “$Risk”.
                                             </li>
                                             <li>
                                                 <strong>Risk ($):</strong> This field shows your total risk in $US dollars as determined by the %value you entered in “Risk %”.
                                                 <br/>Alternatively you may enter a $US amount here which will then adjust your “Risk %” field.
+                                            </li>
+                                            <li>
+                                                <strong>Effective Bank:</strong> Equal to Usable Bank x Risk (%). This must be lower than your Maximum Bank.
                                             </li>
                                         </ul>
                                     </li>
