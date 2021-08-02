@@ -1177,6 +1177,15 @@
     padding-top: 0;
 }
 
+#faq-body ul {
+    list-style-type: disc;
+}
+
+#faq-body li {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
 #faq-contents {
     max-width: 1200px;
 }

@@ -294,11 +294,11 @@ class ContactUs extends Component
                                             <td className="promo stat-value">{infoValues["win_perc"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Maximum Drawdown %</td>
+                                            <td className="promo stat-type">Net Maximum Drawdown % <span className="stat-type-small">inc. Comms</span></td>
                                             <td className="promo stat-value">{infoValues["drawdown"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Maximum End of Month Drawdown %</td>
+                                            <td className="promo stat-type">Net Maximum End of Month Drawdown % <span className="stat-type-small">inc. Comms</span></td>
                                             <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
                                         </tr>
                                     </tbody>
@@ -562,7 +562,7 @@ class ContactUs extends Component
         commsPrice *= 2;
         const equityValues = this.generateEquityCurve(data);
         const ret_info = this.getEquityReturn(data, totalBank, commsPrice);
-        const monthly_dd = this.getMonthlyDrawdown(data);
+        const monthly_dd = this.getMonthlyDrawdown(data, totalBank, commsPrice);
 
         const pro_comms_cost = this.getCommissionsCost(Object.values(data["Risk (Pips)"]).slice(0, 287), totalBank, commsPrice);
         const old_comms_cost = this.getCommissionsCost(Object.values(oldData["Risk (Pips)"]), totalBank, commsPrice);
@@ -580,7 +580,7 @@ class ContactUs extends Component
         const total_days = this.getTotalDays(data);
 
         const gpr = this.getGpr(data);
-        const expectancy = this.getExpectancy(data);
+        const expectancy = this.getExpectancy(data, totalBank, commsPrice);
         const sqn_info = this.getSqn(data);
 
         let infoValues = {};
@@ -629,6 +629,7 @@ class ContactUs extends Component
         const dataLength = Object.keys(data["R Profit"]).length;
 
         let ret = 0;
+        let ret_comms = 0;
         let wins = 0;
         let losses = 0;
         
@@ -641,7 +642,11 @@ class ContactUs extends Component
         for (let i=0; i < dataLength; i++)
         {
             const val = parseFloat(data["R Profit"][i]);
+            const risk_pips = parseFloat(data["Risk (Pips)"][i]);
+            const comms_cost = ((totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice) / (totalBank * 0.01);
+
             ret += val;
+            ret_comms += val - comms_cost;
             if (val >= 0)
             {
                 avg_win += val;
@@ -652,13 +657,13 @@ class ContactUs extends Component
                 avg_loss += val;
                 losses += 1;
             }
-            if (ret > ret_high)
+            if (ret_comms > ret_high)
             {
-                ret_high = ret;
+                ret_high = ret_comms;
             }
             if (ret_high - ret > max_dd)
             {
-                max_dd = ret_high - ret;
+                max_dd = ret_high - ret_comms;
             }
         }
 
@@ -688,7 +693,7 @@ class ContactUs extends Component
         for (let i=0; i < values.length; i++)
         {
             const risk_pips = parseFloat(values[i]);
-            total_cost += (totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice
+            total_cost += (totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice;
         }
 
         const total_cost_perc = total_cost / totalBank;
@@ -776,9 +781,34 @@ class ContactUs extends Component
         return monthly_ret;
     }
 
-    getMonthlyDrawdown(data)
+    getMonthlyCommsReturn(data, totalBank, commsPrice)
     {
-        const monthly_ret = Object.values(this.getMonthlyReturn(data));
+        const dates = Object.values(data["Date.1"]);
+        const profits = Object.values(data["R Profit"]);
+        const risk_pips_data = Object.values(data["Risk (Pips)"]);
+        let monthly_ret = {};
+        
+        for (let i=0; i < dates.length; i++)
+        {
+            const risk_pips = parseFloat(risk_pips_data[i]);
+            const comms_cost = ((totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice) / (totalBank * 0.01);
+
+            if (moment(dates[i]).format("MMM YY") in monthly_ret)
+            {
+                monthly_ret[moment(dates[i]).format("MMM YY")] += parseFloat(profits[i]) - comms_cost;
+            }
+            else
+            {
+                monthly_ret[moment(dates[i]).format("MMM YY")] = parseFloat(profits[i]) - comms_cost;
+            }
+        }
+
+        return monthly_ret;
+    }
+
+    getMonthlyDrawdown(data, totalBank, commsPrice)
+    {
+        const monthly_ret = Object.values(this.getMonthlyCommsReturn(data, totalBank, commsPrice));
 
         let drawdown = 0;
         for (let i of monthly_ret)
@@ -810,9 +840,9 @@ class ContactUs extends Component
         return ret_total/Math.abs(gpr_sum);
     }
 
-    getExpectancy(data)
+    getExpectancy(data, totalBank, commsPrice)
     {
-        const equity_info = this.getEquityReturn(data);
+        const equity_info = this.getEquityReturn(data, totalBank, commsPrice);
         return (equity_info[4] * equity_info[6]) - ((1 - equity_info[4]) * Math.abs(equity_info[7]));
     }
 
