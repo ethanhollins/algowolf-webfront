@@ -172,7 +172,7 @@ class GettingStarted extends Component
                                     <li>Review the “Control Panel” information you entered for this account regarding your bank information, risk and position size and confirm any changes you make.</li>
                                     <li>Prior to starting the script ensure no previous positions are open and no pending orders are on the account you wish to trade.</li>
                                     <li>
-                                        Click on <strong>“Start”</strong> - Once the script has started you will see “Strategy Running”. This may take a couple of minutes to commence.
+                                        Click on <strong>“Start”</strong> - Once the script has started you will see “Strategy Running”. This may take 3-4 minutes to commence if it's your first time starting the script or if there are updates.
                                         <ul>
                                             <li><strong>Note:</strong> The script automatically trades the session times programmed in the algorithm and will automatically <strong>restart</strong> trading those times when the next session begins the following day or after the weekend.</li>
                                             <li>This means you do not have to restart the script manually every trading session.</li>
