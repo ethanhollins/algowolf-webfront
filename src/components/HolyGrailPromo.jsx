@@ -105,7 +105,7 @@ class ContactUs extends Component
                             <a href="/">Home</a>
                             <a className="hidden-xs hidden-sm" href="#calculator">Calculator</a>
                             <a className="hidden-xs hidden-sm" href="#pricing">Pricing</a>
-                            <a className="hidden-xs hidden-sm" href="#getting_started">Getting Started</a>
+                            <a className="hidden-xs hidden-sm" href="/getting-started" target="_blank">Getting Started</a>
                             <a className="hidden-xs hidden-sm" href="/hgpro/faq" target="_blank">FAQ</a>
                             <div className="sm-hide">
                                 {this.getDashboardHeaderBtn()}
@@ -363,7 +363,7 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Up to 50K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
+                                            <div><strong>Up to 50K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
                                             <div><strong>Risk up to 1%</strong> of Tradable Bank</div>
                                             <div>Up to <strong>1 Trading Account</strong></div>
                                             <div>No Lock-in Contracts</div>
@@ -396,8 +396,8 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Up to 100K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
-                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq">FAQ</a>)</div>
+                                            <div><strong>Up to 100K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
+                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq" target="_blank">FAQ</a>)</div>
                                             <div>Up to <strong>5 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
@@ -425,8 +425,8 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Scalable Bank 100K+ (POA)</strong><br/>See how this is calculated: <a href="/hgpro/faq">FAQ</a></div>
-                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq">FAQ</a>)</div>
+                                            <div><strong>Scalable Bank 100K+ (POA)</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
+                                            <div><strong>Flexible Risk Option</strong> (see <a target="_blank" href="/hgpro/faq" target="_blank">FAQ</a>)</div>
                                             <div>Up to <strong>10 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>

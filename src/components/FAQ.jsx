@@ -35,7 +35,7 @@ class FAQ extends Component
                         <div className="row">
                             
                             <div className="col-md-12 text-center" id="getting-started-faq">
-                                <h4 className="underline">Getting Started</h4>
+                                <h4 className="underline">How to</h4>
                             </div>
 
                             <div className="col-md-8 col-md-offset-2">
@@ -72,7 +72,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse1-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Broker commission fees are a significant expense of the original Holy Grail strategy due to the high volume of short range trades taken and the associated higher position sizing of these types of trades (See “Results Calculator”).</p>
+                                                <p>Broker commission fees are a significant expense of the original Holy Grail strategy due to the high volume of short range trades taken and the associated higher position sizing of these types of trades (See <a href="/hgpro#calculator" target="_blank">Results Calculator</a>).</p>
                                                 <p>To solve this we needed to substantially cut down on the number of underperforming trades and only go with setups that exhibited the highest risk/reward potential.</p>
                                                 <p>Areas of change we identified included;</p>
                                                 <ul>
@@ -118,8 +118,8 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse4-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>The Standard subscription automatically allocates your “Maximum Bank” of US$50K to which ever account you’re currently using to trade with as only one trading account may be used at a time.</p>
-                                                <p>A Professional subscription however allows up to 5 simultaneous live accounts to operate at once which means your trading capital limit of US$100K must be split between the accounts you wish to use.</p>
+                                                <p>The <strong>Standard</strong> subscription automatically allocates your “Maximum Bank” of US$50K to which ever account you’re currently using to trade with as only one trading account may be used at a time.</p>
+                                                <p>A <strong>Professional</strong> subscription however allows up to 5 simultaneous live accounts to operate at once which means your trading capital limit of US$100K must be split between the accounts you wish to use.</p>
                                                 <p>When you first add a Broker account to your Dashboard the “Maximum Bank” field on your “Control Panel” is by default set to “0”.</p>
                                                 <p>You then decide how your 100K trading bank limit is split between your accounts. For example you might set your accounts like this.</p>
                                                 <p>
@@ -146,7 +146,7 @@ class FAQ extends Component
                                             <div className="panel-body">
                                                 <p>The “Flexible Risk” option of the Professional subscription allows you to maintain the same level of $risk using a much smaller bank size.</p>
                                                 <p>To explain; The Professional subscription allows you to take a maximum $risk per trade of US$1,000 (100,000 x 1%). To trade at this maximum $risk of $1000 means you would ordinarily need to have at least US$100K sitting in your brokers account.</p>
-                                                <p>However, the Professional subscription comes with a flexible risk option of up to 5%. This means if you have <em>less</em> than 100K sitting in your account you may still take the full $1,000 risk by simply <em>increasing</em> your %Risk exposure (up to 5%) while simultaneously <em>decreasing</em> your bank size. See example below;</p>
+                                                <p>However, the Professional subscription also comes with a flexible risk option of up to 5%. This means if you have <em>less</em> than 100K sitting in your account you may still take the full $1,000 risk by simply <em>increasing</em> your %Risk exposure (up to 5%) while simultaneously <em>decreasing</em> your bank size. See example below;</p>
                                                 <p>
                                                     <strong>100K x 1%</strong> = $1000 (max allowable risk per trade)<br/>
                                                     <strong>50K  x 2%</strong> = $1000<br/>
@@ -181,7 +181,7 @@ class FAQ extends Component
                                                 <p><strong>This means on a 30:1 leverage any attempt to enter one of these short range positions at a risk slightly greater than 1% will most likely be disallowed by your broker.</strong></p>
                                                 <p>Use the Leverage calculator on your “Control Panel” to calculate the maximum risk you may take depending on your Broker’s margin requirements.</p>
                                                 <p>Generally it makes good sense to keep your risk low anyway to preserve your capital for as long as possible in the event of a sustained drawdown. In many cases it might be prudent to limit your risk to much less than 1%. </p>
-                                                <p>All Standard subscriptions are limited to a maximum risk per trade of 1%.</p>
+                                                <p><strong>All Standard subscriptions are limited to a maximum risk per trade of 1%.</strong></p>
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@ class FAQ extends Component
                                         <div id="collapse13-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>Some brokers offer rebates on their fees or discounted commission on volume so shop around.</p>
-                                                <p>There’s also Introducing Brokers who offer rebates of up to 60% or more on a range of brokers if you sign up through them. Check their terms & conditions regarding withdrawals etc. Some require the trade orders to be routed through them <strong>which may not be compatible with our platform.</strong> (Check with us first: support@algowolf.com )</p>
+                                                <p>There’s also Introducing Brokers who offer rebates of up to 60% or more on a range of brokers if you sign up through them. Check their terms & conditions regarding withdrawals etc. Some require the trade orders to be routed through them <strong>which may not be compatible with our platform.</strong> (Check with us first: <a href="mailto:support@algowolf.com">support@algowolf.com</a> )</p>
                                             </div>
                                         </div>
                                     </div>
