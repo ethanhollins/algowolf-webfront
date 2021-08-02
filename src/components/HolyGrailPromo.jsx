@@ -645,8 +645,10 @@ class ContactUs extends Component
             const risk_pips = parseFloat(data["Risk (Pips)"][i]);
             const comms_cost = ((totalBank * 0.01) / (Math.max(Math.abs(risk_pips), 3) * 10) * commsPrice) / (totalBank * 0.01);
 
+            console.log(comms_cost);
+
             ret += val;
-            ret_comms += val - comms_cost;
+            ret_comms += (val - comms_cost);
             if (val >= 0)
             {
                 avg_win += val;
@@ -661,7 +663,7 @@ class ContactUs extends Component
             {
                 ret_high = ret_comms;
             }
-            if (ret_high - ret > max_dd)
+            if (ret_high - ret_comms > max_dd)
             {
                 max_dd = ret_high - ret_comms;
             }
