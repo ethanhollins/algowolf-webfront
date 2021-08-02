@@ -863,17 +863,17 @@ class ContactUs extends Component
         const user_id = this.props.getUserId();
         const is_beta_tester = this.props.getIsBetaTester();
         const { strategies } = this.state;
+        const { REACT_APP_FRONT_BASE_URL } = process.env;
         
         let dashboard_btn;
         if (!user_id)
         {
             dashboard_btn = (
-                <div>
+                <a href={"/login?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL + "/hgpro")}>
 
-                <FontAwesomeIcon className='promo header-icon' icon={faTimesCircle} />
-                Currently Unavailable
+                Login/Sign Up
 
-                </div>
+                </a>
             );
         }
         else if (strategies.includes(pkg))
