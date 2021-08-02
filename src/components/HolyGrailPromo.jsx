@@ -121,10 +121,10 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">New and Improved</h2>
                             <p>
-                                <strong>HG Pro</strong> is an improved version of the Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.
+                                <strong>HG Pro</strong> is an improved version of the classic Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.
                             </p>
                             <p>
-                                To see how much you'll gain, use the calculator below.
+                                To see how much could gain, use the calculator below.
                             </p>
                         </div>
                     </div>
