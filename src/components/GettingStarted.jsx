@@ -74,7 +74,7 @@ class GettingStarted extends Component
                                 <h6>Broker Notes:</h6>
                                 <ul>
                                     <li>For the HG Pro plan we suggest you find a broker who provides a raw or minimal spread account to help prevent entry and stop orders being executed prematurely.</li>
-                                    <li>Low commission fees are important too. (Use the “Returns Calculator” to see how much they affect your net return). In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.</li>
+                                    <li>Low commission fees are important too. (Use the <a href="/hgpro#calculator" target="_blank">Returns Calculator</a> to see how much they affect your net return). In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.</li>
                                     <li>Other Broker accounts will be added from time to time once the process of testing their Application Programming Interface (API) has been completed. Not all brokers have this capability or have suitable interfaces compatible with the demands of our platform.</li>
                                     <li>MetaTrader accounts are not compatible with our platform although the broker itself may provide an account that is. For example, if your broker is IC Markets you would need to use their cTrader account not the MetaTrader version.</li>
                                 </ul>
@@ -171,6 +171,7 @@ class GettingStarted extends Component
                                     <li>Before you start trading, always check you have selected the correct broker account you wish to trade with.</li>
                                     <li>Review the “Control Panel” information you entered for this account regarding your bank information, risk and position size and confirm any changes you make.</li>
                                     <li>Prior to starting the script ensure no previous positions are open and no pending orders are on the account you wish to trade.</li>
+                                    <li>While the script is switched on DO NOT use this account for any other trading purpose as it may cause errors and the strategy to be switched off.</li>
                                     <li>
                                         Click on <strong>“Start”</strong> - Once the script has started you will see “Strategy Running”. This may take 3-4 minutes to commence if it's your first time starting the script or if there are updates.
                                         <ul>

@@ -6,6 +6,7 @@ import moment from "moment";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/pro-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
+import Footer2 from './Footer2';
 
 class ContactUs extends Component
 {
@@ -121,7 +122,7 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">New and Improved</h2>
                             <p>
-                                <strong>HG Pro</strong> is an improved version of the classic Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.
+                                <strong>HG Pro</strong> is an advanced algorithmic version of the classic Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times. Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.
                             </p>
                             <p>
                                 To see how much you could gain, use the calculator below.
@@ -291,7 +292,7 @@ class ContactUs extends Component
                                         </tr>
                                         <tr>
                                             <td className="promo stat-type">Win Percentage %</td>
-                                            <td className="promo stat-value">{infoValues["win_perc"].toFixed(2)}</td>
+                                            <td className="promo stat-value">{(infoValues["win_perc"] * 100).toFixed(2)}</td>
                                         </tr>
                                         <tr>
                                             <td className="promo stat-type">Net Maximum Drawdown % <span className="stat-type-small">inc. Comms</span></td>
@@ -456,7 +457,7 @@ class ContactUs extends Component
                 </div>
             </section>
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 
