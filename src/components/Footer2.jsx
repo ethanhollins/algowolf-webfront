@@ -36,7 +36,7 @@ class Footer extends Component
                     <div className="row footer-bottom">
                         <div className="col-md-12">
                             <p>Copyright &copy; AlgoWolf. 2021. All Rights Reserved.</p>
-                            <p>AlgoWolf is a software development company and does not provide investment or brokerage services. Nothing in this website should be construed as a solicitation to trade in the Foreign Exchange market. HG Pro is a tradmark of Tymraft Pty Ltd. AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131.</p>
+                            <p>AlgoWolf is a software development company and does not provide investment or brokerage services. Nothing in this website should be construed as a solicitation to trade in the Foreign Exchange market. HG Pro is a trademark of Tymraft Pty Ltd. AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131.</p>
                             <p>By registering an account with this website or using this website or any of our products or services you agree that you unconditionally accept and abide by our <a href="/tos">Terms & Conditions</a> and the <a href="/risk-disclosure">Risk Disclosure and Disclaimer agreement</a>.</p>
                             <p>EVERY TIME YOU USE OUR PRODUCTS OR SERVICE YOU AGREE THAT IN ALL CASES ALGOWOLF BEARS NO RESPONSIBILITY FOR LOSSES INCURRED, AND OFFERS NO GUARANTEES OR EXPECTATIONS OF ANY ALGORITHM PERFORMANCE OR STABILITY.</p>
                         </div>

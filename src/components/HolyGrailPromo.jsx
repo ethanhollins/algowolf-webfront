@@ -108,6 +108,7 @@ class ContactUs extends Component
                             <a className="hidden-xs hidden-sm" href="#pricing">Pricing</a>
                             <a className="hidden-xs hidden-sm" href="/getting-started" target="_blank">Getting Started</a>
                             <a className="hidden-xs hidden-sm" href="/hgpro/faq" target="_blank">FAQ</a>
+                            <a className="hidden-xs hidden-sm" href="/hgpro/results" target="_blank">Baseline</a>
                             <div className="sm-hide">
                                 {this.getDashboardHeaderBtn()}
                             </div>
@@ -184,6 +185,7 @@ class ContactUs extends Component
                             <div className="promo graph-sub-header">Broker Commission Fees over 18 Months (More is worse)</div>
                         </div>
                         <div id="calculator" className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                            <p><br/><a href="/hgpro/results" target="_blank">See HG Pro Baseline Results</a></p>
                             <h3>Returns Calculator</h3>
                             <p>
                                 Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong> In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.

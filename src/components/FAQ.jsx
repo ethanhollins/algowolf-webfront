@@ -43,14 +43,15 @@ class FAQ extends Component
 
                                     <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading40-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse40-12" aria-expanded="false" aria-controls="collapse40-12">Should I withdraw profits daily or weekly? Can I quit my job? <span className="icon fa fa-plus trans"></span></a></h6>
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse40-12" aria-expanded="false" aria-controls="collapse40-12">Is it best to withdraw profits daily or weekly? Should I quit my job? <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
                                         <div id="collapse40-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading40-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>This question is at the top for a reason.</p>
-                                                <p>No problem of course with taking out any profits <em>whenever</em> you want (unless you want to compound them)… but <strong>if you’re expecting consistent weekly income you’re probably in the wrong game and should stop now!</strong></p>
+                                                <p>No problem of course with taking out profits <em>whenever</em> you want (unless you want to compound them)… but <strong>if you’re expecting consistent weekly income you’re probably in the wrong game and should stop now!</strong></p>
                                                 <p>Trading is much like the seasons of the year… sometimes long periods of gloom punctuated by days of glorious sunshine.</p>
                                                 <p>Professional traders generally gauge performance quarterly or over longer periods to allow for these cycles… while keeping a watch during the slow times to ensure the expected maximum drawdowns are not unreasonably exceeded. (See <a href="/getting-started" target="_blank">Getting Started</a> guide for instructions on how to set “Drawdown Limit”)</p>
+                                                <p>It’s very much slow & steady wins the race while attempting to avoid the wild equity swings associated with conventional short term trading strategies.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -72,14 +73,17 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse1-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
+                                                <p>HG Pro is an advanced algorithmic version of the classic Prison Paycheck (aka. Holy Grail) strategy. It allows you to automatically take all the best confirming evidence types, with optimal target & stop ranges during the most profitable trading session times.</p>
+                                                <p>Most importantly, this upgrade considerably reduces broker's commission fees and significantly improved the final net result.</p>
                                                 <p>Broker commission fees are a significant expense of the original Holy Grail strategy due to the high volume of short range trades taken and the associated higher position sizing of these types of trades (See <a href="/hgpro#calculator" target="_blank">Results Calculator</a>).</p>
                                                 <p>To solve this we needed to substantially cut down on the number of underperforming trades and only go with setups that exhibited the highest risk/reward potential.</p>
-                                                <p>Areas of change we identified included;</p>
+                                                <p><strong>Areas of change we identified included;</strong></p>
                                                 <ul>
                                                     <li>Eliminated or restricted some Confirming Evidence types such as B/B to achieve more profitable outcomes</li>
                                                     <li>Added an additional time frame (5min) for increased opportunities on the higher probability setups</li>
-                                                    <li>Extended the trading session by several hours to take advantage of both the European and New York sessions.</li>
+                                                    <li>Extended the trading session by several hours to take advantage of both the European and New York sessions (indicated by the green/red (start/stop) vertical lines on the chart).</li>
                                                     <li>Restricted some Entry types to their most profitable session time</li>
+                                                    <li>Modified High & Tight settings to adapt to market conditions</li>
                                                     <li>Increased the minimum stop range to 4 pips to help lower expensive commission fees</li>
                                                     <li>Increased the maximum target range on some trades to 3R for much higher profits</li>
                                                     <li>Implemented a customized Trailing Stop to lock in profits</li>
@@ -217,11 +221,28 @@ class FAQ extends Component
 
                                     <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading8-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse8-12" aria-expanded="false" aria-controls="collapse8-12">Which broker should I use? <span className="icon fa fa-plus trans"></span></a></h6>
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse8-12" aria-expanded="false" aria-controls="collapse8-12">Which broker should I use? (What should I look for in a broker?) <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
                                         <div id="collapse8-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>At this stage we have no specific recommendations but offer a range to choose from on the Dashboard. From these we suggest you find one who provides a raw or minimal spread account with low commission fees. (See “Why Use A Raw Spread Broker Account”?)</p>
+                                                <p>Perhaps use a demo account first to get a feel for what they’re like.</p>
+                                                <p><strong>In most cases a Regular Spread Account, even with no commission fees will probably yield a <em>worse</em> overall return.</strong> (ie. If Oanda is your broker you will need to see if they provide a raw spread account. Don’t use their regular spread account for this strategy)</p>
+                                                <p>Ask your Broker;</p>
+                                                <ol>
+                                                    <li>
+                                                        What is the average spread they quote for the EUR/USD pair?
+                                                        <br/>As close to zero is what we’re looking for (raw spread). A spread of around 0.1 – 0.4 pips might be acceptable though.
+                                                    </li>
+                                                    <li>
+                                                        How much do they charge per lot each way in commissions?
+                                                        <br/>Even though the HG Pro strategy minimises the impact of commissions, it’s still good to get the best rate you can as long as there’s no trade off on service. (See <a href="/hgpro#calculator" target="_blank">Returns Calculator</a> )
+                                                        <br/>Somewhere between <strong>$2 - $3 per lot</strong> or better each way is probably ok.
+                                                        <br/><br/>To calculate this; multiply your brokers listed commission price per lot x the current EUR/USD rate 
+                                                        <br/>The actual fee charged will depend on the lot size of each position taken which varies from trade to trade (bearing in mind there is probably a minimum fee).
+                                                    </li>
+                                                    <p><br/>NB: Some brokers offer rebates on their fees or discounted commission on volume so shop around. There’s also Introducing Brokers who offer rebates of up to 60% or more on a range of brokers if you sign up through them. Check their terms & conditions regarding withdrawals etc. Some require the trade orders to be routed through them <strong>which may not be compatible with our platform.</strong> (Check with us first: <a href="mailto:support@algowolf.com">support@algowolf.com</a>)</p>
+                                                </ol>
                                             </div>
                                         </div>
                                     </div>
@@ -234,8 +255,8 @@ class FAQ extends Component
                                             <div className="panel-body">
                                                 <p>The wider the spread quoted by your broker the more likely you’ll prematurely hit your entry point or stop loss or miss your target profit.</p>
                                                 <p>AlgoWolf uses a mid-data (no spread) feed to trigger entry and stop orders. The HG Pro System is essentially a scalping type plan with very small range between entry & stop orders.</p>
-                                                <p>Because of this we suggest you find a broker who provides a tight or “raw” (minimal spread) account to help prevent your orders being executed prematurely.</p>
-                                                <p>In most cases a Regular Spread Account, even with no commission fees will yield a lower overall return.</p>
+                                                <p>Because of this we suggest you find a broker who provides a tight or “raw” (minimal spread) account to help prevent your orders being executed prematurely and to, as far as practical, match the performance of the AlgoWolf Baseline results.</p>
+                                                <p><strong>In most cases a Regular Spread Account, even with no commission fees will yield a lower overall return.</strong></p>
                                             </div>
                                         </div>
                                     </div>
@@ -274,24 +295,24 @@ class FAQ extends Component
                                     </div>
 
                                     <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading13-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse13-12" aria-expanded="false" aria-controls="collapse13-12">What else can I do to lower my broker's commission fees? <span className="icon fa fa-plus trans"></span></a></h6>
-                                        </div>
-                                        <div id="collapse13-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading13-12" aria-expanded="false" style={{height: "0px"}}>
-                                            <div className="panel-body">
-                                                <p>Some brokers offer rebates on their fees or discounted commission on volume so shop around.</p>
-                                                <p>There’s also Introducing Brokers who offer rebates of up to 60% or more on a range of brokers if you sign up through them. Check their terms & conditions regarding withdrawals etc. Some require the trade orders to be routed through them <strong>which may not be compatible with our platform.</strong> (Check with us first: <a href="mailto:support@algowolf.com">support@algowolf.com</a> )</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading14-12">
                                             <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse14-12" aria-expanded="false" aria-controls="collapse14-12">Will more brokers be added in the future? <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
                                         <div id="collapse14-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading14-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>Yes. Other Broker accounts will be added from time to time once the process of testing their Application Programming Interface (API) has been completed. Not all brokers have this capability or have suitable interfaces compatible with the demands of our platform.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading46-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse46-12" aria-expanded="false" aria-controls="collapse46-12">Why is my broker statement different to my what "System Results" records? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse46-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading46-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>On rare occasion if the server was restarted after a trade was entered it might not get recorded on your “System Results” page. This can also happen if you switch off your strategy during a trade. ie The trade listed by your broker was probably legitimate but wasn’t recorded by AlgoWolf due to the server interruption.</p>
+                                                <p>Always check your broker statements to ensure the trades listed in your “System Results” match those executed by your broker. If they don’t contact <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -305,6 +326,41 @@ class FAQ extends Component
 
                             <div className="col-md-8 col-md-offset-2">
                                 <div className="panel-group acc-faq-2" id="accordion-12" role="tablist" aria-multiselectable="true">
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading45-12">
+                                            <h6 className="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse45-12" aria-expanded="false" aria-controls="collapse45-12" className="trans collapsed">How can I verify my platform is working correctly? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse45-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading45-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>Your Dashboard “System Results” should fairly closely track the AlgoWolf Baseline which can be found <a href="/hgpro/results" target="_blank">here</a>.</p>
+                                                <p>Occasional discrepancies are normal, however if you constantly find major differences: See “Why Is There A Discrepancy Between The Algowolf Baseline & My Live Results?” and change brokers if necessary.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading29-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse29-12" aria-expanded="false" aria-controls="collapse29-12">Why is there a discrepancy between the AlgoWolf Baseline & my System Results? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse29-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading29-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>AlgoWolf uses a mid-price (raw spread) data feed to initiate and track trade orders and represents the theoretical ideal outcome.</p>
+                                                <p>Sometimes there will be discrepancies between the AlgoWolf “Baseline” and your live trading results & broker charts.</p>
+                                                <p><strong>This is usually the result of:</strong></p>
+                                                <ol style={{ listStyleType: "lower-alpha" }}>
+                                                    <li>Your broker “slipping” your order (See “What Is Slippage”)</li>
+                                                    <li>Your broker’s spread prematurely hitting your Entry order (resulting in a trade that a true raw spread account might not enter if the trade ended up being cancelled) </li>
+                                                    <li>Your broker’s spread prematurely hitting your Stop loss (resulting in exiting a trade for a loss that a raw spread might have kept you in for a profit)</li>
+                                                    <li>Your broker’s spread not hitting the profit target (resulting in less profit or a loss)</li>
+                                                    <li>Fractional data differences between broker feeds</li>
+                                                </ol>
+                                                <p>This is why we recommend using brokers who provide a tight or “raw” spread which is closer to the mid-data ideal.</p>
+                                                <p><strong>Occasional discrepancies are normal, but if you constantly find major differences or your broker often widening the spread then change brokers.</strong></p>
+                                                <p>See: “What Should I Look For In A Broker?”</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading15-12">
@@ -360,7 +416,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse20-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading20-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>On the Demo Charts you can watch & revise trade setups that happen in real time pertaining to the original Holy Grail (aka Prison Paycheck) system, whereas on the Automated Platform you can automatically trade real positions in real time using the upgraded HG Pro strategy.</p>
+                                                <p>On the Demo Charts you can watch & revise trade setups that happen in real time pertaining to the original Holy Grail (aka Prison Paycheck) system, whereas on the Automated Platform you can automatically trade real positions in real time using the advanced HG Pro strategy.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -444,7 +500,30 @@ class FAQ extends Component
                                             </div>
                                         </div>
                                     </div>
-                                
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading35-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse35-12" aria-expanded="false" aria-controls="collapse35-12">What browser should I use? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse35-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading35-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>Most browsers should be fine including Chrome and Edge. However, avoid IE as this browser is known to cause problems.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading44-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse44-12" aria-expanded="false" aria-controls="collapse44-12">Constant Spinning Head? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse44-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading44-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>Assuming you’re using a compatible browser (See “Which Browser Should I Use?”), this usually happens when AlgoWolf or the Brokers are performing maintenance on their Platform or updating the Server. Whenever possible this is confined to weekends or outside of regular trading session hours.</p>
+                                                <p>Try again later or if problem persists contact <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -488,30 +567,6 @@ class FAQ extends Component
                                         <div id="collapse27-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading27-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>We use stop orders to help ensure our target range remains within the strategies High & Tight requirements and to receive our full desired profit total if hit. The further your entry is pushed out by spread the further the market has to move to hit your target.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading28-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse28-12" aria-expanded="false" aria-controls="collapse28-12">Why is there a discrepancy between the AlgoWolf chart and my broker's chart? <span className="icon fa fa-plus trans"></span></a></h6>
-                                        </div>
-                                        <div id="collapse28-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading28-12" aria-expanded="false" style={{height: "0px"}}>
-                                            <div className="panel-body">
-                                                <p>The discrepancy is most likely due to the spread offered by your broker. AlgoWolf uses a mid-price data feed to initiate trade orders. The wider the spread quoted by your broker the more likely you’ll prematurely hit your entry point or stop loss or miss the target.</p>
-                                                <p>This is why we suggest you find a broker who provides a tight or “raw” (minimal spread) account to help prevent these orders being executed prematurely.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading29-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse29-12" aria-expanded="false" aria-controls="collapse29-12">Why is there a discrepancy between the Backtested & Live results? <span className="icon fa fa-plus trans"></span></a></h6>
-                                        </div>
-                                        <div id="collapse29-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading29-12" aria-expanded="false" style={{height: "0px"}}>
-                                            <div className="panel-body">
-                                                <p>Sometimes there will be discrepancies between the backtest (which uses mid-data) and live trading results. This is usually the result of your broker either “slipping” your order (See “What Is Slippage”) or the broker widening their quoted spread which can prematurely hit your entry and stop positions when the mid-data (no spread) didn’t.</p>
-                                                <p>This is why we recommend using brokers who provide a tight or “raw” spread which is closer to the mid-data ideal.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -562,12 +617,25 @@ class FAQ extends Component
                                     </div>
 
                                     <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading35-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse35-12" aria-expanded="false" aria-controls="collapse35-12">What browser should I use? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        <div className="panel-heading" role="tab" id="heading47-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse47-12" aria-expanded="false" aria-controls="collapse47-12">Why can't I see the confirming evidence charts? <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
-                                        <div id="collapse35-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading35-12" aria-expanded="false" style={{height: "0px"}}>
+                                        <div id="collapse47-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading47-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Most browsers should be fine including Chrome and Edge. However, avoid IE and we are aware of a bug with Firefox.</p>
+                                                <p>These operate in the background of your platform and their status is logged in “Chart Info”. The 2 & 5 minute signal charts are displayed on your Dashboard to follow any trade setups.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading48-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse48-12" aria-expanded="false" aria-controls="collapse48-12">May I switch the strategy "ON" or "OFF" mid-way through the trading session? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse48-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading48-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>Starting your strategy mid-session should not be an issue, although obviously you will miss any prior trades.</p>
+                                                <p><strong>However, avoid “stopping” your strategy mid-session unless absolutely necessary.</strong></p>
+                                                <p>If you have to stop your strategy part way through a session you can manage any open position via your broker’s platform.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -601,7 +669,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse37-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading37-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>We frequently conduct testing and implement Machine Learning algorithms to look for ways to improve the effectiveness of this strategy. If we find something good we’ll let you know!</p>
+                                                <p>We frequently conduct testing and implement Machine Learning algorithms to look for ways to improve the effectiveness of this strategy over different instruments and time frames. If we find something good we’ll let you know!</p>
                                             </div>
                                         </div>
                                     </div>
