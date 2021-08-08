@@ -372,7 +372,7 @@ class ContactUs extends Component
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Currently Unavailable
+                                                Available Soon
                                             </div>
                                         </div>
                                     </div>
@@ -405,7 +405,7 @@ class ContactUs extends Component
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Currently Unavailable
+                                                Available Soon
                                             </div>
                                         </div>
                                     </div>
@@ -434,7 +434,7 @@ class ContactUs extends Component
                                         </div>
                                         <div className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Currently Unavailable
+                                                Available Soon
                                             </div>
                                         </div>
                                     </div>
