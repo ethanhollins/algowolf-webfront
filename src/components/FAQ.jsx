@@ -12,6 +12,8 @@ class FAQ extends Component
 
     render()
     {
+        const { REACT_APP_APP_BASE_URL } = process.env;
+
         return (
             <React.Fragment>
 
@@ -333,7 +335,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse45-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading45-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Your Dashboard “System Results” should fairly closely track the AlgoWolf Baseline which can be found <a href="/hgpro/results" target="_blank">here</a>.</p>
+                                                <p>Your Dashboard “System Results” should fairly closely track the AlgoWolf Baseline which can be found <a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">here</a>.</p>
                                                 <p>Occasional discrepancies are normal, however if you constantly find major differences: See “Why Is There A Discrepancy Between The Algowolf Baseline & My Live Results?” and change brokers if necessary.</p>
                                             </div>
                                         </div>
