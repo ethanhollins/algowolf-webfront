@@ -199,6 +199,7 @@ class App extends Component
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
                             getScriptFile={this.getScriptFile}
+                            getUserFile={this.getUserFile}
                             getStrategiesList={this.getStrategiesList}
                             getIsBetaTester={this.getIsBetaTester}
                             createStrategy={this.createStrategy}
@@ -459,6 +460,37 @@ class App extends Component
         };
 
         const res = await fetch(`${REACT_APP_API_URL}/v1/scripts/${script_id}/${file_name}`, requestOptions);
+        if (res.status === 200)
+        {
+            const data = await res.json();
+            return data.item;
+        }
+        else if (res.status === 403)
+        {
+            window.location = '/logout';
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    async getUserFile(user_id, file_name)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: '*/*'
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                file_name: file_name
+            })
+        };
+
+        const res = await fetch(`${REACT_APP_API_URL}/v1/users/${user_id}/file`, requestOptions);
         if (res.status === 200)
         {
             const data = await res.json();

@@ -189,7 +189,7 @@ class ContactUs extends Component
                             <p><br/><a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">See HG Pro Baseline Results</a></p>
                             <h3>Returns Calculator</h3>
                             <p>
-                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong> In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
+                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong><br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
                                 Not recommended for trading banks less than US$15,000.
                             </p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
@@ -455,6 +455,8 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">Getting Started</h2>
                             <p>Go to <a href="/getting-started" target="_blank">this page</a> to learn how to get started with your Dashboard.</p>
+                            <br/><h2 className="mtn">Find Out More</h2>
+                            <p>See our <a href="/hgpro/faq" target="_blank">FAQ page</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -551,7 +553,11 @@ class ContactUs extends Component
 
     async onStartup() 
     {
-        const data = await this.props.getScriptFile("HolyGrail_Pro", "SystemResults.csv");
+        const file_path = "UOZXQU/accounts/UOZXQU.papertrader/reports/System Results.csv"; // PROD
+        // const file_path = "PPLISD/accounts/PPLISD.papertrader/reports/System Results.csv"; // DEV
+
+        const data = await this.props.getUserFile("hgpro", file_path);
+        console.log(data);
         const oldData = await this.props.getScriptFile("HolyGrail_Pro", "OldSystemResults.csv")
         this.updateValues(data, oldData, 25000, 2.1, 12);
 
@@ -620,7 +626,7 @@ class ContactUs extends Component
             total += parseFloat(data["R Profit"][i]);
             values.push({
                 y: total,
-                x: moment(data["Date.1"][i]).format("YYYY-MM-DD HH:mm:ss")
+                x: moment(data["Time"][i]).format("YYYY-MM-DD HH:mm:ss")
             });
         }
         return values;
@@ -683,8 +689,8 @@ class ContactUs extends Component
 
     getTotalDays(data)
     {
-        const start_date = moment(data["Date.1"][0]);
-        const end_date = moment(data["Date.1"][Object.keys(data["Date.1"]).length-1]);
+        const start_date = moment(data["Time"][0]);
+        const end_date = moment(data["Time"][Object.keys(data["Time"]).length-1]);
         const duration = moment.duration(end_date.diff(start_date));
         
         return Math.floor(duration.asDays());
@@ -722,7 +728,7 @@ class ContactUs extends Component
 
     getCompoundedCommsReturnByMonths(data, totalBank, commsPrice, num_months)
     {
-        const dates = Object.values(data["Date.1"]);
+        const dates = Object.values(data["Time"]);
         let total_ret = 0;
         const end_date = moment(dates[dates.length-1]);
 
@@ -766,7 +772,7 @@ class ContactUs extends Component
 
     getMonthlyReturn(data)
     {
-        const dates = Object.values(data["Date.1"]);
+        const dates = Object.values(data["Time"]);
         const profits = Object.values(data["R Profit"]);
         let monthly_ret = {};
         
@@ -787,7 +793,7 @@ class ContactUs extends Component
 
     getMonthlyCommsReturn(data, totalBank, commsPrice)
     {
-        const dates = Object.values(data["Date.1"]);
+        const dates = Object.values(data["Time"]);
         const profits = Object.values(data["R Profit"]);
         const risk_pips_data = Object.values(data["Risk (Pips)"]);
         let monthly_ret = {};

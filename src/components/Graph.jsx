@@ -127,6 +127,9 @@ class Graph extends Component
                         radius: 0
                     }
                 },
+                layout: {
+                    padding: 5
+                },
                 responsive: true,
                 maintainAspectRatio: false,
             }

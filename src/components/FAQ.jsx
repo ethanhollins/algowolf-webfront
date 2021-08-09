@@ -194,34 +194,6 @@ class FAQ extends Component
                                 <div className="panel-group acc-faq-2" id="accordion-12" role="tablist" aria-multiselectable="true">
 
                                     <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading6-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse6-12" aria-expanded="false" aria-controls="collapse6-12">Why might a broker refuse my order if I risk more than 1% on a trade? <span className="icon fa fa-plus trans"></span></a></h6>
-                                        </div>
-                                        <div id="collapse6-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6-12" aria-expanded="false" style={{height: "0px"}}>
-                                            <div className="panel-body">
-                                                <p>The reason has to do with the margin requirements imposed by your Broker and the laws of your country. E.g. Retail clients in Australia or UK are limited to a maximum of 30:1 leverage.</p>
-                                                <p>Some position sizes taken by HG Pro are larger than others depending on the range from entry to the stop loss. The shorter the range the <em>greater</em> the position lot size which in turn increases the associated $ margin amount that must be held in your trading account to cover it. </p>
-                                                <p><strong>This means on a 30:1 leverage any attempt to enter one of these short range positions at a risk slightly greater than 1% will most likely be disallowed by your broker.</strong></p>
-                                                <p>Use the Leverage calculator on your “Control Panel” to calculate the maximum risk you may take depending on your Broker’s margin requirements.</p>
-                                                <p>Generally it makes good sense to keep your risk low anyway to preserve your capital for as long as possible in the event of a sustained drawdown. In many cases it might be prudent to limit your risk to much less than 1%. </p>
-                                                <p><strong>All Standard subscriptions are limited to a maximum risk per trade of 1%.</strong></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="panel panel-default">
-                                        <div className="panel-heading" role="tab" id="heading7-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse7-12" aria-expanded="false" aria-controls="collapse7-12">What is the minimum account size I can use? (Why isn't HG Pro suitable for accounts less than US$15K?) <span className="icon fa fa-plus trans"></span></a></h6>
-                                        </div>
-                                        <div id="collapse7-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7-12" aria-expanded="false" style={{height: "0px"}}>
-                                            <div className="panel-body">
-                                                <p>The minimum account size is whatever the smallest lot size your broker allows you to trade.</p>
-                                                <p>However, we suggest HG Pro may not be suitable for retail traders with a trading bank of less than US$15K as subscription costs are more likely to outweigh any profits.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading8-12">
                                             <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse8-12" aria-expanded="false" aria-controls="collapse8-12">Which broker should I use? (What should I look for in a broker?) <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
@@ -259,6 +231,34 @@ class FAQ extends Component
                                                 <p>AlgoWolf uses a mid-data (no spread) feed to trigger entry and stop orders. The HG Pro System is essentially a scalping type plan with very small range between entry & stop orders.</p>
                                                 <p>Because of this we suggest you find a broker who provides a tight or “raw” (minimal spread) account to help prevent your orders being executed prematurely and to, as far as practical, match the performance of the AlgoWolf Baseline results.</p>
                                                 <p><strong>In most cases a Regular Spread Account, even with no commission fees will yield a lower overall return.</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading6-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse6-12" aria-expanded="false" aria-controls="collapse6-12">Why might a broker refuse my order if I risk more than 1% on a trade? <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse6-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>The reason has to do with the margin requirements imposed by your Broker and the laws of your country. E.g. Retail clients in Australia or UK are limited to a maximum of 30:1 leverage.</p>
+                                                <p>Some position sizes taken by HG Pro are larger than others depending on the range from entry to the stop loss. The shorter the range the <em>greater</em> the position lot size which in turn increases the associated $ margin amount that must be held in your trading account to cover it. </p>
+                                                <p><strong>This means on a 30:1 leverage any attempt to enter one of these short range positions at a risk slightly greater than 1% will most likely be disallowed by your broker.</strong></p>
+                                                <p>Use the Leverage calculator on your “Control Panel” to calculate the maximum risk you may take depending on your Broker’s margin requirements.</p>
+                                                <p>Generally it makes good sense to keep your risk low anyway to preserve your capital for as long as possible in the event of a sustained drawdown. In many cases it might be prudent to limit your risk to much less than 1%. </p>
+                                                <p><strong>All Standard subscriptions are limited to a maximum risk per trade of 1%.</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="panel panel-default">
+                                        <div className="panel-heading" role="tab" id="heading7-12">
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse7-12" aria-expanded="false" aria-controls="collapse7-12">What is the minimum account size I can use? (Why isn't HG Pro suitable for accounts less than US$15K?) <span className="icon fa fa-plus trans"></span></a></h6>
+                                        </div>
+                                        <div id="collapse7-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7-12" aria-expanded="false" style={{height: "0px"}}>
+                                            <div className="panel-body">
+                                                <p>The minimum account size is whatever the smallest lot size your broker allows you to trade.</p>
+                                                <p>However, we suggest HG Pro may not be suitable for retail traders with a trading bank of less than US$15K as subscription costs are more likely to outweigh any profits.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -335,8 +335,8 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse45-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading45-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Your Dashboard “System Results” should fairly closely track the AlgoWolf Baseline which can be found <a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">here</a>.</p>
-                                                <p>Occasional discrepancies are normal, however if you constantly find major differences: See “Why Is There A Discrepancy Between The Algowolf Baseline & My Live Results?” and change brokers if necessary.</p>
+                                                <p>Your Dashboard “System Results” should fairly closely match the AlgoWolf Baseline which can be found <a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">here</a>.</p>
+                                                <p>Small discrepancies are normal, however if you constantly find major differences: See “Why Is There A Discrepancy Between The Algowolf Baseline & My Live Results?” and change brokers if necessary.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -347,8 +347,8 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse29-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading29-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>AlgoWolf uses a mid-price (raw spread) data feed to initiate and track trade orders and represents the theoretical ideal outcome.</p>
-                                                <p>Sometimes there will be discrepancies between the AlgoWolf “Baseline” and your live trading results & broker charts.</p>
+                                                <p>AlgoWolf uses a mid-price (raw spread) data feed to initiate and track trade orders and represents the theoretical <em>ideal</em> outcome.</p>
+                                                <p>Often there will be discrepancies between the AlgoWolf “Baseline” and your live trading results & broker charts.</p>
                                                 <p><strong>This is usually the result of:</strong></p>
                                                 <ol style={{ listStyleType: "lower-alpha" }}>
                                                     <li>Your broker “slipping” your order (See “What Is Slippage”)</li>
@@ -358,7 +358,7 @@ class FAQ extends Component
                                                     <li>Fractional data differences between broker feeds</li>
                                                 </ol>
                                                 <p>This is why we recommend using brokers who provide a tight or “raw” spread which is closer to the mid-data ideal.</p>
-                                                <p><strong>Occasional discrepancies are normal, but if you constantly find major differences or your broker often widening the spread then change brokers.</strong></p>
+                                                <p><strong>Small discrepancies are normal, but if you constantly find major differences or your broker often widening the spread then change brokers.</strong></p>
                                                 <p>See: “What Should I Look For In A Broker?”</p>
                                             </div>
                                         </div>
