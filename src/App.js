@@ -27,6 +27,7 @@ import Home3 from './components/Home3';
 import Pricing from './components/Pricing';
 import GettingStarted from './components/GettingStarted';
 import CheckoutPage from './components/CheckoutPage';
+import CheckoutResultPage from './components/CheckoutResultPage';
 
 class App extends Component 
 {
@@ -223,6 +224,14 @@ class App extends Component
                     </Route>
                     <Route exact path="/checkout">
                         <CheckoutPage
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/checkout/result">
+                        <CheckoutResultPage
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}

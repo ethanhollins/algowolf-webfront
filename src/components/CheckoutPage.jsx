@@ -21,8 +21,17 @@ class CheckoutPage extends Component
             EPS_AMOUNT: this.getAmount()
         }
 
+        this.setFormRef = elem => {
+            this.form = elem;
+        }
         this.setCardNumberRef = elem => {
             this.cardNumber = elem;
+        }
+        this.setMonthRef = elem => {
+            this.month = elem;
+        }
+        this.setYearRef = elem => {
+            this.year = elem;
         }
         this.setCCVRef = elem => {
             this.ccv = elem;
@@ -46,11 +55,7 @@ class CheckoutPage extends Component
 
     componentDidMount()
     {
-        console.log("--=");
-        console.log(this.testGenerateHMACSHA256());
-        console.log("=--");
-        
-        this.generateHMACSHA256();
+        window.addEventListener("load", this.handleLoad.bind(this));
     }
 
     render()
@@ -70,6 +75,7 @@ class CheckoutPage extends Component
                 />
                 
                 <form 
+                    ref={this.setFormRef}
                     method="post" action="https://demo.transact.nab.com.au/directpostv2/authorise"
                     onSubmit={this.validateSubmit}
                 >
@@ -83,14 +89,8 @@ class CheckoutPage extends Component
                             <input type="hidden" name="EPS_CURRENCY" value="USD"/>
                             <input type="hidden" name="EPS_TIMESTAMP" value={EPS_TIMESTAMP}/>
                             <input type="hidden" name="EPS_FINGERPRINT" value={this.generateHMACSHA256()}/>
-                            {/* 
-                                HMAC-SHA256 - 
-                                Fields joined with a | separator:
-                                EPS_MERCHANT|TransactionPassword|EPS_TXNTYPE|EPS_REFERENCEID|EPS_AMOUNT|EPS_TIMESTAMP 
-                                e.g.: XYZ0010|abcd1234|0|Test Reference|1.00|20140224221931
-                            */}
-                            <input type="hidden" name="EPS_RESULTURL" value="https://www.algowolf.com/result"/>
-                            <input type="hidden" name="EPS_CALLBACKURL" value="https://www.algowolf.com/result"/>
+                            <input type="hidden" name="EPS_RESULTURL" value="https://www.brokerlib.com/checkout/result"/>
+                            <input type="hidden" name="EPS_CALLBACKURL" value="https://api.brokerlib.com/v1/nab/callback"/>
                             <input type="hidden" name="EPS_REDIRECT" value="TRUE"/>
                             <label>Payment Card Number</label>
                             <div className="field col-xs-12">
@@ -109,7 +109,7 @@ class CheckoutPage extends Component
                                     <label>Expiry Date</label>
                                     <div className="sub-field-group">
                                         <div>
-                                            <select name="EPS_EXPIRYMONTH">
+                                            <select ref={this.setMonthRef} name="EPS_EXPIRYMONTH">
                                                 <option value="01">01</option>
                                                 <option value="02">02</option>
                                                 <option value="03">03</option>
@@ -125,7 +125,7 @@ class CheckoutPage extends Component
                                             </select>
                                         </div>
                                         <div>
-                                            <select name="EPS_EXPIRYYEAR">
+                                            <select ref={this.setYearRef} name="EPS_EXPIRYYEAR">
                                                 <option value="2021">2021</option>
                                                 <option value="2022">2022</option>
                                                 <option value="2023">2023</option>
@@ -231,6 +231,11 @@ class CheckoutPage extends Component
         );
     }
 
+    handleLoad(e)
+    {
+        this.form.reset();
+    }
+
     onKeyPressCreditCard = (e) =>
     {
         const event = e || window.event;
@@ -239,17 +244,12 @@ class CheckoutPage extends Component
         key = String.fromCharCode(key);
 
         let regex = /^\d+$/;
-        if (!regex.test(key))
+        if (regex.test(key) && e.target.value.length < 19)
         {
-            if (event.preventDefault)
-            {
-                event.preventDefault();
-            }
+            const new_value = e.target.value + key;
+            e.target.value = new_value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
         }
-        else
-        {
-            e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
-        }
+        event.preventDefault();
     }
 
     onPasteCreditCard = (e) =>
@@ -259,17 +259,12 @@ class CheckoutPage extends Component
         const data = clipboardData.getData('text/plain');
         
         let regex = /^\d+$/;
-        if (!regex.test(data))
+        if (regex.test(data))
         {
-            if (event.preventDefault)
-            {
-                event.preventDefault();
-            }
+            const new_value = e.target.value + data;
+            e.target.value = new_value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim().substr(0,19);
         }
-        else
-        {
-            e.target.value = data.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim().substr(0,19);
-        }
+        event.preventDefault();
     }
 
     onKeyPressCCV = (e) =>
@@ -344,29 +339,27 @@ class CheckoutPage extends Component
     }
 
     generateHMACSHA256 = () => {
-        const { EPS_TIMESTAMP } = this.state;
+        const { EPS_TIMESTAMP, EPS_AMOUNT } = this.state;
         const data = [
             MERCHANT_ID, TRANSACTION_PASSWORD, "0", 
-            "Test Reference", "295.00", EPS_TIMESTAMP
+            "Test Reference", EPS_AMOUNT, EPS_TIMESTAMP
         ].join('|');
         
         const sha256 = CryptoJS.HmacSHA256(data, TRANSACTION_PASSWORD);
-        const base64encoded = CryptoJS.enc.Base64.stringify(sha256);
-        return base64encoded;
+        return sha256.toString(CryptoJS.enc.HEX);
     }
 
     testGenerateHMACSHA256 = () => {
-        const { EPS_TIMESTAMP } = this.state;
+        const { EPS_TIMESTAMP, EPS_AMOUNT } = this.state;
         const data = [
             MERCHANT_ID, TRANSACTION_PASSWORD, "0", 
-            "Test Reference", "295.00", EPS_TIMESTAMP
+            "Test Reference", EPS_AMOUNT, EPS_TIMESTAMP
         ].join('|');
         console.log(EPS_TIMESTAMP);
         console.log(data);
         
         const sha256 = CryptoJS.HmacSHA256(data, TRANSACTION_PASSWORD);
-        const base64encoded = CryptoJS.enc.Base64.stringify(sha256);
-        return base64encoded;
+        return sha256.toString(CryptoJS.enc.HEX);
     }
 
     getPlan = () =>
@@ -393,7 +386,7 @@ class CheckoutPage extends Component
 
         if (plan === "Standard")
         {
-            return "295.00";
+            return "1.00";
         }
         else if (plan === "Professional")
         {
@@ -415,6 +408,25 @@ class CheckoutPage extends Component
         {
             this.cardNumber.style.borderColor = "#ececec";
         }
+
+        const now = moment().utc();
+        const expiry = moment(this.year.value + "/" + this.month.value + "/" + "01");
+
+        if (
+            now.year() > expiry.year() || 
+            (now.year() === expiry.year() && now.month() > expiry.month())
+        )
+        {
+            this.month.style.borderColor = "#e74c3c";
+            this.year.style.borderColor = "#e74c3c";
+            prevent = true;
+        }
+        else
+        {
+            this.month.style.borderColor = "#ececec";
+            this.year.style.borderColor = "#ececec";
+        }
+
         if (this.ccv.value.length < 3)
         {
             this.ccv.style.borderColor = "#e74c3c";
