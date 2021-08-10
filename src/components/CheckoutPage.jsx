@@ -108,6 +108,8 @@ class CheckoutPage extends Component
                                 <input type="hidden" name="EPS_RESULTURL" value="https://www.brokerlib.com/checkout/result"/>
                                 <input type="hidden" name="EPS_CALLBACKURL" value="https://api.brokerlib.com/v1/nab/callback"/>
                                 <input type="hidden" name="EPS_REDIRECT" value="TRUE"/>
+                                <input type="hidden" name="EPS_STORE" value="true"/>
+                                <input type="hidden" name="EPS_STORETYPE" value="TOKEN"/>
                                 <label>Payment Card Number</label>
                                 <div className="field col-xs-12">
                                     <input 
