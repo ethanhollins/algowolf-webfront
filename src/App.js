@@ -220,14 +220,20 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                            getStrategiesList={this.getStrategiesList}
+                            createStrategy={this.createStrategy}
+                            getIsBetaTester={this.getIsBetaTester}
                         />
                     </Route>
-                    <Route exact path="/getting-started">
+                    <Route exact path="/hgpro/getting-started">
                         <GettingStarted
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                            getStrategiesList={this.getStrategiesList}
+                            createStrategy={this.createStrategy}
+                            getIsBetaTester={this.getIsBetaTester}
                         />
                     </Route>
                     <Route exact path="/checkout">

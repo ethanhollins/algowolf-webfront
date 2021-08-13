@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from './Footer';
+import Footer2 from './Footer2';
+import HolyGrailPromoNav from './HolyGrailPromoNav';
 import Navigation2 from './Navigation2';
 
 class GettingStarted extends Component
@@ -11,14 +13,21 @@ class GettingStarted extends Component
         return (
             <React.Fragment>
 
+            <HolyGrailPromoNav
+                getStrategiesList={this.props.getStrategiesList}
+                createStrategy={this.props.createStrategy}
+                getUserId={this.props.getUserId}
+                getIsBetaTester={this.props.getIsBetaTester}
+            />
+
             <div className="home body">
                 
-                <Navigation2 
+                {/* <Navigation2 
                     checkAuthorization={this.props.checkAuthorization}
                     getUserId={this.props.getUserId}
                     getFirstName={this.props.getFirstName}
                     getScreenWidth={this.props.getScreenWidth}
-                />
+                /> */}
                 
                 <div className="banner body title">
                     <div className="banner inner">
@@ -219,7 +228,7 @@ class GettingStarted extends Component
 
             <div id="first-section"></div>
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 

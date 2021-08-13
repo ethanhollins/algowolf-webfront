@@ -6,6 +6,8 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
+import Footer2 from './Footer2';
+import HolyGrailPromoNav from './HolyGrailPromoNav';
 
 class FAQ extends Component
 {
@@ -17,14 +19,21 @@ class FAQ extends Component
         return (
             <React.Fragment>
 
+            <HolyGrailPromoNav
+                getStrategiesList={this.props.getStrategiesList}
+                createStrategy={this.props.createStrategy}
+                getUserId={this.props.getUserId}
+                getIsBetaTester={this.props.getIsBetaTester}
+            />
+
             <div className="home body">
                 
-                <Navigation2 
+                {/* <Navigation2 
                     checkAuthorization={this.props.checkAuthorization}
                     getUserId={this.props.getUserId}
                     getFirstName={this.props.getFirstName}
                     getScreenWidth={this.props.getScreenWidth}
-                />
+                /> */}
 
                 <div className="banner body title">
                     <div className="banner inner">
@@ -52,7 +61,7 @@ class FAQ extends Component
                                                 <p>This question is at the top for a reason.</p>
                                                 <p>No problem of course with taking out profits <em>whenever</em> you want (unless you want to compound them)… but <strong>if you’re expecting consistent weekly income you’re probably in the wrong game and should stop now!</strong></p>
                                                 <p>Trading is much like the seasons of the year… sometimes long periods of gloom punctuated by days of glorious sunshine.</p>
-                                                <p>Professional traders generally gauge performance quarterly or over longer periods to allow for these cycles… while keeping a watch during the slow times to ensure the expected maximum drawdowns are not unreasonably exceeded. (See <a href="/getting-started" target="_blank">Getting Started</a> guide for instructions on how to set “Drawdown Limit”)</p>
+                                                <p>Professional traders generally gauge performance quarterly or over longer periods to allow for these cycles… while keeping a watch during the slow times to ensure the expected maximum drawdowns are not unreasonably exceeded. (See <a href="/hgpro/getting-started" target="_blank">Getting Started</a> guide for instructions on how to set “Drawdown Limit”)</p>
                                                 <p>It’s very much slow & steady wins the race while attempting to avoid the wild equity swings associated with conventional short term trading strategies.</p>
                                             </div>
                                         </div>
@@ -117,7 +126,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse2-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>See the <a href="/getting-started" target="_blank">Getting Started</a> guide for step by step instructions.</p>
+                                                <p>See the <a href="/hgpro/getting-started" target="_blank">Getting Started</a> guide for step by step instructions.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -710,7 +719,7 @@ class FAQ extends Component
                 
             </div>
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 

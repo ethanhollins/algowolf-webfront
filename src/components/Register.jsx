@@ -162,7 +162,7 @@ class Register extends Component
                                 />
                                 <div className='aw-login checkmark'></div>
                             </label> */}
-                            <div className="aw-login small-text">By continuing, you acknowledge you have read and agree to the <a href="/tos" target="_blank">Terms of Use</a> as well as <a href="/risk-disclosure" target="_blank">Risk Disclosure</a>, <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/cookies-policy" target="_blank">Cookies Policy</a></div>
+                            <div className="aw-login small-text">By continuing, you acknowledge you have read and agree to the <a href="/tos" target="_blank">Terms of Use</a> as well as <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/cookies-policy" target="_blank">Cookies Policy</a></div>
                         </div>
     
                         {/* <div className="aw-login field">

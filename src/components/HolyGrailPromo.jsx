@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/pro-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
 import Footer2 from './Footer2';
+import HolyGrailPromoNav from './HolyGrailPromoNav';
 
 class ContactUs extends Component
 {
@@ -44,11 +45,11 @@ class ContactUs extends Component
             this.onImageTransition()
         }, (5)*1000);
 
-        let { strategies } = this.state;
-        strategies = await this.props.getStrategiesList();
+        // let { strategies } = this.state;
+        // strategies = await this.props.getStrategiesList();
         await this.onStartup();
 
-        this.setState({ strategies });
+        // this.setState({ strategies });
     }
 
     render()
@@ -58,66 +59,13 @@ class ContactUs extends Component
 
         return (
             <React.Fragment>
-            
-            <div className="promo header-group">
-                <div className="promo banner-img">
-                    <div ref={this.setImageRef} className="opaque">
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_4.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_4.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_12.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_9.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_9.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_13.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_13.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_16.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_16.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_14.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_14.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_20.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_20.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_2.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_2.jpg"} />
-                    </div>
-                    <div ref={this.setImageRef}>
-                        <img className="promo banner-img-background" src={process.env.PUBLIC_URL + "/images/hg_22.jpg"} />
-                        <img className="promo banner-img-main" src={process.env.PUBLIC_URL + "/images/hg_22.jpg"} />
-                    </div>
-                </div>
                 
-                <div className="promo header-label-parent">
-                    <div className="promo header-label">
-                        <div className="promo header-shadow"/>
-                        <div className="promo header-background"/>
-                        <div className="promo header-label-group">
-                            <div className="promo title"><span>HG Pro</span></div>
-                            <a href="/">Home</a>
-                            <a className="hidden-xs hidden-sm" href="#calculator">Calculator</a>
-                            <a className="hidden-xs hidden-sm" href="#pricing">Pricing</a>
-                            <a className="hidden-xs hidden-sm" href="/getting-started" target="_blank">Getting Started</a>
-                            <a className="hidden-xs hidden-sm" href="/hgpro/faq" target="_blank">FAQ</a>
-                            <a className="hidden-xs hidden-sm" href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">Baseline</a>
-                            <div className="sm-hide">
-                                {this.getDashboardHeaderBtn()}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <HolyGrailPromoNav
+                getStrategiesList={this.props.getStrategiesList}
+                createStrategy={this.props.createStrategy}
+                getUserId={this.props.getUserId}
+                getIsBetaTester={this.props.getIsBetaTester}
+            />
 
             <section className="se-section single-feature">
                 <div className="container feature-desc">
@@ -455,7 +403,7 @@ class ContactUs extends Component
                     <div className="row">
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">Getting Started</h2>
-                            <p>Go to <a href="/getting-started" target="_blank">this page</a> to learn how to get started with your Dashboard.</p>
+                            <p>Go to <a href="/hgpro/getting-started" target="_blank">this page</a> to learn how to get started with your Dashboard.</p>
                             <br/><h2 className="mtn">Find Out More</h2>
                             <p>See our <a href="/hgpro/faq" target="_blank">FAQ page</a>.</p>
                         </div>
