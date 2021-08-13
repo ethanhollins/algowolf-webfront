@@ -488,7 +488,11 @@ nav {
 }
 
 .account-settings .aw-login.icon {
-    margin-bottom: 18px;
+    margin-bottom: 8px;
+}
+
+.password-reset .aw-login.icon {
+    margin-bottom: 0;
 }
 
 .invite.main {

@@ -38,6 +38,9 @@ class ContactUs extends Component
                         <div className="col-md-12">
                             <h4 className="underline">Got any questions or need help?</h4>
                             <p><strong>Support Team:</strong> <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
+                            <p><strong>Phone:</strong> +61 3 5243 9233</p>
+                            <p><strong>Address:</strong> 12 Hyatt Ct, Grovedale VIC 3216</p>
+                            <p>Tymraft Pty Ltd<br/>ABN: 51 006 268 131</p>
                         </div>
                     </div>
                 </div>

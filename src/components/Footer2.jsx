@@ -27,7 +27,6 @@ class Footer extends Component
                         <div className="col-md-3 col-sm-3 col-xs-4">
                             <h6 className="mtn">Other Pages</h6>
                             <ul>
-                                <li><a href="/contact-us">Contact Us</a></li>
                                 <li><a href="/legal">Legal</a></li>
                             </ul>
                         </div>

@@ -57,6 +57,8 @@ class CheckoutPage extends Component
 
     async componentDidMount()
     {
+        this.props.countPageVisit(window.location.pathname);
+        
         window.addEventListener("load", this.handleLoad.bind(this));
 
         const { REACT_APP_FRONT_BASE_URL } = process.env;

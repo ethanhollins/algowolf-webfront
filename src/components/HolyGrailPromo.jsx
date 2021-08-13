@@ -38,6 +38,7 @@ class ContactUs extends Component
     async componentDidMount()
     {
         this.props.checkAuthorization();
+        this.props.countPageVisit(window.location.pathname);
 
         setTimeout(() => {
             this.onImageTransition()

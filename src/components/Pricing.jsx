@@ -8,6 +8,11 @@ import Banner from './Banner';
 class Pricing extends Component
 {
 
+    componentDidMount()
+    {
+        this.props.countPageVisit(window.location.pathname);
+    }
+
     render()
     {
         return (
@@ -37,7 +42,7 @@ class Pricing extends Component
                                                 </div>
                                                 <div className="pricing header-circle">
                                                     <div className="pricing price-group">
-                                                        <div className="pricing price">29</div>
+                                                        <div className="pricing price">59</div>
                                                         <div className="pricing price-currency">USD</div>
                                                     </div>
                                                     <div className="pricing price-period">
@@ -46,11 +51,11 @@ class Pricing extends Component
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div>Up to <strong>5 Strategies</strong></div>
                                                 <div>Up to <strong>10 Notebooks</strong></div>
                                                 <div><strong>12GB</strong> Storage Space</div>
-                                                <div><strong>CPU</strong> Cloud Compute</div>
                                                 <div>Up to <strong>128MB</strong> Compute Memory</div>
+                                                <div><strong>CPU</strong> Cloud Compute</div>
+                                                <div><strong>12 hours</strong> Monthly Compute Allowance</div>
                                                 <div>Access to <strong>Market Price Datasets</strong></div>
                                                 <div></div>
                                             </div>
@@ -69,7 +74,7 @@ class Pricing extends Component
                                                 </div>
                                                 <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
                                                     <div className="pricing price-group">
-                                                        <div className="pricing price">59</div>
+                                                        <div className="pricing price">99</div>
                                                         <div className="pricing price-currency">USD</div>
                                                     </div>
                                                     <div className="pricing price-period">
@@ -78,13 +83,13 @@ class Pricing extends Component
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div>Up to <strong>10 Strategies</strong></div>
                                                 <div><strong>Unlimited Notebooks</strong></div>
                                                 <div><strong>64GB</strong> Storage Space</div>
-                                                <div><strong>GPU/CPU</strong> Cloud Compute</div>
                                                 <div>Up to <strong>512MB</strong> Compute Memory</div>
+                                                <div><strong>GPU/CPU</strong> Cloud Compute</div>
+                                                <div><strong>24 hours</strong> Monthly Compute Allowance</div>
                                                 <div>Access to <strong>Market Price Datasets</strong></div>
-                                                <div></div>
+                                                <div>Access to AlgoWolf's <strong>Alternate Datasets</strong></div>
                                             </div>
                                             <div className="pricing purchase-group">
                                                 <div className="pricing purchase-btn">
@@ -97,41 +102,43 @@ class Pricing extends Component
                                         <div id="pricing-black" className="pricing body pricing-page">
                                             <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
                                                 <div className="pricing title-group">
-                                                    <div className="pricing title">Pro+</div>
+                                                    <div className="pricing title">Enterprise</div>
                                                 </div>
                                                 <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
                                                     <div className="pricing price-group">
-                                                        <div className="pricing price">99</div>
-                                                        <div className="pricing price-currency">USD</div>
+                                                        <div className="pricing price-small">Custom Pricing</div>
                                                     </div>
-                                                    <div className="pricing price-period">
+                                                    {/* <div className="pricing price-period">
                                                         per month
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div><strong>Unlimited Strategies</strong></div>
                                                 <div><strong>Unlimited Notebooks</strong></div>
-                                                <div><strong>256GB</strong> Storage Space</div>
+                                                <div><strong>Custom</strong> Storage Space</div>
+                                                <div><strong>Custom</strong> Compute Memory</div>
                                                 <div><strong>GPU/CPU</strong> Cloud Compute</div>
-                                                <div>Up to <strong>2GB</strong> Compute Memory</div>
+                                                <div><strong>Custom</strong> Monthly Compute Allowance</div>
                                                 <div>Access to <strong>Market Price Datasets</strong></div>
                                                 <div>Access to AlgoWolf's <strong>Alternate Datasets</strong></div>
                                             </div>
-                                            <div className="pricing purchase-group">
+                                            <a href="mailto:admin@algowolf.com" className="pricing purchase-group">
                                                 <div className="pricing purchase-btn">
-                                                    Currently Unavailable
+                                                    Contact Us
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
+                            <p>* On purchase confirmation, your subscription privileges will be immediately available.</p>
+                        </div>
                     </div>
                 </section>
 
-                <section className="se-section single-feature">
+                {/* <section className="se-section single-feature">
                     <div className="container">
                         <div className="row">
                             <h2 className="mtn">Additional Compute Costs</h2>
@@ -173,7 +180,7 @@ class Pricing extends Component
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
 
             </div>
 

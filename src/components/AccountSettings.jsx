@@ -601,7 +601,7 @@ class AccountSettings extends Component
                         </span>
                     </div>
                     <div className="account-settings sub-field">
-                        <span className="account-settings link-text">Forgot Password?</span>
+                        <a href="/send-reset" className="account-settings link-text" target="_blank">Forgot Password?</a>
                     </div>
                     <div className="aw-login input-parent">
                         <input 

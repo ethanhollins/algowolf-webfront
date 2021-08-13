@@ -63,7 +63,6 @@ class CookiesPolicy extends Component
                         <p>If you have questions about this Cookies Policy or the way personal information is processed or used in connection with the use of our Software Applications or websites, please address your queries to: <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p><strong>The following documents must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/tos"><strong>TERMS OF USE & CONDITIONS OF SERVICE POLICY</strong></a></p>
-                        <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>
                         <p><a href="/privacy-policy"><strong>PRIVACY POLICY</strong></a></p>
                     </div>
                 </section>

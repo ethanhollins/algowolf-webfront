@@ -28,6 +28,10 @@ import Pricing from './components/Pricing';
 import GettingStarted from './components/GettingStarted';
 import CheckoutPage from './components/CheckoutPage';
 import CheckoutResultPage from './components/CheckoutResultPage';
+import SendPasswordReset from './components/SendPasswordReset';
+import ResetPassword from './components/ResetPassword';
+import Home4 from './components/Home4';
+import Tos2 from './components/Tos2';
 
 class App extends Component 
 {
@@ -44,6 +48,7 @@ class App extends Component
         this.createStrategy = this.createStrategy.bind(this);
         this.getScriptFile = this.getScriptFile.bind(this);
         this.onResize = this.onResize.bind(this);
+        this.countPageVisit = this.countPageVisit.bind(this);
     }
 
     state = {
@@ -72,7 +77,7 @@ class App extends Component
             <Router component={App}>
                 <Switch>
                     <Route exact path="/">
-                        <Home3 
+                        <Home4 
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
@@ -81,6 +86,7 @@ class App extends Component
                             getIsBetaTester={this.getIsBetaTester}
                             createStrategy={this.createStrategy}
                             getScriptFile={this.getScriptFile}
+                            countPageVisit={this.countPageVisit}
                         />
                     </Route>
                     <Route exact path="/login">
@@ -149,7 +155,7 @@ class App extends Component
                         />
                     </Route>
                     <Route exact path="/tos">
-                        <Tos 
+                        <Tos2 
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
@@ -191,6 +197,7 @@ class App extends Component
                             createStrategy={this.createStrategy}
                             getScriptFile={this.getScriptFile}
                             getIsBetaTester={this.getIsBetaTester}
+                            countPageVisit={this.countPageVisit}
                         />
                     </Route>
                     <Route exact path="/hgpro">
@@ -204,6 +211,7 @@ class App extends Component
                             getStrategiesList={this.getStrategiesList}
                             getIsBetaTester={this.getIsBetaTester}
                             createStrategy={this.createStrategy}
+                            countPageVisit={this.countPageVisit}
                         />
                     </Route>
                     <Route exact path="/hgpro/faq">
@@ -228,6 +236,7 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                            countPageVisit={this.countPageVisit}
                         />
                     </Route>
                     <Route exact path="/checkout/result">
@@ -236,6 +245,24 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/send-reset">
+                        <SendPasswordReset
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                            getHeaders={this.getHeaders}
+                        />
+                    </Route>
+                    <Route exact path="/reset">
+                        <ResetPassword
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                            getHeaders={this.getHeaders}
                         />
                     </Route>
                     <Route exact path="/app">
@@ -327,6 +354,30 @@ class App extends Component
 
         this.setUser(user_id, first_name);
         return user_id;
+    }
+
+    async countPageVisit(page)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        const auth_token = this.getCookies().get('Authorization');
+
+        if (auth_token !== undefined)
+        {
+            var requestOptions = {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: '*/*',
+                    Authorization: 'Bearer ' + auth_token
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    page: page
+                })
+            };
+    
+            fetch(`${REACT_APP_API_URL}/v1/analytics/page`, requestOptions);
+        }
     }
 
     async isBetaTester()
