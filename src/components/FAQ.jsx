@@ -12,6 +12,11 @@ import HolyGrailPromoNav from './HolyGrailPromoNav';
 class FAQ extends Component
 {
 
+    async componentDidMount()
+    {
+        this.props.checkAuthorization();
+    }
+
     render()
     {
         const { REACT_APP_APP_BASE_URL } = process.env;

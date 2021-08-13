@@ -8,6 +8,11 @@ import Navigation2 from './Navigation2';
 class GettingStarted extends Component
 {
 
+    async componentDidMount()
+    {
+        this.props.checkAuthorization();
+    }
+
     render()
     {
         return (

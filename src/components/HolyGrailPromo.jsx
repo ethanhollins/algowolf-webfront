@@ -41,9 +41,9 @@ class ContactUs extends Component
         this.props.checkAuthorization();
         this.props.countPageVisit(window.location.pathname);
 
-        setTimeout(() => {
-            this.onImageTransition()
-        }, (5)*1000);
+        // setTimeout(() => {
+        //     this.onImageTransition()
+        // }, (5)*1000);
 
         // let { strategies } = this.state;
         // strategies = await this.props.getStrategiesList();
@@ -59,7 +59,7 @@ class ContactUs extends Component
 
         return (
             <React.Fragment>
-                
+
             <HolyGrailPromoNav
                 getStrategiesList={this.props.getStrategiesList}
                 createStrategy={this.props.createStrategy}
