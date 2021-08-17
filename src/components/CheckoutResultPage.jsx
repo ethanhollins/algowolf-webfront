@@ -63,7 +63,7 @@ class CheckoutResultPage extends Component
                 <div className='checkout-result body'>
                     <FontAwesomeIcon className='checkout-result success-icon' icon={faCheckCircle} />
                     <span className='checkout-result header'>Success!</span>
-                    <span className='checkout-result sub-header'>Your payment request has been processed successfully.<br/><a href="/app">Click here</a> to go to your dashboard.</span>
+                    <span className='checkout-result sub-header'>Your payment request has been processed successfully.<br/><a href="#">Click here</a> to go to your dashboard.</span>
                 </div>
             );
         }

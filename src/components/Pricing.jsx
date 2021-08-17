@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
-import Strategies from './Strategies';
-import Banner from './Banner';
 import CookiesPopup from './CookiesPopup';
 
 class Pricing extends Component
