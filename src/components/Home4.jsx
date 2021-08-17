@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import CookiesPopup from './CookiesPopup';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
 
@@ -243,6 +244,10 @@ class Home3 extends Component
             <div id="first-section"></div>
 
             <Footer/>
+
+            <CookiesPopup 
+                getCookies={this.props.getCookies}
+            />
 
             </React.Fragment>
 

@@ -8,6 +8,7 @@ import { faCheckCircle, faTimesCircle } from '@fortawesome/pro-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
 import Footer2 from './Footer2';
 import HolyGrailPromoNav from './HolyGrailPromoNav';
+import CookiesPopup from './CookiesPopup';
 
 class ContactUs extends Component
 {
@@ -412,6 +413,10 @@ class ContactUs extends Component
             </section>
 
             <Footer2/>
+
+            <CookiesPopup 
+                getCookies={this.props.getCookies}
+            />
 
             </React.Fragment>
 

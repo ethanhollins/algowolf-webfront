@@ -87,6 +87,7 @@ class App extends Component
                             createStrategy={this.createStrategy}
                             getScriptFile={this.getScriptFile}
                             countPageVisit={this.countPageVisit}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/login">
@@ -144,6 +145,7 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/legal">
@@ -152,6 +154,7 @@ class App extends Component
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/tos">
@@ -198,6 +201,7 @@ class App extends Component
                             getScriptFile={this.getScriptFile}
                             getIsBetaTester={this.getIsBetaTester}
                             countPageVisit={this.countPageVisit}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/hgpro">
@@ -212,6 +216,7 @@ class App extends Component
                             getIsBetaTester={this.getIsBetaTester}
                             createStrategy={this.createStrategy}
                             countPageVisit={this.countPageVisit}
+                            getCookies={this.getCookies}
                         />
                     </Route>
                     <Route exact path="/hgpro/faq">

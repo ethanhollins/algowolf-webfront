@@ -64,14 +64,15 @@ class CheckoutPage extends Component
         const { REACT_APP_FRONT_BASE_URL } = process.env;
 
         const user_id = await this.props.checkAuthorization();
-        if (user_id)
-        {
-            this.generateReference(user_id);
-        }
-        else
-        {
-            window.location.href = "/login?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL + "/checkout" + window.location.search);
-        }
+        this.generateReference(user_id);
+        // if (user_id)
+        // {
+        //     this.generateReference(user_id);
+        // }
+        // else
+        // {
+        //     window.location.href = "/login?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL + "/checkout" + window.location.search);
+        // }
     }
 
     render()
@@ -424,11 +425,19 @@ class CheckoutPage extends Component
         const params = new URLSearchParams(queryString);
 
         const plan = params.get("plan");
-        if (plan === "standard")
+        if (plan === "pro")
+        {
+            return "Pro";
+        }
+        else if (plan === "standard")
         {
             return "Standard";
         }
-        else if (plan === "professional")
+        else if (plan === "hgpro_standard")
+        {
+            return "Standard";
+        }
+        else if (plan === "hgpro_professional")
         {
             return "Professional";
         }
@@ -440,7 +449,11 @@ class CheckoutPage extends Component
     {
         const plan = this.getPlan();
 
-        if (plan === "Standard")
+        if (plan === "Pro")
+        {
+            return "495.00";
+        }
+        else if (plan === "Standard")
         {
             return "295.00";
         }
@@ -453,7 +466,26 @@ class CheckoutPage extends Component
     generateReference = (user_id) =>
     {
         let { EPS_REFERENCEID, isLoaded } = this.state;
-        EPS_REFERENCEID = `${user_id}|HolyGrail_Pro|${this.getPlan()}`;
+
+        const queryString = this.props.location.search;
+        const params = new URLSearchParams(queryString);
+        const plan = params.get("plan");
+        if (plan === "pro")
+        {
+            EPS_REFERENCEID = `${user_id}|pro|${plan}`;
+        }
+        else if (plan === "standard")
+        {
+            EPS_REFERENCEID = `${user_id}|standard|${plan}`;
+        }
+        else if (plan === "hgpro_professional")
+        {
+            EPS_REFERENCEID = `${user_id}|HolyGrail_Pro_professional|${plan}`;
+        }
+        else if (plan === "hgpro_standard")
+        {
+            EPS_REFERENCEID = `${user_id}|HolyGrail_Pro|${plan}`;
+        }
         isLoaded = true;
 
         this.setState({ EPS_REFERENCEID, isLoaded });
@@ -475,7 +507,7 @@ class CheckoutPage extends Component
         }
 
         const now = moment().utc();
-        const expiry = moment(this.year.value + "/" + this.month.value + "/" + "01");
+        const expiry = moment(this.year.value + "/" + this.month.value + "/01");
 
         if (
             now.year() > expiry.year() || 

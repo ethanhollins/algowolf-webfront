@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Navigation2 from './Navigation2';
 import Strategies from './Strategies';
 import Banner from './Banner';
+import CookiesPopup from './CookiesPopup';
 
 class Pricing extends Component
 {
@@ -42,7 +43,7 @@ class Pricing extends Component
                                                 </div>
                                                 <div className="pricing header-circle">
                                                     <div className="pricing price-group">
-                                                        <div className="pricing price">59</div>
+                                                        <div className="pricing price">295</div>
                                                         <div className="pricing price-currency">USD</div>
                                                     </div>
                                                     <div className="pricing price-period">
@@ -51,11 +52,12 @@ class Pricing extends Component
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div>Up to <strong>10 Notebooks</strong></div>
-                                                <div><strong>12GB</strong> Storage Space</div>
-                                                <div>Up to <strong>128MB</strong> Compute Memory</div>
-                                                <div><strong>CPU</strong> Cloud Compute</div>
-                                                <div><strong>12 hours</strong> Monthly Compute Allowance</div>
+                                                <div>Up to <strong>10 Notebooks/Scripts</strong></div>
+                                                <div><strong>Leading</strong> Data Analysis Tools</div>
+                                                <div><strong>32GB</strong> Storage Space</div>
+                                                <div>Up to <strong>256MB</strong> Compute Memory</div>
+                                                <div><strong>GPU/CPU</strong> Cloud Compute</div>
+                                                <div><strong>24 hours</strong> Monthly Compute Allowance</div>
                                                 <div>Access to <strong>Market Price Datasets</strong></div>
                                                 <div></div>
                                             </div>
@@ -67,14 +69,14 @@ class Pricing extends Component
                                         </div>
                                     </div>
                                     <div className="col-md-4 col-xs-12 col-xs-offset-0">
-                                        <div id="pricing-black" className="pricing body pricing-page">
-                                            <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
+                                        <div id="pricing-orange" className="pricing body pricing-page">
+                                            <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
                                                 <div className="pricing title-group">
                                                     <div className="pricing title">Pro</div>
                                                 </div>
-                                                <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
+                                                <div className="pricing header-circle" style={{ backgroundColor: "#f7a50e" }}>
                                                     <div className="pricing price-group">
-                                                        <div className="pricing price">99</div>
+                                                        <div className="pricing price">495</div>
                                                         <div className="pricing price-currency">USD</div>
                                                     </div>
                                                     <div className="pricing price-period">
@@ -83,11 +85,12 @@ class Pricing extends Component
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div><strong>Unlimited Notebooks</strong></div>
-                                                <div><strong>64GB</strong> Storage Space</div>
-                                                <div>Up to <strong>512MB</strong> Compute Memory</div>
+                                                <div><strong>Unlimited Notebooks/Scripts</strong></div>
+                                                <div><strong>Leading</strong> Data Analysis Tools</div>
+                                                <div><strong>128GB</strong> Storage Space</div>
+                                                <div>Up to <strong>1GB</strong> Compute Memory</div>
                                                 <div><strong>GPU/CPU</strong> Cloud Compute</div>
-                                                <div><strong>24 hours</strong> Monthly Compute Allowance</div>
+                                                <div><strong>48 hours</strong> Monthly Compute Allowance</div>
                                                 <div>Access to <strong>Market Price Datasets</strong></div>
                                                 <div>Access to AlgoWolf's <strong>Alternate Datasets</strong></div>
                                             </div>
@@ -114,7 +117,8 @@ class Pricing extends Component
                                                 </div>
                                             </div>
                                             <div className="pricing features-group">
-                                                <div><strong>Unlimited Notebooks</strong></div>
+                                                <div><strong>Unlimited Notebooks/Scripts</strong></div>
+                                                <div><strong>Leading</strong> Data Analysis Tools</div>
                                                 <div><strong>Custom</strong> Storage Space</div>
                                                 <div><strong>Custom</strong> Compute Memory</div>
                                                 <div><strong>GPU/CPU</strong> Cloud Compute</div>
@@ -185,6 +189,10 @@ class Pricing extends Component
             </div>
 
             <Footer/>
+
+            <CookiesPopup 
+                getCookies={this.props.getCookies}
+            />
 
             </React.Fragment>
 

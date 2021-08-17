@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
+import CookiesPopup from './CookiesPopup';
 
 class ContactUs extends Component
 {
@@ -47,6 +48,10 @@ class ContactUs extends Component
             </section>
             
             <Footer/>
+
+            <CookiesPopup 
+                getCookies={this.props.getCookies}
+            />
 
             </React.Fragment>
 

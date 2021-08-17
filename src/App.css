@@ -1551,6 +1551,35 @@ section.checkout-result {
     pointer-events: none;
 }
 
+#cookies_popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    top: calc(100vh - 60px);
+    color: #fff;
+    background-color: rgb(40,40,40);
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    padding-left: 60px; 
+    padding-right: 60px;
+}
+
+#cookies_popup .accept-btn {
+    margin-left: 20px;
+    padding: 5px 20px;
+    background-color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#cookies_popup a {
+    color: #3498db;
+    font-weight: 600;
+}
+
 @media screen and (max-width : 1200px)
 {
     .pricing-page.parent {
