@@ -76,6 +76,7 @@ class CheckoutPage extends Component
 
     render()
     {
+        const { REACT_APP_FRONT_BASE_URL, REACT_APP_API_URL } = process.env;
         const { EPS_TIMESTAMP, EPS_AMOUNT, EPS_REFERENCEID, isLoaded } = this.state;
 
         if (isLoaded)
@@ -107,8 +108,8 @@ class CheckoutPage extends Component
                                 <input type="hidden" name="EPS_CURRENCY" value="USD"/>
                                 <input type="hidden" name="EPS_TIMESTAMP" value={EPS_TIMESTAMP}/>
                                 <input type="hidden" name="EPS_FINGERPRINT" value={this.generateHMACSHA256()}/>
-                                <input type="hidden" name="EPS_RESULTURL" value="https://www.brokerlib.com/checkout/result"/>
-                                <input type="hidden" name="EPS_CALLBACKURL" value="https://api.brokerlib.com/v1/nab/callback"/>
+                                <input type="hidden" name="EPS_RESULTURL" value={REACT_APP_FRONT_BASE_URL + "/checkout/result"}/>
+                                <input type="hidden" name="EPS_CALLBACKURL" value={REACT_APP_API_URL + "/v1/nab/callback"}/>
                                 <input type="hidden" name="EPS_REDIRECT" value="TRUE"/>
                                 <input type="hidden" name="EPS_STORE" value="true"/>
                                 <input type="hidden" name="EPS_STORETYPE" value="TOKEN"/>
