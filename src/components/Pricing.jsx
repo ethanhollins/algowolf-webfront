@@ -7,8 +7,21 @@ import CookiesPopup from './CookiesPopup';
 class Pricing extends Component
 {
 
-    componentDidMount()
+    state = {
+        isAvailable: false
+    }
+
+    async componentDidMount()
     {
+        const user_id = await this.props.checkAuthorization()
+        console.log(user_id);
+        if (user_id === "nab")
+        {
+            let { isAvailable } = this.state;
+            isAvailable = true;
+            this.setState({ isAvailable });
+        }
+
         this.props.countPageVisit(window.location.pathname);
     }
 
@@ -60,9 +73,7 @@ class Pricing extends Component
                                                 <div></div>
                                             </div>
                                             <div className="pricing purchase-group">
-                                                <div className="pricing purchase-btn">
-                                                    Currently Unavailable
-                                                </div>
+                                                {this.getSubscribeButton("standard")}
                                             </div>
                                         </div>
                                     </div>
@@ -93,9 +104,7 @@ class Pricing extends Component
                                                 <div>Access to AlgoWolf's <strong>Alternate Datasets</strong></div>
                                             </div>
                                             <div className="pricing purchase-group">
-                                                <div className="pricing purchase-btn">
-                                                    Currently Unavailable
-                                                </div>
+                                                {this.getSubscribeButton("pro")}
                                             </div>
                                         </div>
                                     </div>
@@ -195,6 +204,54 @@ class Pricing extends Component
             </React.Fragment>
 
         );
+    }
+
+    
+    getSubscribeButton(plan)
+    {
+        const { isAvailable } = this.state;
+
+        if (isAvailable)
+        {
+            if (plan === "standard")
+            {
+                return (
+                    <a href="/checkout?plan=standard" className="pricing purchase-group">
+                        <div className="pricing purchase-btn">
+                            Subscribe Now
+                        </div>
+                    </a>
+                )
+            }
+            else if (plan === "pro")
+            {
+                return (
+                    <a href="/checkout?plan=pro" className="pricing purchase-group">
+                        <div className="pricing purchase-btn">
+                            Subscribe Now
+                        </div>
+                    </a>
+                )
+            }
+            else
+            {
+                return (
+                    <div className="pricing purchase-group">
+                        <div className="pricing purchase-btn">
+                            Currently Unavailable
+                        </div>
+                    </div>
+                )
+            }
+        }
+        else
+        {
+            return (
+                <div className="pricing purchase-btn">
+                    Currently Unavailable
+                </div>
+            )
+        }
     }
 
 }

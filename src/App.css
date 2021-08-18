@@ -1091,6 +1091,10 @@
     font-size: 1.5em;
 }
 
+.pricing.purchase-btn:visited {
+    color: #000;
+}
+
 .pricing.purchase-btn a {
     color: #000;
 }

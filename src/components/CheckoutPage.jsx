@@ -64,15 +64,14 @@ class CheckoutPage extends Component
         const { REACT_APP_FRONT_BASE_URL } = process.env;
 
         const user_id = await this.props.checkAuthorization();
-        this.generateReference(user_id);
-        // if (user_id)
-        // {
-        //     this.generateReference(user_id);
-        // }
-        // else
-        // {
-        //     window.location.href = "/login?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL + "/checkout" + window.location.search);
-        // }
+        if (user_id)
+        {
+            this.generateReference(user_id);
+        }
+        else
+        {
+            window.location.href = "/login?redirect=" + encodeURIComponent(REACT_APP_FRONT_BASE_URL + "/checkout" + window.location.search);
+        }
     }
 
     render()

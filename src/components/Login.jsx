@@ -79,7 +79,7 @@ class Login extends Component
                                 <div className="aw-login input-parent">
                                     <input 
                                         ref={this.setEmailRef}
-                                        type="email" className="aw-login input" 
+                                        type="username" className="aw-login input" 
                                         name="email" id="email" 
                                         placeholder="Email"
                                         autoComplete="email" required 
