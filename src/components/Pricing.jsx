@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
 import CookiesPopup from './CookiesPopup';
+import Footer2 from './Footer2';
 
 class Pricing extends Component
 {
@@ -195,7 +196,7 @@ class Pricing extends Component
 
             </div>
 
-            <Footer/>
+            <Footer2/>
 
             <CookiesPopup 
                 getCookies={this.props.getCookies}

@@ -14,7 +14,11 @@ class FAQ extends Component
 
     async componentDidMount()
     {
-        this.props.checkAuthorization();
+        const user_id = await this.props.checkAuthorization();
+        if (!user_id)
+        {
+            window.location = "/login?redirect=" + encodeURIComponent(window.location.href);
+        }
     }
 
     render()

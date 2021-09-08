@@ -7,6 +7,7 @@ import {
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
 import CookiesPopup from './CookiesPopup';
+import Footer2 from './Footer2';
 
 class ContactUs extends Component
 {
@@ -45,7 +46,7 @@ class ContactUs extends Component
                 </div>
             </section>
             
-            <Footer/>
+            <Footer2/>
 
             <CookiesPopup 
                 getCookies={this.props.getCookies}

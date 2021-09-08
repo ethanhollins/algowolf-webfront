@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
+import Footer2 from './Footer2';
 
 class Tos extends Component
 {
@@ -181,6 +182,7 @@ class Tos extends Component
                         <p>AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131</p>
                         <p>All contents © 2021 AlgoWolf. All rights reserved.</p>
                         <p><strong>The following documents form part of the Terms & Conditions and must be read & accepted in conjunction with the above:</strong></p>
+                        <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>
                         <p><a href="/privacy-policy"><strong>PRIVACY POLICY</strong></a></p>
                         <p><a href="/cookies-policy"><strong>COOKIES POLICY</strong></a></p>
                     </div>
@@ -190,7 +192,7 @@ class Tos extends Component
 
             <div id="first-section" />
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 

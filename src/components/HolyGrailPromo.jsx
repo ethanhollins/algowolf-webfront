@@ -139,8 +139,7 @@ class ContactUs extends Component
                             <p><br/><a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">See HG Pro Baseline Results</a></p>
                             <h3>Returns Calculator</h3>
                             <p>
-                                Find out how much this strategy could have made you. Based on a 1% per trade risk of the total Trading Bank size. <strong>This assumes a Raw Spread account.</strong><br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
-                                Not recommended for trading banks less than US$15,000.
+                                Find out how much this strategy could have made you. Based on a 1% risk per trade of the total Trading Bank using a Raw Spread account.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
                             </p>
                             <div className="col col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
                                 <div>
@@ -394,7 +393,7 @@ class ContactUs extends Component
                                 </div>
                             </div>
                         </div>
-                        <span id="pricing_footnote"><strong id="gpr_info_asterisks">*</strong> Not recommended for trading banks less than US$15,000.</span>
+                        <span id="pricing_footnote"><strong id="gpr_info_asterisks">* </strong><strong>Not recommended for trading banks less than US$15,000.</strong></span>
                     </div>
                 </div>
             </section>

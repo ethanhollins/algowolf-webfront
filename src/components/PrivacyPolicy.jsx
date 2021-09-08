@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
+import Footer2 from './Footer2';
 
 class PrivacyPolicy extends Component
 {
@@ -100,6 +101,7 @@ class PrivacyPolicy extends Component
                         <p>You may contact us anytime by addressing your queries to: <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p><strong>The following documents must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/tos"><strong>TERMS OF USE & CONDITIONS OF SERVICE POLICY</strong></a></p>
+                        <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>
                         <p><a href="/cookies-policy"><strong>COOKIES POLICY</strong></a></p>
                     </div>
                 </section>
@@ -108,7 +110,7 @@ class PrivacyPolicy extends Component
 
             <div id="first-section" />
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 

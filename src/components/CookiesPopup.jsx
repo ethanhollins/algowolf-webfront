@@ -27,7 +27,7 @@ class CookiesPopup extends Component
             return (
                 <div id="cookies_popup">
                     <div>This website uses cookies to ensure you get the best experience on our website <a href="/cookies-policy" target="_blank">More Info</a></div>
-                    <div className="accept-btn" onClick={this.onAccept.bind(this)}>Accept</div>
+                    <div className="accept-btn" onClick={this.onAccept.bind(this)}>Got It</div>
                 </div>
             );
         }

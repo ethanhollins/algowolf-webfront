@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import CookiesPopup from './CookiesPopup';
 import Footer from './Footer';
+import Footer2 from './Footer2';
 import Navigation2 from './Navigation2';
 
 class Home3 extends Component
@@ -243,7 +244,7 @@ class Home3 extends Component
 
             <div id="first-section"></div>
 
-            <Footer/>
+            <Footer2/>
 
             <CookiesPopup 
                 getCookies={this.props.getCookies}

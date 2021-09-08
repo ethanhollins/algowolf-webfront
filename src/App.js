@@ -32,6 +32,8 @@ import SendPasswordReset from './components/SendPasswordReset';
 import ResetPassword from './components/ResetPassword';
 import Home4 from './components/Home4';
 import Tos2 from './components/Tos2';
+import CheckoutPage2 from './components/CheckoutPage2';
+import Unsubscribe from './components/Unsubscribe';
 
 class App extends Component 
 {
@@ -54,6 +56,7 @@ class App extends Component
     state = {
         user_id: null,
         first_name: null,
+        email: null,
         screen_width: 0,
         is_beta_tester: false
     }
@@ -246,6 +249,17 @@ class App extends Component
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
+                            getEmail={this.getEmail}
+                            getScreenWidth={this.getScreenWidth}
+                            countPageVisit={this.countPageVisit}
+                            getHeaders={this.getHeaders}
+                        />
+                    </Route>
+                    <Route exact path="/checkout2">
+                        <CheckoutPage2
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
                             getScreenWidth={this.getScreenWidth}
                             countPageVisit={this.countPageVisit}
                         />
@@ -269,6 +283,15 @@ class App extends Component
                     </Route>
                     <Route exact path="/reset">
                         <ResetPassword
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                            getHeaders={this.getHeaders}
+                        />
+                    </Route>
+                    <Route exact path="/unsubscribe">
+                        <Unsubscribe
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
                             getFirstName={this.getFirstName}
@@ -331,6 +354,7 @@ class App extends Component
         const auth_token = this.getCookies().get('Authorization');
         let user_id = null;
         let first_name = null;
+        let email = null;
         if (auth_token !== undefined)
         {
             var requestOptions = {
@@ -350,20 +374,23 @@ class App extends Component
                 const data = await res.json();
                 user_id = data.user_id;
                 first_name = data.first_name;
+                email = data.email;
             }
             else
             {
                 user_id = null;
                 first_name = null;
+                email = null;
             }
         }
         else
         {
             user_id = null;
             first_name = null;
+            email = null;
         }
 
-        this.setUser(user_id, first_name);
+        this.setUser(user_id, first_name, email);
         return user_id;
     }
 
@@ -585,9 +612,9 @@ class App extends Component
         return packages_in_use;
     }
     
-    setUser = (user_id, first_name) =>
+    setUser = (user_id, first_name, email) =>
     {
-        this.setState({ user_id, first_name });
+        this.setState({ user_id, first_name, email });
     }
 
     getUserId = () =>
@@ -598,6 +625,11 @@ class App extends Component
     getFirstName = () =>
     {
         return this.state.first_name;
+    }
+
+    getEmail = () =>
+    {
+        return this.state.email;
     }
 
     getIsBetaTester = () =>

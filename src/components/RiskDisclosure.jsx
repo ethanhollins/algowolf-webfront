@@ -6,6 +6,7 @@ import {
 } from '@fortawesome/pro-light-svg-icons';
 import Footer from './Footer';
 import Navigation2 from './Navigation2';
+import Footer2 from './Footer2';
 
 class RiskDisclosure extends Component
 {
@@ -57,7 +58,7 @@ class RiskDisclosure extends Component
 
             <div id="first-section" />
 
-            <Footer/>
+            <Footer2/>
 
             </React.Fragment>
 
