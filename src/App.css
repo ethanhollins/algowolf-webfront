@@ -1806,7 +1806,7 @@ section.checkout-result {
         padding-right: 18px;
     }
 
-    .nav.login-group > a {
+    .nav.login-group > .login-btn, .nav.login-group > .signup-btn {
         height: 35px;
         padding: 8px 20px;
     }
