@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSlidersH, faTimes } from '@fortawesome/pro-light-svg-icons';
-import { faBars } from '@fortawesome/pro-regular-svg-icons';
+import { faBars, faUserCog, faSignOut } from '@fortawesome/pro-regular-svg-icons';
 
 class Home2 extends Component
 {
@@ -127,8 +127,12 @@ class Home2 extends Component
             return (
                 <div className="nav right">
                     <div className="nav login-group">
-                        <div className="nav login-msg">Hi <span className="login-name">{this.props.getFirstName()}</span>.</div>
-                        <a className="nav login-btn" href="/logout">Logout</a>
+                        <div className="nav login-msg">
+                            Hi <span className="login-name">{this.props.getFirstName()}</span>.
+                        </div>
+                        <a href="/account-settings" className='nav-links btn-icon' title="User Settings"><FontAwesomeIcon  icon={faUserCog} /></a>
+                        <a href="/logout" className='nav-links btn-icon' title="Logout"><FontAwesomeIcon  icon={faSignOut} /></a>
+                        {/* <a className="nav login-btn" href="/logout">Logout</a> */}
                     </div>
                 </div>
             );

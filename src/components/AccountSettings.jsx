@@ -19,6 +19,8 @@ class AccountSettings extends Component
         this.checkPassword = this.checkPassword.bind(this);
         this.onFieldSaveChanges = this.onFieldSaveChanges.bind(this);
         this.onDeleteAccount = this.onDeleteAccount.bind(this);
+        this.getSubscriptions = this.getSubscriptions.bind(this);
+        this.onCancelSubscriptionYes = this.onCancelSubscriptionYes.bind(this);
 
         this.setFirstNameRef = elem => {
             this.firstNameElem = elem;
@@ -62,6 +64,12 @@ class AccountSettings extends Component
         this.setPasswordSuccessMsgRef = elem => {
             this.passwordSuccessMsgElem = elem;
         }
+        this.setSubscriptionSuccessMsgRef = elem => {
+            this.subscriptionSuccessMsgElem = elem;
+        }
+        this.setSubscriptionErrorMsgRef = elem => {
+            this.subscriptionErrorMsgElem = elem;
+        }
     }
 
     state = {
@@ -71,6 +79,7 @@ class AccountSettings extends Component
         is_change_notify_me: false,
         is_change_password: false,
         is_delete_account: false,
+        is_cancel_subscription: false,
         first_name: '',
         last_name: '',
         email: '',
@@ -78,14 +87,17 @@ class AccountSettings extends Component
         old_password: '',
         new_password: '',
         confirm_password: '',
-        delete_account: ''
+        delete_account: '',
+        subscriptions: [],
+        cancelled: []
     }
 
     async componentDidMount()
     {
-        let { account } = this.state;
+        let { account, subscriptions } = this.state;
         account = await this.retrieveAccountInfo();
-        this.setState({ account });
+        subscriptions = await this.getSubscriptions();
+        this.setState({ account, subscriptions });
     }
 
     render()
@@ -137,9 +149,7 @@ class AccountSettings extends Component
                         <div className="account-settings field disabled">
                             <div className="account-settings field-header">Billing</div>
                             <div className="account-settings sub-field">
-                                <div className="account-settings small-text">
-                                    No current on-going subscriptions.
-                                </div>
+                                {this.generateSubscriptionsField()}
                             </div>
                         </div>
                         <div className="account-settings field">
@@ -256,6 +266,60 @@ class AccountSettings extends Component
         if (res.status === 200)
         {
             return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    async getSubscriptions()
+    {
+        const { REACT_APP_API_URL } = process.env;
+
+        const reqOptions = {
+            method: 'GET',
+            headers: this.props.getHeaders(),
+            credentials: 'include'
+        }
+
+        const res = await fetch(
+            `${REACT_APP_API_URL}/v1/payments/subscribe`,
+            reqOptions
+        );
+            
+        if (res.status === 200)
+        {
+            return (await res.json()).subscriptions;
+        }
+        else
+        {
+            return [];
+        }
+    }
+
+    async cancelSubscription(name)
+    {
+        const { REACT_APP_API_URL } = process.env;
+
+        const reqOptions = {
+            method: 'DELETE',
+            headers: this.props.getHeaders(),
+            credentials: 'include'
+        }
+
+        const res = await fetch(
+            `${REACT_APP_API_URL}/v1/payments/subscribe/${name}`,
+            reqOptions
+        );
+            
+        if (res.status === 200)
+        {
+            return true;
+        }
+        else if (res.status === 403)
+        {
+            window.location = "/login?redirect=" + encodeURIComponent(window.location.href);
         }
         else
         {
@@ -672,6 +736,120 @@ class AccountSettings extends Component
                 </div>
             );
         }
+    }
+
+    generateSubscriptionsField = () =>
+    {
+        const { subscriptions, is_cancel_subscription, cancelled } = this.state;
+        if (subscriptions.length === 0)
+        {
+            return (
+                <div className="account-settings small-text disabled">
+                    No current on-going subscriptions.
+                </div>
+            );
+        }
+        else
+        {
+            let result = [];
+            for (let sub of subscriptions)
+            {
+                if (is_cancel_subscription === sub["name"])
+                {
+                    result.push(
+                        <div key={sub["name"]} className="account-settings billing small-text">
+                            <div>{sub["name"]}</div>
+                            <div className="account-settings cancel-confirm-btn">
+                                <span>Are you sure?</span>
+                                <span name={sub["plan"]} onClick={this.onCancelSubscriptionYes}>Yes</span>
+                                <span onClick={this.onCancelSubscriptionNo}>No</span>
+                            </div>
+                        </div>
+                    );
+                }
+                else
+                {
+                    if (cancelled.includes(sub["plan"]))
+                    {
+                        result.push(
+                            <div key={sub["name"]} className="account-settings billing small-text">
+                                <div className="account-settings small-text disabled">{sub["name"]}</div>
+                                <div className="account-settings small-text disabled">
+                                    Cancelled
+                                </div>
+                            </div>
+                        );
+                    }
+                    else
+                    {
+                        result.push(
+                            <div key={sub["name"]} className="account-settings billing small-text">
+                                <div>{sub["name"]}</div>
+                                <div 
+                                    className="account-settings cancel-btn" 
+                                    onClick={this.onCancelSubscription}
+                                    name={sub["name"]}
+                                >
+                                    Cancel Subscription
+                                </div>
+                            </div>
+                        );
+                    }
+                }
+            }
+            return (
+                <React.Fragment>
+                
+                {result}
+                <span 
+                    ref={this.setSubscriptionSuccessMsgRef}
+                    className="account-settings success-text" 
+                />
+                <span 
+                    ref={this.setSubscriptionErrorMsgRef}
+                    className="account-settings error-text" 
+                />
+                
+                </React.Fragment>
+            );
+        }
+    }
+
+    onCancelSubscription = (e) =>
+    {
+        let { is_cancel_subscription } = this.state;
+        const name = e.target.getAttribute("name");
+        is_cancel_subscription = name;
+        this.setState({ is_cancel_subscription });
+    }
+
+    async onCancelSubscriptionYes(e)
+    {
+        let { is_cancel_subscription, cancelled } = this.state;
+        const name = e.target.getAttribute("name");
+        const success = await this.cancelSubscription(name);
+
+        if (success)
+        {
+            cancelled.push(name);
+            this.subscriptionErrorMsgElem.textContent = ""
+            this.subscriptionSuccessMsgElem.textContent = "Successfully cancelled subscription."
+        }
+        else
+        {
+            this.subscriptionErrorMsgElem.textContent = "Sorry, cancellation was unsuccessful."
+            this.subscriptionSuccessMsgElem.textContent = ""
+        }
+
+        is_cancel_subscription = false;
+        this.setState({ is_cancel_subscription, cancelled });
+    }
+
+    onCancelSubscriptionNo = (e) =>
+    {
+        let { is_cancel_subscription } = this.state;
+        is_cancel_subscription = false;
+        this.setState({ is_cancel_subscription });
     }
 
     getIsChangePassword = () =>
