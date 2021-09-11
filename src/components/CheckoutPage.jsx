@@ -18,7 +18,20 @@ import {
     CardElement
 } from "@stripe/react-stripe-js";
 
-
+const products = {
+    "hgpro_standard": {
+        "level": 0,
+        "plan": "hgpro"
+    },
+    "hgpro_professional": {
+        "level": 1,
+        "plan": "hgpro"
+    },
+    "hgpro_hedgefund": {
+        "level": 2,
+        "plan": "hgpro"
+    }
+}
 
 const CheckoutForm = (props) =>
 {
@@ -114,6 +127,9 @@ const CheckoutForm = (props) =>
                 }
                 else
                 {
+                    const level = products[params.get("plan")]["level"]
+                    const plan = products[params.get("plan")]["plan"]
+
                     var requestOptions = {
                         method: 'POST',
                         headers: props.headers,
@@ -126,11 +142,12 @@ const CheckoutForm = (props) =>
                                 country: billingDetails.country,
                                 postal_code: billingDetails.postal_code
                             },
-                            payment_method: result.paymentMethod.id
+                            payment_method: result.paymentMethod.id,
+                            level: level
                         })
                     };
                     
-                    const res = await fetch(`${REACT_APP_API_URL}/v1/payments/subscribe/${params.get("plan")}`, requestOptions);
+                    const res = await fetch(`${REACT_APP_API_URL}/v1/payments/subscribe/${plan}`, requestOptions);
                     if (res.status === 200)
                     {
                         const { client_secret, status } = await res.json()

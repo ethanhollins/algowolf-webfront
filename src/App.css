@@ -1156,6 +1156,17 @@
     padding: 12px 13px;
 }
 
+#feature_two_lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 83px;
+}
+
+#feature_two_lines strong {
+    margin-left: 4px;
+}
+
 .getting-started.body h1 {
     margin-bottom: 30px;
 }
@@ -1422,6 +1433,10 @@ section.checkout-result {
     background-color: #f7a50e;
 }
 
+#pricing-purple .pricing.purchase-group:hover {
+    background-color: #8e44ad;
+}
+
 #features-separator {
     margin-top: 60px;
 }
@@ -1658,6 +1673,14 @@ section.checkout-result {
     font-weight: 600;
 }
 
+@media screen and (max-width : 1320px)
+{
+    .pricing.body {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 @media screen and (max-width : 1200px)
 {
     .pricing-page.parent {
@@ -1671,6 +1694,11 @@ section.checkout-result {
         margin-right: 0;
         margin-bottom: 50px;
     }
+
+    #feature_two_lines {
+        height: inherit !important;
+    }
+    
 }
 
 @media screen and (max-width : 992px)

@@ -295,14 +295,47 @@ class ContactUs extends Component
                         <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
                             <h2 className="mtn">Pricing *</h2>
                             <div className="pricing parent pricing-page">
-                                <div className="col-md-4 col-xs-12">
+                                <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div className="pricing body pricing-page">
-                                        <div className="pricing header-notice">Initial Release Limited to 25 Places</div>
                                         <div className="pricing header-group">
+                                            <div className="pricing title-group">
+                                                <div className="pricing title">Kick Starter</div>
+                                            </div>
+                                            <div className="pricing header-circle">
+                                                <div className="pricing price-group">
+                                                    <div className="pricing price">55</div>
+                                                    <div className="pricing price-currency">USD</div>
+                                                </div>
+                                                <div className="pricing price-period">
+                                                    per month
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="pricing features-group">
+                                            <div>Live Trade the HG Pro Algorithm</div>
+                                            <div>Automatic Order Execution</div>
+                                            <div>Personalize to Your Risk Management</div>
+                                            <div><strong>Up to 5K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
+                                            <div><strong>Risk up to 1%</strong> of Tradable Bank</div>
+                                            <div id="feature_two_lines">Up to <strong>1 Trading Account</strong></div>
+                                            <div>No Lock-in Contracts</div>
+                                            <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
+                                        </div>
+                                        <div className="pricing purchase-group">
+                                            <div className="pricing purchase-btn">
+                                                Available Soon
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-3 col-xs-12 col-xs-offset-0">
+                                    <div id="pricing-orange" className="pricing body pricing-page">
+                                        {/* <div className="pricing header-notice">Initial Release Limited to 25 Places</div> */}
+                                        <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Standard</div>
                                             </div>
-                                            <div className="pricing header-circle">
+                                            <div className="pricing header-circle" style={{ backgroundColor: "#f7a50e" }}>
                                                 <div className="pricing price-group">
                                                     <div className="pricing price">295</div>
                                                     <div className="pricing price-currency">USD</div>
@@ -316,9 +349,9 @@ class ContactUs extends Component
                                             <div>Live Trade the HG Pro Algorithm</div>
                                             <div>Automatic Order Execution</div>
                                             <div>Personalize to Your Risk Management</div>
-                                            <div><strong>Up to 50K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
+                                            <div><strong>Up to 25K Tradable Bank</strong><br/>See how this is calculated: <a href="/hgpro/faq" target="_blank">FAQ</a></div>
                                             <div><strong>Risk up to 1%</strong> of Tradable Bank</div>
-                                            <div>Up to <strong>1 Trading Account</strong></div>
+                                            <div>Up to <strong>2 Simultaneous Trading Accounts</strong></div>
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
@@ -329,13 +362,13 @@ class ContactUs extends Component
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-4 col-xs-12 col-xs-offset-0">
-                                    <div id="pricing-orange" className="pricing body pricing-page">
-                                        <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
+                                <div className="col-lg-3 col-xs-12 col-xs-offset-0">
+                                    <div id="pricing-purple" className="pricing body pricing-page">
+                                        <div className="pricing header-group" style={{ backgroundColor: "#8e44ad" }}>
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Professional</div>
                                             </div>
-                                            <div className="pricing header-circle" style={{ backgroundColor: "#f7a50e" }}>
+                                            <div className="pricing header-circle" style={{ backgroundColor: "#8e44ad" }}>
                                                 <div className="pricing price-group">
                                                     <div className="pricing price">495</div>
                                                     <div className="pricing price-currency">USD</div>
@@ -362,7 +395,7 @@ class ContactUs extends Component
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-4 col-xs-12 col-xs-offset-0">
+                                <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div id="pricing-black" className="pricing body pricing-page">
                                         <div className="pricing header-group" style={{ backgroundColor: "#2d3436" }}>
                                             <div className="pricing title-group">
