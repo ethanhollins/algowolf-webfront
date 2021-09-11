@@ -1008,6 +1008,11 @@
     border: 5px solid #fff;
     background-color: #0984e3;
     border-radius: 100%;
+    line-height: 0.8em;
+}
+
+.pricing.header-circle.discount {
+    padding-bottom: 20px;
 }
 
 .pricing.header-notice {
@@ -1046,10 +1051,15 @@
 }
 
 .pricing.price-group {
+    position: relative;
     display: flex;
     align-items: baseline;
     justify-content: center;
     /* margin-top: 20px; */
+}
+
+.pricing.price-group.small {
+    font-size: 0.75em;
 }
 
 .pricing.price {
@@ -1435,6 +1445,15 @@ section.checkout-result {
 
 #pricing-purple .pricing.purchase-group:hover {
     background-color: #8e44ad;
+}
+
+#price-strikethrough {
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    top: 14px;
+    background-color: #e74c3c;
+    transform: rotate(15deg);
 }
 
 #features-separator {
