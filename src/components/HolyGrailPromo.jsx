@@ -293,7 +293,7 @@ class ContactUs extends Component
                 <div className="home container">
                     <div className="row">
                         <div className="col-md-12 col-md-offset-0 col-xs-12 col-sm-offset-0">
-                            <h2 className="mtn">Pricing *</h2>
+                            <h2 className="mtn">Pricing</h2>
                             <div className="pricing parent pricing-page">
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div className="pricing body pricing-page">
@@ -426,7 +426,7 @@ class ContactUs extends Component
                                 </div>
                             </div>
                         </div>
-                        <span id="pricing_footnote"><strong id="gpr_info_asterisks">* </strong><strong>Not recommended for trading banks less than US$15,000.</strong></span>
+                        {/* <span id="pricing_footnote"><strong id="gpr_info_asterisks">* </strong><strong>Not recommended for trading banks less than US$15,000.</strong></span> */}
                     </div>
                 </div>
             </section>
