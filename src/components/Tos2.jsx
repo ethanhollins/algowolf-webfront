@@ -37,7 +37,7 @@ class Tos extends Component
                         <p>You are not permitted to use AlgoWolf’s website or services unless you accept all of the terms and conditions stated on this page.</p>
                         <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. </p>
                         <p>These Terms of Use apply to all visitors, users, and others who access or use the Service.</p>
-                        <p>These terms and conditions (“Terms of Service”) describe the terms and conditions that AlgoWolf (“Author”, “we”, “us”or “our”) uses on its Website (“Site”, “Marketplace” “our product“, “the product“, “our service“, or “the service“) and the choices You (“Client”, “Customer”, “User”) have.</p>
+                        <p>These terms and conditions (“Terms of Service”) describe the terms and conditions that AlgoWolf (“Author”, “we”, “us”or “our”) uses on its Website (“Site”, “Marketplace” “our product“, “the product“, “the platform“, “our service“, or “the service“) and the choices You (“Client”, “Customer”, “User”) have.</p>
                         <p>In our Terms of Use, the terminology “AlgoWolf“, “our product“, “the product“, “our service“, and “the service“ indicates any and all the products and services offered by AlgoWolf, including the website, algorithmic script, trading platform, any training course, training materials, videos published by us, and all content as well as software associated with our company.</p>
                         <p><strong>Your Account:</strong></p>
                         <ul>
@@ -67,7 +67,7 @@ class Tos extends Component
                         <p><strong>Payment:</strong></p>
                         <p>When you purchase any subscription to our products you can pay using one of the major credit or debit cards for secure & fast payment. We use the services of secure payment providers to bill for our products online. These companies will have access to your personal and payment information. </p>
                         <p>When paying by card, we do not ever have any access to your card details.</p>
-                        <p>The third party payment gateway company we use is <a target="_blank" href="https://www.nab.com.au/">NAB Transact</a>. We share information with these companies only to the extent necessary for the purposes of processing payments you make via our marketplace.</p>
+                        <p>The third party payment gateway company we use is <a target="_blank" href="https://stripe.com/">Stripe</a>. We share information with these companies only to the extent necessary for the purposes of processing payments you make via our marketplace.</p>
                         <p>Upon confirmation of your payment, you will be granted immediate access to your subscription privileges.</p>
                         <p><strong>Failed Payments:</strong></p>
                         <p>Failed payments will automatically revoke access to your subscription privileges. </p>
@@ -76,13 +76,13 @@ class Tos extends Component
                         <p>You can update your payment method or card details in the Billing section in your account settings to prevent the automatic cancellation.</p>
                         <p><strong>Chargebacks:</strong></p>
                         <p>You hereby agree to not process any chargebacks on your purchase from AlgoWolf, rather speak to the AlgoWolf support team at <a href="mailto:support@algowolf.com">support@algowolf.com</a> to resolve any issue.</p>
-                        <p>In no event shall AlgoWolf be accountable for any financial losses or costs from the use of any of our software or any algorithm you build. Any chargeback initiated by the customer will be investigated to the fullest extent, and that customer will no longer be able to purchase any items from our company. </p>
+                        <p>In no event shall AlgoWolf be accountable for any financial losses or costs from the use of any of our software or any algorithm you build or we supply. Any chargeback initiated by the customer will be investigated to the fullest extent, and that customer will no longer be able to purchase any items from our company. </p>
                         <p>Any additional purchases will be refunded immediately. Do not attempt to make any fraudulent purchases. If we receive any fraudulent chargebacks, we will immediately deactivate your account and prosecute to the fullest extent of the law.</p>
                         <p><strong>Refund Policy & Terms:</strong></p>
-                        <p>We offer a 14-day refund option on any of our software products.</p>
+                        <p>We offer a 14-day refund option on any of our software or algorithmic products that state on the product page the words <strong>14-Day Refund Option</strong>.</p>
                         <p><strong>After the 14-day period, the customer will no longer be eligible to receive a refund except where it is defective or required by law.</strong></p>
                         <p>This means if you purchase a product or subscription plan and you are unhappy with it, as long as it is within 14-days of the initial purchase date we will issue a refund minus any refund fees.</p>
-                        <p>On the same day that we action your refund the product will be deactivated and you will no longer be able to use it.</p>
+                        <p>On the same day that we action your refund the product will be deactivated and you will no longer be able to use the platform.</p>
                         <ul>
                             <li>If you wish to request a refund send an email requesting a refund within the prescribed 14-day period to:  <a href="mailto:support@algowolf.com">support@algowolf.com</a></li>
                         </ul>
@@ -99,10 +99,10 @@ class Tos extends Component
                         <ul>
                             <li>You have changed your mind about your using our product and service;</li>
                             <li>You purchased our subscription plan by mistake;</li>
-                            <li>You do not have sufficient expertise to use our platform;</li>
+                            <li>You do not have sufficient expertise to use our platform or algorithmic products;</li>
                             <li>You forgot to cancel your subscription before the trial period ended;</li>
                             <li><strong>You forgot to cancel your subscription before your next billing cycle;</strong></li>
-                            <li>You did not make use of our platform in time before your trial or current subscription cycle finishes; or</li>
+                            <li>You did not make use of our platform or activate your algorithm in time before your trial or current subscription cycle finishes; or</li>
                             <li>You experience dissatisfaction with our platform after purchase.</li>
                         </ul>
                         <p><strong>Refund Fees</strong></p>
@@ -131,25 +131,29 @@ class Tos extends Component
                         <p><strong>Warranty Disclaimer</strong></p>
                         <p>This site and the content, products, and services on this site, software, and all Author Content are provided on an “as-is” and “as available” basis, with no warranties of any kind, whether express or implied. To the fullest extent permissible pursuant to applicable law, the author disclaims all warranties, express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, and non-infringement. The author does not represent or warrant that the functions contained in the site will be uninterrupted or error-free, that the defects will be corrected, or that this site or the server that makes the site available are free of viruses or other harmful components.</p>
                         <p>The author does not make any warranties or representations regarding the use of the materials in this site in terms of their correctness, accuracy, adequacy, usefulness, timeliness, reliability or otherwise. Some states do not permit limitations or exclusions on warranties, so the above limitations may not apply to you. In such states, our liability and that of our third-party content providers will be limited to the greatest extent permitted by law.</p>
-                        <p><strong>Platform Risks</strong></p>
+                        <p><strong>Platform & Operational Risks</strong></p>
                         <p>In connection with the use of computer equipment and data, the client bears the following risks amongst other risks, in which cases you agree we bear no liability for any resulting loss from:</p>
                         <ul>
                             <li>Power cut of the equipment on the side of the client or the provider, or communication operator (including voice communication) that serves the client</li>
                             <li>Physical damage (or destruction) of the communication channels used to link the client and provider (communication operator)</li>
                             <li>Outage (unacceptably low quality) of communication via the channels used by the client, or the company of the channels used by the provider, or communication operator (including voice communication) that are used by the client or the company</li>
-                            <li>Wrong or inconsistent with requirements settings of the client terminal</li>
                             <li>Untimely update of the client terminal</li>
                             <li>The use of communication channels, hardware, and software, generate the risk of no reception of a message (including text messages) by the client from the company</li>
                             <li>Malfunction or non-operability of the platform, which also includes the client terminal</li>
-                            <li>Failure of client’s devices, software and poor quality of connection</li>
+                            <li>The client is warned that when trading in an electronic platform they assume the risk of financial loss which may be a consequence amongst other things</li>
+                            <li>Failure of client’s equipment, software and poor quality of connection</li>
                             <li>AlgoWolf’s or client’s hardware or software failure, malfunction or misuse</li>
-                            <li>Improper work of client’s equipment</li>
                             <li>Wrong settings of client’s terminal</li>
                             <li>Delayed updates to the client’s terminal</li>
                         </ul>
                         <p><strong>Further Client’s Warranties and Representations:</strong></p>
                         <p>The Client warrants and represents that You:</p>
                         <ul>
+                            <li>Will not use any broker account connected to our platform for any other trading purpose (to help prevent operational errors)</li>
+                            <li>Acknowledge and understand the impact the bid/ask spread of your broker can have on prematurely or incorrectly entering and exiting positions</li>
+                            <li>At all times will carry out any use of algorithms on our platform in a well thought-out basis and not as gambling or a wager.</li>
+                            <li>Have adequate and sufficient knowledge and understanding of the instruments and transactions to be carried on and is familiar with the regulations of the relevant markets, transactions and products;</li>
+                            <li>Have thoroughly tested any Algorithm, API, trading strategy, tool, function, programming code, specific order setting or combination thereof as well as any third party software or software and found such to be satisfactory before use of any such on a live account.</li>
                             <li>Are in compliance with all laws to which You are subject, including, without limitation, all tax laws and regulations, registration requirements and have obtained all necessary consents, licenses, etc. from competent authorities to enter into and perform all your obligations under the Conditions or any provisions thereof;</li>
                             <li>Are not under any legal disability and are not subject to any law or regulation which would prevent You to enter into and perform all your obligations under the Conditions or any provisions thereof.</li>
                             <li>Are responsible for setting your own password in accordance with the instructions that we provide to you (which together with your email address are known as your “Account Sign In Details”) as well as keeping all information in your Account confidential. </li>
@@ -176,7 +180,7 @@ class Tos extends Component
                         <p><strong>AlgoWolf reserves the right to change its Terms & Conditions:</strong></p>
                         <p>We reserve the right, at our sole discretion, to modify or replace these Terms & Conditions at any time. From time to time you should check our Website to ensure any changes made are suitable for you. If required by applicable law, you will be informed of any significant changes made to the terms of service.</p>
                         <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you must stop using the Service.</p>
-                        <p>The current version of these terms of service was modified on <strong>12th August 2021.</strong></p>
+                        <p>The current version of these terms of service was modified on <strong>13th September 2021.</strong></p>
                         <p><strong>Contact:</strong></p>
                         <p>If you have any questions about these Terms, please contact us send in an email with your query at <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p>AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131</p>

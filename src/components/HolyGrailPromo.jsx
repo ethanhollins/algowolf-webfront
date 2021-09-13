@@ -271,7 +271,7 @@ class ContactUs extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">What's so good about HG Pro?</h2>
                             <ul>
-                                <li>Only <strong>takes high probability setups</strong>, which significantly reduces the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish).</li>
+                                <li>Only <strong>takes high probability setups</strong>, which significantly reduces the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish or not worth the risk).</li>
                                 <li><strong>Trades considerably longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
                                 <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
                                 <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>
@@ -284,6 +284,7 @@ class ContactUs extends Component
                             <h2 className="mtn">Why AlgoWolf?</h2>
                             <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you. No more sitting in front of a screen for hours on end every day and no more costly human error due to frustration, fatigue and inexperience. AlgoWolf is your ultimate trader!</p>
                             <p>With just a few clicks; add your broker, set your trade risk, turn on the script and away you go. It switches itself on and off for the session and automatically commences the next day at the set time without you having to lift a finger.</p>
+                            <p>AlgoWolf has years of experience developing institutional grade trading software that employ a wealth of robust safety mechanisms to help ensure your trades are executed exactly as intended.</p>
                         </div>
                     </div>
                 </div>
@@ -302,12 +303,9 @@ class ContactUs extends Component
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Kick Starter</div>
                                             </div>
-                                            <div className="pricing header-circle discount">
-                                                <div className="pricing price-group small">
-                                                    <div className="pricing price">85</div>
-                                                    <div className="pricing price-currency">USD</div>
-                                                    <div id="price-strikethrough"/>
-                                                </div>
+                                            
+                                            <div className="pricing header-circle discount-two">
+                                                
                                                 <div className="pricing price-group">
                                                     <div className="pricing price">55</div>
                                                     <div className="pricing price-currency">USD</div>
@@ -315,7 +313,40 @@ class ContactUs extends Component
                                                 <div className="pricing price-period">
                                                     per month
                                                 </div>
+
+                                                {/* <div className="pricing price-group discount-slash-two">
+                                                    <div className="pricing price">85</div>
+                                                    <div className="pricing price-currency">USD</div>
+                                                    <div id="price-strikethrough"/>
+                                                </div> */}
+                                                
+                                                <div className="pricing price-group discount">
+                                                    <div id="price-discount-two"/>
+                                                    <div className="pricing price two">was $85</div>
+                                                </div>
                                             </div>
+
+                                            {/* <div className="pricing header-circle discount">
+                                                
+                                                <div className="pricing price-group discount-slash">
+                                                    <div className="pricing price">85</div>
+                                                    <div className="pricing price-currency">USD</div>
+                                                    <div id="price-strikethrough"/>
+                                                </div>
+
+                                                <div className="pricing price-group">
+                                                    <div className="pricing price">55</div>
+                                                    <div className="pricing price-currency">USD</div>
+                                                </div>
+                                                <div className="pricing price-period">
+                                                    per month
+                                                </div>
+                                                
+                                                <div className="pricing price-group discount">
+                                                    <div id="price-discount"/>
+                                                    <div className="pricing price">Save 35%</div>
+                                                </div>
+                                            </div> */}
                                         </div>
                                         <div className="pricing features-group">
                                             <div>Live Trade the HG Pro Algorithm</div>

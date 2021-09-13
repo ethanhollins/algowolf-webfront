@@ -77,7 +77,11 @@ class Unsubscribe extends Component
                 <div className='checkout-result body'>
                     <FontAwesomeIcon className='checkout-result success-icon' icon={faCheckCircle} />
                     <span className='checkout-result header'>Success!</span>
-                    <span className='checkout-result sub-header'>Your email has been successfully unsubscribed.<br/><a href="#">Click here</a> to go to your dashboard.</span>
+                    <span className='checkout-result sub-header'>
+                        Your email has been successfully unsubscribed.<br/>
+                        Go to your <a href="/account-settings">Account Settings</a> to resubscribe to email notifications.<br/>
+                        Note: This does not unsubscribe you from operational emails in relation to products you have purchased.
+                    </span>
                 </div>
             );
         }

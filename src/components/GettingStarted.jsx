@@ -91,11 +91,11 @@ class GettingStarted extends Component
                                 </ol>
                                 <h6>Broker Notes:</h6>
                                 <ul>
-                                    <li>For the HG Pro plan we suggest you find a broker who provides a raw or minimal spread account to help prevent entry and stop orders being executed prematurely. (See <a href="/hgpro/faq" target="_blank">FAQ</a>)</li>
+                                    <li>It is vital you understand the impact the bid/ask spread of your broker can have on prematurely or incorrectly entering and exiting stop orders/positions. For the HG Pro plan we strongly suggest you find a broker who provides a raw or minimal spread account. (See <a href="/hgpro/faq" target="_blank">FAQ</a>)</li>
                                     <li>Low commission fees are important too. (Use the <a href="/hgpro#calculator" target="_blank">Returns Calculator</a> to see how much they affect your net return). In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.</li>
                                     <li>Other Broker accounts will be added from time to time once the process of testing their Application Programming Interface (API) has been completed. Not all brokers have this capability or have suitable interfaces compatible with the demands of our platform.</li>
                                     <li>MetaTrader accounts are not compatible with our platform although the broker itself may provide an account that is. For example, if your broker is IC Markets you would need to use their cTrader account not the MetaTrader version.</li>
-                                    <li><strong>DO NOT use this account for any other trading purpose while the script is switched on as it may cause errors and the strategy to be switched off. Keep it exclusively for the HG Pro strategy.</strong></li>
+                                    <li><strong>DO NOT use this account for any other trading purpose while the script is switched on as it may cause errors and the strategy to be switched off. Keep it exclusively for the HG Pro strategy. (NOTE: This is a requirement of your <a target="_blank" href="/tos">T&Cs</a>)</strong></li>
                                 </ul>
                             </div>
                         </div>
