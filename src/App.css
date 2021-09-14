@@ -372,7 +372,7 @@
 }
 
 .dropdown-anim {
-    height: 261px !important;
+    height: 210px !important;
     transition: height 0.3s ease;
 }
 
@@ -1079,9 +1079,13 @@
 .pricing.price-group.discount > .price.two {
     position: absolute;
     width: 100px;
-    font-size: 2.0em;
-    bottom: 38px;
+    font-size: 2.4em;
+    bottom: 35px;
     top: inherit;
+}
+
+.pricing.price-group.discount > .price.two > .price-currency {
+    font-size: 0.6em;
 }
 
 .pricing.price-group.discount-slash {
@@ -1486,6 +1490,15 @@ section.checkout-result {
     top: 14px;
     background-color: #e74c3c;
     transform: rotate(15deg);
+}
+
+#price-strikethrough-two {
+    position: absolute;
+    width: 72px;
+    height: 2px;
+    bottom: 48px;
+    background-color: #FFF;
+    transform: rotate(10deg);
 }
 
 #price-discount {

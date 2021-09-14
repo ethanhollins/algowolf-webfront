@@ -73,7 +73,7 @@ class Home2 extends Component
                             Dashboard
                         </a>
                         <a className="nav-links link-btn" href="/">Home</a>
-                        <a className="nav-links link-btn" href="/pricing">Pricing</a>
+                        {/* <a className="nav-links link-btn" href="/pricing">Pricing</a> */}
                         <a className="nav-links link-btn" href="/contact-us">Contact Us</a>
                         <a className="nav-links link-btn" href="/legal">Legal</a>
                     </div>
@@ -110,7 +110,7 @@ class Home2 extends Component
                     <a className="nav-links link-btn" href="/">Home</a>
                     {/* <a className="nav-links link-btn" href="/strategies">Strategies</a> */}
                     {/* <a className="nav-links link-btn" href="/faq">FAQ</a> */}
-                        <a className="nav-links link-btn" href="/pricing">Pricing</a>
+                        {/* <a className="nav-links link-btn" href="/pricing">Pricing</a> */}
                     <a className="nav-links link-btn" href="/contact-us">Contact Us</a>
                     <a className="nav-links link-btn" href="/legal">Legal</a>
                 </div>

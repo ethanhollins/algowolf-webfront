@@ -232,9 +232,9 @@ class Home3 extends Component
                         <div className="row">
                         <div className="home s4-parent section-centered">
                             <div className="home s1-header">
-                                See Our Pricing
+                                Enquire about the AlgoWolf Platform
                             </div>
-                            <a className="home s4-b1 feat-btn" href="/pricing">Pricing</a>
+                            <a className="home s4-b1 feat-btn" href="mailto:admin@algowolf.com">Email Us</a>
                         </div>
                         </div>
                     </div>

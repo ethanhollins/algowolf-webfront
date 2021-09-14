@@ -531,7 +531,8 @@ class CheckoutPage extends Component
 }
 
 // pk_test_6pRNASCoBOKtIshFeQd4XMUh
-const stripePromise = loadStripe("pk_test_51JQTAqBtSFeX56k3QKOu4p0kbg8F5AxGFp5SoVi9i2aMVmKKSrA9t4nb5QLtUZXRmb13pAvi1RfSF79XKQlF7CGt009HRxaGGm");
+// const stripePromise = loadStripe("pk_test_51JQTAqBtSFeX56k3QKOu4p0kbg8F5AxGFp5SoVi9i2aMVmKKSrA9t4nb5QLtUZXRmb13pAvi1RfSF79XKQlF7CGt009HRxaGGm");
+const stripePromise = loadStripe("pk_live_51JQTAqBtSFeX56k360CWCZwCt8avkaotoaDXFrFaSw6235l7cbBj4Hb9rBqR2keBRiZs5wj4j6dNrdxVCk1oZ0RF00A1jaTWVZ");
 
 const ELEMENTS_OPTIONS = {
     fonts: [

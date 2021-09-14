@@ -322,7 +322,8 @@ class ContactUs extends Component
                                                 
                                                 <div className="pricing price-group discount">
                                                     <div id="price-discount-two"/>
-                                                    <div className="pricing price two">was $85</div>
+                                                    <div className="pricing price two">85 <span className="price-currency">USD</span></div>
+                                                    <div id="price-strikethrough-two"/>
                                                 </div>
                                             </div>
 

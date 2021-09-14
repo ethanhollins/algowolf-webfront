@@ -192,7 +192,7 @@ class App extends Component
                             getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
-                    <Route exact path="/pricing">
+                    {/* <Route exact path="/pricing">
                         <Pricing 
                             checkAuthorization={this.checkAuthorization}
                             getUserId={this.getUserId}
@@ -206,7 +206,7 @@ class App extends Component
                             countPageVisit={this.countPageVisit}
                             getCookies={this.getCookies}
                         />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/hgpro">
                         <HolyGrailPromo
                             checkAuthorization={this.checkAuthorization}
