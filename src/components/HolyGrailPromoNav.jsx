@@ -8,7 +8,7 @@ import { faCheckCircle, faTimesCircle } from '@fortawesome/pro-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
 import Footer2 from './Footer2';
 
-class ContactUs extends Component
+class HolyGrailPromoNav extends Component
 {
     constructor(props)
     {
@@ -214,12 +214,12 @@ class ContactUs extends Component
         else
         {
             dashboard_btn = (
-                <div>
+                <a href="#pricing">
 
-                <FontAwesomeIcon className='promo header-icon' icon={faTimesCircle} />
-                Currently Unavailable
+                    <FontAwesomeIcon className='promo header-icon' icon={faPlusCircle} />
+                    Add to Dashboard
                 
-                </div>
+                </a>
             );
         }
 
@@ -228,4 +228,4 @@ class ContactUs extends Component
 
 }
 
-export default withRouter(ContactUs);
+export default withRouter(HolyGrailPromoNav);

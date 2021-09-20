@@ -10,7 +10,7 @@ import Footer2 from './Footer2';
 import HolyGrailPromoNav from './HolyGrailPromoNav';
 import CookiesPopup from './CookiesPopup';
 
-class ContactUs extends Component
+class HolyGrailPromo extends Component
 {
     constructor(props)
     {
@@ -359,11 +359,11 @@ class ContactUs extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <div className="pricing purchase-group">
+                                        <a href={"/checkout?plan=hgpro_kickstarter&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Available Soon
+                                                Subscribe Now
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
@@ -393,11 +393,11 @@ class ContactUs extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <div className="pricing purchase-group">
+                                        <a href={"/checkout?plan=hgpro_standard&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Available Soon
+                                                Subscribe Now
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
@@ -426,11 +426,11 @@ class ContactUs extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <div className="pricing purchase-group">
+                                        <a href="mailto:support@algowolf.com" className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Available Soon
+                                                Enquire Now
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
@@ -441,7 +441,7 @@ class ContactUs extends Component
                                             </div>
                                             <div className="pricing header-circle" style={{ backgroundColor: "#2d3436" }}>
                                                 <div className="pricing price-group">
-                                                    <div className="pricing price-small">Contact Us</div>
+                                                    <div className="pricing price-small">Custom</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -455,11 +455,11 @@ class ContactUs extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <div className="pricing purchase-group">
+                                        <a href="mailto:support@algowolf.com" className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Available Soon
+                                                Enquire Now
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -933,12 +933,12 @@ class ContactUs extends Component
         else
         {
             dashboard_btn = (
-                <div>
+                <a href="#pricing">
 
                 <FontAwesomeIcon className='promo header-icon' icon={faTimesCircle} />
-                Currently Unavailable
+                Add to Dashboard
                 
-                </div>
+                </a>
             );
         }
 
@@ -963,4 +963,4 @@ class ContactUs extends Component
 
 }
 
-export default withRouter(ContactUs);
+export default withRouter(HolyGrailPromo);
