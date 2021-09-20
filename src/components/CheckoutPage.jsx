@@ -19,16 +19,20 @@ import {
 } from "@stripe/react-stripe-js";
 
 const products = {
-    "hgpro_standard": {
+    "hgpro_kickstarter": {
         "level": 0,
         "plan": "hgpro"
     },
-    "hgpro_professional": {
+    "hgpro_standard": {
         "level": 1,
         "plan": "hgpro"
     },
-    "hgpro_hedgefund": {
+    "hgpro_professional": {
         "level": 2,
+        "plan": "hgpro"
+    },
+    "hgpro_hedgefund": {
+        "level": 3,
         "plan": "hgpro"
     }
 }
@@ -491,42 +495,50 @@ class CheckoutPage extends Component
         const params = new URLSearchParams(queryString);
 
         const plan = params.get("plan");
-        if (plan === "pro")
+        // if (plan === "pro")
+        // {
+        //     return "Pro";
+        // }
+        // else if (plan === "standard")
+        // {
+        //     return "Standard";
+        // }
+        if (plan === "hgpro_kickstarter")
         {
-            return "Pro";
-        }
-        else if (plan === "standard")
-        {
-            return "Standard";
+            return "Kick Starter";
         }
         else if (plan === "hgpro_standard")
         {
             return "Standard";
         }
-        else if (plan === "hgpro_professional")
-        {
-            return "Professional";
-        }
+        // else if (plan === "hgpro_professional")
+        // {
+        //     return "Professional";
+        // }
 
-        window.location.href = "/pricing";
+        window.location.href = "/";
     }
 
     getAmount = () =>
     {
         const plan = this.getPlan();
 
-        if (plan === "Pro")
+        // if (plan === "Pro")
+        // {
+        //     return "495.00";
+        // }
+        if (plan === "Kick Starter")
         {
-            return "495.00";
+            return "55.00";
         }
         else if (plan === "Standard")
         {
-            return "295.00";
+            return "255.00";
         }
-        else if (plan === "Professional")
-        {
-            return "495.00";
-        }
+        // else if (plan === "Professional")
+        // {
+        //     return "495.00";
+        // }
     }
 }
 
