@@ -184,6 +184,7 @@ class Tos extends Component
                         <p><strong>Contact:</strong></p>
                         <p>If you have any questions about these Terms, please contact us send in an email with your query at <a href="mailto:support@algowolf.com">support@algowolf.com</a></p>
                         <p>AlgoWolf is a trading name of Tymraft Pty Ltd, ACN: 006 268 131</p>
+                        <p>HG Pro is a trademark of Tymraft Pty Ltd</p>
                         <p>All contents © 2021 AlgoWolf. All rights reserved.</p>
                         <p><strong>The following documents form part of the Terms & Conditions and must be read & accepted in conjunction with the above:</strong></p>
                         <p><a href="/risk-disclosure"><strong>RISK DISCLOSURE STATEMENT AND PERFORMANCE DISCLAIMER AGREEMENT</strong></a></p>

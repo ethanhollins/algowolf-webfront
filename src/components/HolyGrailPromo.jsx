@@ -136,7 +136,7 @@ class ContactUs extends Component
                             <div className="promo graph-sub-header">Broker Commission Fees over 18 Months (More is worse)</div>
                         </div>
                         <div id="calculator" className="col col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
-                            <p><br/><a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">See HG Pro Baseline Results</a></p>
+                            <p style={{fontSize: "1.2em"}}><br/><a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">See HG Pro Baseline Results</a></p>
                             <h3>Returns Calculator</h3>
                             <p>
                                 Find out how much this strategy could have made you. Based on a 1% risk per trade of the total Trading Bank using a Raw Spread account.<br/><strong>*Results shown are not indicative of real life future monetary gains.</strong> Please read our <a href="/risk-disclosure" target="_blank">Risk Disclosure and Disclaimer agreement</a> for more information.
@@ -284,7 +284,7 @@ class ContactUs extends Component
                             <h2 className="mtn">Why AlgoWolf?</h2>
                             <p>AlgoWolf’s state-of-the art algorithms & fully automated order placement do all the work for you. No more sitting in front of a screen for hours on end every day and no more costly human error due to frustration, fatigue and inexperience. AlgoWolf is your ultimate trader!</p>
                             <p>With just a few clicks; add your broker, set your trade risk, turn on the script and away you go. It switches itself on and off for the session and automatically commences the next day at the set time without you having to lift a finger.</p>
-                            <p>AlgoWolf has years of experience developing institutional grade trading software that employ a wealth of robust safety mechanisms to help ensure your trades are executed exactly as intended.</p>
+                            <p>AlgoWolf has years of experience developing institutional grade trading software that employ a wealth of robust safety mechanisms to help ensure your trades are executed exactly as intended. Nothing to download or install. Our dedicated high speed servers deliver seemless performance, to meet the most demanding institutional needs.</p>
                         </div>
                     </div>
                 </div>

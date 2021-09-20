@@ -271,12 +271,12 @@ class FAQ extends Component
 
                                     <div className="panel panel-default">
                                         <div className="panel-heading" role="tab" id="heading7-12">
-                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse7-12" aria-expanded="false" aria-controls="collapse7-12">What is the minimum account size I can use? (Why isn't HG Pro suitable for accounts less than US$15K?) <span className="icon fa fa-plus trans"></span></a></h6>
+                                            <h6 className="panel-title"><a className="trans collapsed" role="button" data-toggle="collapse" data-parent="#accordion-12" href="#collapse7-12" aria-expanded="false" aria-controls="collapse7-12">What is the minimum account size I can use? <span className="icon fa fa-plus trans"></span></a></h6>
                                         </div>
                                         <div id="collapse7-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
                                                 <p>The minimum account size is whatever the smallest lot size your broker allows you to trade.</p>
-                                                <p>However, we suggest HG Pro may not be suitable for retail traders with a trading bank of less than US$15K as subscription costs are more likely to outweigh any profits.</p>
+                                                <p>However, we suggest HG Pro may not be suitable for some retail traders with a small trading bank as subscription costs may outweigh any profits.</p>
                                             </div>
                                         </div>
                                     </div>
