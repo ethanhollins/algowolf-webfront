@@ -34,6 +34,7 @@ import Home4 from './components/Home4';
 import Tos2 from './components/Tos2';
 import CheckoutPage2 from './components/CheckoutPage2';
 import Unsubscribe from './components/Unsubscribe';
+import WelcomeDemoPage from './components/WelcomeDemoPage';
 
 class App extends Component 
 {
@@ -192,6 +193,31 @@ class App extends Component
                             getScreenWidth={this.getScreenWidth}
                         />
                     </Route>
+
+                    {/* <Route exact path="/old">
+                        <WelcomeDemoPage 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/old2">
+                        <WelcomeDemoPageTwo 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/old3">
+                        <AutomatedTradingPage 
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route> */}
                     {/* <Route exact path="/pricing">
                         <Pricing 
                             checkAuthorization={this.checkAuthorization}

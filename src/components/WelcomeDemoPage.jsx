@@ -6,7 +6,6 @@ import {
     faArrowAltCircleRight, faArrowCircleUp, faArrowCircleDown, faTimesCircle, faQuestionCircle, faEnvelope,
     faInfoCircle
 } from '@fortawesome/pro-regular-svg-icons';
-import WelcomeDemo from './strategyapp/popups/WelcomeDemo';
 
 class WelcomeDemoPage extends Component
 {

@@ -101,6 +101,7 @@ class HolyGrailPromoNav extends Component
                         <div className="promo header-label-group">
                             <a href="/hgpro" className="promo title"><span>HG Pro</span></a>
                             {/* <a href="/">Home</a> */}
+                            <a className="hidden-xs hidden-sm" href="/">Home</a>
                             <a className="hidden-xs hidden-sm" href="/hgpro#calculator">Calculator</a>
                             <a className="hidden-xs hidden-sm" href="/hgpro#pricing">Pricing</a>
                             <a className="hidden-xs hidden-sm" href="/hgpro/getting-started" target="_blank">Getting Started</a>

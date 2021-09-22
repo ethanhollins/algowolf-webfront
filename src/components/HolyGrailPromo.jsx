@@ -275,6 +275,8 @@ class HolyGrailPromo extends Component
                                 <li><strong>Trades considerably longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
                                 <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
                                 <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>
+                                <li>A <strong>dynamic baseline which updates in real time</strong> and allows you to verify that every trade you take is exactly according to the system rules.</li>
+                                <li>An <strong>intuitive money management control panel</strong> to ensure you position is sized correctly according to best practice principles.</li>
                                 <li>Virtually <strong>impossible for human traders</strong> to match.</li>
                             </ul>
                         </div>
@@ -369,17 +371,23 @@ class HolyGrailPromo extends Component
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div id="pricing-orange" className="pricing body pricing-page">
                                         {/* <div className="pricing header-notice">Initial Release Limited to 25 Places</div> */}
+                                        <div className="pricing header-notice"  style={{ backgroundColor: "#e67e22" }}>Limited Time Offer</div>
                                         <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Standard</div>
                                             </div>
-                                            <div className="pricing header-circle" style={{ backgroundColor: "#f7a50e" }}>
+                                            <div className="pricing header-circle discount-two" style={{ backgroundColor: "#f7a50e" }}>
                                                 <div className="pricing price-group">
                                                     <div className="pricing price">255</div>
                                                     <div className="pricing price-currency">USD</div>
                                                 </div>
                                                 <div className="pricing price-period">
                                                     per month
+                                                </div>
+                                                <div className="pricing price-group discount">
+                                                    <div id="price-discount-two"/>
+                                                    <div className="pricing price two">295 <span className="price-currency">USD</span></div>
+                                                    <div id="price-strikethrough-two"/>
                                                 </div>
                                             </div>
                                         </div>
