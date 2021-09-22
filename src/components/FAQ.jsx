@@ -388,7 +388,7 @@ class FAQ extends Component
                                         </div>
                                         <div id="collapse15-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading15-12" aria-expanded="false" style={{height: "0px"}}>
                                             <div className="panel-body">
-                                                <p>Although completely automatic we’d recommend you check in daily or at least weekly to ensure everything is running properly and to check your “Control Panel” settings for each account.</p>
+                                                <p>Although completely automatic we’d recommend you check in daily to ensure everything is running properly and to check your “Control Panel” settings for each account.</p>
                                                 <p>It is advised you periodically check if your script is still running. Restart if necessary.</p>
                                                 <p>Regularly check your broker’s statements to ensure all trade records are correct.</p>
                                                 <p>The script automatically trades during the session times programmed in the algorithm and will automatically restart trading those times when the next session begins the following day or after the weekend.</p>

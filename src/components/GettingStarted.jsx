@@ -52,10 +52,11 @@ class GettingStarted extends Component
                                     1. Connecting your Broker
                                     <div className="popup getting-started header-border"/>
                                 </h1>
+                                <p><strong>Note:</strong> If you wish, you may connect your broker accounts <em>before</em> subscribing to a trading plan.</p>
                                 <ol>
                                     <li>Click on the Menu icon in the top left of your dashboard.</li>
                                     <li>Select “My Brokers”.</li>
-                                    <li>Click on “Add Broker” and select a broker you have an account with. You can connect both live and demo accounts.
+                                    <li>Click on “Add Broker” and select a broker from the available list you have an account with. You can connect both live and demo accounts.
                                         <ul>
                                             <li>The instructions for each broker will be provided on the page you end up on. You may be required to login, some brokers require you to generate a token.</li>
                                             <li>Follow the instructions and you should be redirected back to your Dashboard on completion.</li>
@@ -63,6 +64,28 @@ class GettingStarted extends Component
                                         </ul>
                                     </li>
                                 </ol>
+                                <p><strong>Some of the brokers currently available include:</strong></p>
+                                <ul>
+                                    <li><a href="https://www.fxopen.com/" target="_blank">FX Open</a></li>
+                                    <li>
+                                        Any CTrader account such as:
+                                        <ul>
+                                            <li><a href="https://www.icmarkets.com/" target="_blank">IC Markets</a></li>
+                                            <li><a href="https://pepperstone.com/" target="_blank">Pepperstone</a></li>
+                                            <li><a href="https://www.fxpro.com/" target="_blank">FX Pro</a></li>
+                                            <li><a href="https://bestctraderbrokers.com/ctrader-brokers/" target="_blank">A list of CTrader Brokers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://www.oanda.com/" target="_blank">Oanda</a> (Ensure you open their <strong>Core pricing account</strong> option)</li>
+                                </ul>
+                                <h6>Broker Notes:</h6>
+                                <ul>
+                                    <li>It is vital you understand the impact the bid/ask spread of your broker can have on prematurely or incorrectly entering and exiting stop orders/positions. For the HG Pro plan we strongly suggest you find a broker who provides a raw or minimal spread account. (See <a href="/hgpro/faq" target="_blank">FAQ</a>)</li>
+                                    <li>Low commission fees are important too. (Use the <a href="/hgpro#calculator" target="_blank">Returns Calculator</a> to see how much they affect your net return). In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.</li>
+                                    <li>Other Broker accounts will be added from time to time once the process of testing their Application Programming Interface (API) has been completed. Not all brokers have this capability or have suitable interfaces compatible with the demands of our platform.</li>
+                                    <li>MetaTrader accounts are not compatible with our platform although the broker itself may provide an account that is. For example, if your broker is IC Markets you would need to use their cTrader account not the MetaTrader version.</li>
+                                    <li><strong>DO NOT use this account for any other trading purpose while the script is switched on as it may cause errors and the strategy to be switched off. Keep it exclusively for the HG Pro strategy. (NOTE: This is a requirement of your <a target="_blank" href="/tos">T&Cs</a>)</strong></li>
+                                </ul>
                             </div>
                         </div>
                     </section>
@@ -89,14 +112,6 @@ class GettingStarted extends Component
                                         <br/>This means if you are using multiple accounts, any changes must be made individually for each account.
                                     </li>
                                 </ol>
-                                <h6>Broker Notes:</h6>
-                                <ul>
-                                    <li>It is vital you understand the impact the bid/ask spread of your broker can have on prematurely or incorrectly entering and exiting stop orders/positions. For the HG Pro plan we strongly suggest you find a broker who provides a raw or minimal spread account. (See <a href="/hgpro/faq" target="_blank">FAQ</a>)</li>
-                                    <li>Low commission fees are important too. (Use the <a href="/hgpro#calculator" target="_blank">Returns Calculator</a> to see how much they affect your net return). In most cases a Regular Spread Account, even with no commission fees, will yield a lower return.</li>
-                                    <li>Other Broker accounts will be added from time to time once the process of testing their Application Programming Interface (API) has been completed. Not all brokers have this capability or have suitable interfaces compatible with the demands of our platform.</li>
-                                    <li>MetaTrader accounts are not compatible with our platform although the broker itself may provide an account that is. For example, if your broker is IC Markets you would need to use their cTrader account not the MetaTrader version.</li>
-                                    <li><strong>DO NOT use this account for any other trading purpose while the script is switched on as it may cause errors and the strategy to be switched off. Keep it exclusively for the HG Pro strategy. (NOTE: This is a requirement of your <a target="_blank" href="/tos">T&Cs</a>)</strong></li>
-                                </ul>
                             </div>
                         </div>
                     </section>
