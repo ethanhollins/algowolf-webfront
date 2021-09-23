@@ -275,8 +275,8 @@ class HolyGrailPromo extends Component
                                 <li><strong>Trades considerably longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
                                 <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
                                 <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>
-                                <li>A <strong>dynamic baseline which updates in real time</strong> and allows you to verify that every trade you take is exactly according to the system rules.</li>
-                                <li>An <strong>intuitive money management control panel</strong> to ensure you position is sized correctly according to best practice principles.</li>
+                                <li><strong>Benchmark <a href={REACT_APP_APP_BASE_URL + "/hgpro/results"} target="_blank">Baseline</a> which updates in real time</strong> so you can verify every trade you take is accurate and correct.</li>
+                                <li><strong>Intuitive Money Management Control Panel</strong> to ensure you have correct position sizing according to best trading principles.</li>
                                 <li>Virtually <strong>impossible for human traders</strong> to match.</li>
                             </ul>
                         </div>

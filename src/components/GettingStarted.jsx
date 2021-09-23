@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Footer from './Footer';
 import Footer2 from './Footer2';
 import HolyGrailPromoNav from './HolyGrailPromoNav';
-import Navigation2 from './Navigation2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/pro-regular-svg-icons';
 
 class GettingStarted extends Component
 {
@@ -54,7 +54,7 @@ class GettingStarted extends Component
                                 </h1>
                                 <p><strong>Note:</strong> If you wish, you may connect your broker accounts <em>before</em> subscribing to a trading plan.</p>
                                 <ol>
-                                    <li>Click on the Menu icon in the top left of your dashboard.</li>
+                                    <li>Click on the Menu icon <FontAwesomeIcon className='getting-started icon' icon={faBars} /> in the top left of your <a href="/app" target="_blank">Dashboard</a>.</li>
                                     <li>Select “My Brokers”.</li>
                                     <li>Click on “Add Broker” and select a broker from the available list you have an account with. You can connect both live and demo accounts.
                                         <ul>
