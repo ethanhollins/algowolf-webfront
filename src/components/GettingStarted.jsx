@@ -52,7 +52,7 @@ class GettingStarted extends Component
                                     1. Connecting your Broker
                                     <div className="popup getting-started header-border"/>
                                 </h1>
-                                <p><strong>Note:</strong> If you wish, you may connect your broker accounts <em>before</em> subscribing to a trading plan.</p>
+                                <p><strong>Note:</strong> If you wish, you may connect your broker accounts <em>before</em> subscribing to a trading plan. However, your Charts and Control Panel will only appear once you've subscribed.</p>
                                 <ol>
                                     <li>Click on the Menu icon <FontAwesomeIcon className='getting-started icon' icon={faBars} /> in the top left of your <a href="/app" target="_blank">Dashboard</a>.</li>
                                     <li>Select “My Brokers”.</li>
