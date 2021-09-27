@@ -271,7 +271,8 @@ class HolyGrailPromo extends Component
                         <div className="col-md-10 col-md-offset-1">
                             <h2 className="mtn">What's so good about HG Pro?</h2>
                             <ul>
-                                <li>Only <strong>takes high probability setups</strong>, which significantly reduces the overall number of trades taken per week. This in turn <strong>substantially cuts down on fees</strong>. (Some weeks it won't take any trades if it thinks they're rubbish or not worth the risk).</li>
+                                <li>Only <strong>takes high probability setups</strong>, which significantly reduces the overall number of trades taken per week (some weeks it won't take any trades if it thinks they're rubbish or not worth the risk).</li>
+                                <li>This in turn <strong>substantially reduces fees by a whopping Eighty Percent (80%)</strong>.</li>
                                 <li><strong>Trades considerably longer hours each day</strong>, taking advantage of both the European and New York sessions.</li>
                                 <li><strong>Scans multiple time frames</strong> including 2 min & 5 min charts <strong>looking for the best opportunities</strong>.</li>
                                 <li><strong>Increased profit range</strong> on select confirming evidence types and session times.</li>

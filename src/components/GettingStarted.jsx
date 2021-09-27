@@ -144,8 +144,11 @@ class GettingStarted extends Component
                                     </li>
                                     <li>Note: <strong>All bank values are expressed in $US dollars</strong></li>
                                     <li>
-                                        <strong>Important:</strong> Ensure you click on the Update button to save any changes. The update button will appear orange at the bottom of your screen when you have made any unsaved changes.
+                                        <strong>Important:</strong>
+                                        <br/>Ensure you click on the Update button to save any changes. 
+                                        <br/>The update button will appear orange at the bottom of your screen when you have made any unsaved changes.
                                         <br/>When the update button is greyed out, that means the changes have been saved and you’re ready to start the script.
+                                        <br/>If your script is already running you will need to <strong>stop and restart</strong> the strategy before any changes will take effect.
                                         <ul>
                                             <li>
                                                 <strong>Broker’s Bank:</strong> This field is automatically taken from the balance of the account you have with your broker (This converts your bank into $US dollars & updates at the commencement of each trading session and is used for the entire session)
