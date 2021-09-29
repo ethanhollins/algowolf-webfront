@@ -317,7 +317,7 @@ const CheckoutForm = (props) =>
                                 I authorize AlgoWolf to charge me automatically every month, until I cancel my subscription. 
                                 I acknowledge that refunds are made according to the Terms of Use. 
                                 The subscription can be cancelled at any time from the Billing section in the <a href="/account-settings" target="_blank">Account Settings</a>. 
-                                I have read, and agree to, AlgoWolf's <a href="/tos" target="_blank">Terms of Use</a> and <a href="/privacy-policy" target="_blank">Privacy Policy</a>.
+                                I have read, and agree to, AlgoWolf's <a href="/tos" target="_blank">Terms of Use</a>, <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/risk-disclosure" target="_blank">Risk Disclosure</a>.
                             </div>
                         </div>
                     </div>
