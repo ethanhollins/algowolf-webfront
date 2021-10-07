@@ -201,7 +201,7 @@ class GettingStarted extends Component
                         <div className="container">
                             <div className="row">
                                 <h1>
-                                    4. Start Trading Live
+                                    5. Start Trading Live
                                     <div className="popup getting-started header-border"/>
                                 </h1>
                                 <ol>
@@ -233,7 +233,7 @@ class GettingStarted extends Component
                         <div className="container">
                             <div className="row">
                                 <h1>
-                                    5. Watch your Strategy in Action
+                                    6. Watch your Strategy in Action
                                     <div className="popup getting-started header-border"/>
                                 </h1>
                                 <p>Congratulations! You have successfully connected your broker, selected the correct broker account and started your strategy with your own personalized settings. Now it's time to sit back and relax and let the algorithm do all the work for you!</p>

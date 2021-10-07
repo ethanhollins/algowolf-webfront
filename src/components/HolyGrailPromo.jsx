@@ -9,6 +9,7 @@ import { faPlusCircle } from '@fortawesome/pro-regular-svg-icons';
 import Footer2 from './Footer2';
 import HolyGrailPromoNav from './HolyGrailPromoNav';
 import CookiesPopup from './CookiesPopup';
+import SignUpPopup from './SignUpPopup';
 
 class HolyGrailPromo extends Component
 {
@@ -34,12 +35,20 @@ class HolyGrailPromo extends Component
         commsPrice: 2.1,
         tradingMonths: 12,
         strategies: [],
-        is_graph_update: false
+        is_graph_update: false,
+        isLoggedIn: true
     }
 
     async componentDidMount()
     {
-        this.props.checkAuthorization();
+        let { isLoggedIn } = this.state;
+        const user_id = await this.props.checkAuthorization();
+        if (!user_id)
+        {
+            isLoggedIn = false;
+            this.setState({ isLoggedIn });
+        }
+
         this.props.countPageVisit(window.location.pathname);
 
         // setTimeout(() => {
@@ -56,8 +65,9 @@ class HolyGrailPromo extends Component
     render()
     {
         const { REACT_APP_APP_BASE_URL } = process.env;
-        const { isLoaded, commsValues, equityValues, infoValues, totalBank, tradingMonths } = this.state;
+        const { isLoaded, commsValues, equityValues, infoValues, totalBank, tradingMonths, isLoggedIn } = this.state;
 
+        console.log(isLoggedIn);
         return (
             <React.Fragment>
 
@@ -496,6 +506,8 @@ class HolyGrailPromo extends Component
             <CookiesPopup 
                 getCookies={this.props.getCookies}
             />
+
+            { isLoggedIn ? <React.Fragment /> : <SignUpPopup /> }
 
             </React.Fragment>
 
