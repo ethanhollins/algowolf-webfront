@@ -203,15 +203,6 @@ class HolyGrailPromoNav extends Component
                 </a>
             );
         }
-        else if (is_beta_tester)
-        {
-            dashboard_btn = (
-                <div id="add_to_dashboard" name={"HolyGrail_Pro"} onClick={this.onAddToDashboard.bind(this)}>
-                    <FontAwesomeIcon className='promo header-icon' icon={faPlusCircle} />
-                    Add to Dashboard
-                </div>
-            );
-        }
         else
         {
             dashboard_btn = (
