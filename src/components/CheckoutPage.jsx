@@ -511,10 +511,10 @@ class CheckoutPage extends Component
         {
             return "Standard";
         }
-        // else if (plan === "hgpro_professional")
-        // {
-        //     return "Professional";
-        // }
+        else if (plan === "hgpro_professional")
+        {
+            return "Professional";
+        }
 
         window.location.href = "/";
     }
@@ -535,10 +535,10 @@ class CheckoutPage extends Component
         {
             return "255.00";
         }
-        // else if (plan === "Professional")
-        // {
-        //     return "495.00";
-        // }
+        else if (plan === "Professional")
+        {
+            return "495.00";
+        }
     }
 }
 

@@ -445,9 +445,9 @@ class HolyGrailPromo extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <a href="mailto:support@algowolf.com" className="pricing purchase-group">
+                                        <a href={"/checkout?plan=hgpro_professional&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
                                             <div className="pricing purchase-btn">
-                                                Enquire Now
+                                                Subscribe Now
                                             </div>
                                         </a>
                                     </div>
