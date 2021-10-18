@@ -246,6 +246,7 @@ class App extends Component
                             createStrategy={this.createStrategy}
                             countPageVisit={this.countPageVisit}
                             getCookies={this.getCookies}
+                            getMasterVariable={this.getMasterVariable}
                         />
                     </Route>
                     <Route exact path="/hgpro/faq">
@@ -630,6 +631,33 @@ class App extends Component
         }
     }
 
+    async getMasterVariable(variable_name)
+    {
+        const { REACT_APP_API_URL } = process.env;
+        var requestOptions = {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: '*/*'
+            },
+            credentials: 'include'
+        };
+
+        const res = await fetch(`${REACT_APP_API_URL}/v1/variables/${variable_name}`, requestOptions);
+        if (res.status === 200)
+        {
+            return await res.json();
+        }
+        else if (res.status === 403)
+        {
+            window.location = '/logout';
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
     async getStrategiesList()
     {
         const packages = ['HolyGrail_Pro'];

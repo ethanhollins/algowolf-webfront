@@ -1152,6 +1152,11 @@
     color: #000;
 }
 
+.pricing.purchase-group.disabled {
+    color: rgb(120,120,120);
+    cursor: auto;
+}
+
 .pricing.purchase-btn {
     text-align: center;
     font-family: Poppins, sans-serif;
@@ -1170,7 +1175,7 @@
     color: #000;
 }
 
-.pricing.purchase-group:hover {
+.pricing.purchase-group:not(.disabled):hover {
     background-color: #0984e3;
     color: #fff;
     -webkit-transition: background-color 0.3s ease-out;
@@ -1179,7 +1184,7 @@
     transition: background-color 0.3s ease-out;
 }
 
-.pricing.purchase-group:hover a {
+.pricing.purchase-group:not(.disabled):hover a {
     color: #fff;
 }
 
@@ -1565,15 +1570,15 @@ section.checkout-result {
     flex-direction: column;
 }
 
-#pricing-black .pricing.purchase-group:hover {
+#pricing-black .pricing.purchase-group:not(.disabled):hover {
     background-color: #2d3436;
 }
 
-#pricing-orange .pricing.purchase-group:hover {
+#pricing-orange .pricing.purchase-group:not(.disabled):hover {
     background-color: #f7a50e;
 }
 
-#pricing-purple .pricing.purchase-group:hover {
+#pricing-purple .pricing.purchase-group:not(.disabled):hover {
     background-color: #8e44ad;
 }
 
@@ -1807,11 +1812,11 @@ section.checkout-result {
 #gpr_info_asterisks {
     font-size: 1.3em;
     font-weight: 700;
-    padding-left: 50px;
 }
 
 #pricing_footnote {
-    font-size: 0.9em;
+    padding-left: 50px;
+    font-size: 0.95em;
 }
 
 #add_to_dashboard > *{

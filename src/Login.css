@@ -189,6 +189,11 @@ label, input {
     border-bottom: calc(.2rem + .0625rem) solid rgba(0,0,0,0.2);
 }
 
+#submit.disabled {
+    background-color: rgb(180, 180, 180);
+    border-color: rgb(180, 180, 180);
+}
+
 .aw-login.input:focus {
     outline: none;
     border: 2px solid #ffa801;

@@ -34,6 +34,14 @@ const products = {
     "hgpro_hedgefund": {
         "level": 3,
         "plan": "hgpro"
+    },
+    "7G5bonohg77cS6fLRZSQkg": {
+        "level": 4,
+        "plan": "hgpro"
+    },
+    "cheuYCx4koYzZ3g42kfXWg": {
+        "level": 5,
+        "plan": "hgpro"
     }
 }
 
@@ -494,26 +502,27 @@ class CheckoutPage extends Component
         const queryString = this.props.location.search;
         const params = new URLSearchParams(queryString);
 
-        const plan = params.get("plan");
-        // if (plan === "pro")
-        // {
-        //     return "Pro";
-        // }
-        // else if (plan === "standard")
-        // {
-        //     return "Standard";
-        // }
-        if (plan === "hgpro_kickstarter")
+        const plan_code = params.get("plan");
+
+        if (plan_code === "hgpro_kickstarter")
         {
             return "Kick Starter";
         }
-        else if (plan === "hgpro_standard")
+        else if (plan_code === "hgpro_standard")
         {
             return "Standard";
         }
-        else if (plan === "hgpro_professional")
+        else if (plan_code === "hgpro_professional")
         {
             return "Professional";
+        }
+        else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
+        {
+            return "Kick Starter";
+        }
+        else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
+        {
+            return "Standard";
         }
 
         window.location.href = "/";
@@ -523,21 +532,34 @@ class CheckoutPage extends Component
     {
         const plan = this.getPlan();
 
+        const queryString = this.props.location.search;
+        const params = new URLSearchParams(queryString);
+
+        const plan_code = params.get("plan");
+
         // if (plan === "Pro")
         // {
         //     return "495.00";
         // }
-        if (plan === "Kick Starter")
+        if (plan_code === "hgpro_kickstarter")
+        {
+            return "85.00";
+        }
+        else if (plan_code === "hgpro_standard")
+        {
+            return "295.00";
+        }
+        else if (plan_code === "hgpro_professional")
+        {
+            return "495.00";
+        }
+        else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
         {
             return "55.00";
         }
-        else if (plan === "Standard")
+        else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
         {
             return "255.00";
-        }
-        else if (plan === "Professional")
-        {
-            return "495.00";
         }
     }
 }

@@ -38,7 +38,8 @@ class Register extends Component
         email: '',
         password: '',
         confirm_password: '',
-        notify_me: true
+        notify_me: true,
+        waiting: false
     }
 
     async componentDidMount()
@@ -60,6 +61,7 @@ class Register extends Component
 
     render()
     {
+        const { waiting } = this.state;
         return (
             <div className="register container">
                 <div>
@@ -172,7 +174,7 @@ class Register extends Component
                         </div> */}
 
                         <div className="aw-login field">
-                            <input type="submit" id="submit" className="aw-login input" value="SIGN UP"/>
+                            <input type="submit" id="submit" className={waiting ? "aw-login input disabled" : "aw-login input"} value="SIGN UP"/>
                         </div>
     
                         <div className="aw-login field center">
@@ -236,80 +238,94 @@ class Register extends Component
 
     async handleSubmit(event)
     {
-        this.resetErrors();
-    
-        const { first_name, last_name, email, password, confirm_password, notify_me } = this.state;
-        const { REACT_APP_API_URL } = process.env;
-        event.preventDefault();
-
-        if (!this.validateEmail(email))
+        let { waiting } = this.state;
+        if (!waiting)
         {
-            this.errorMsg.textContent = "Invalid email.";
-            this.email.style['borderColor'] = '#e74c3c';
-            this.email.style['borderWidth'] = '2px';
-
-            this.confirmPassword.value = '';
-        }
-        else if (!this.passwordStrengthCheck(password))
-        {
-            this.errorMsg.textContent = "Password isn't strong enough.";
-            this.password.style['borderColor'] = '#e74c3c';
-            this.password.style['borderWidth'] = '2px';
-
-            this.password.value = '';
-            this.confirmPassword.value = '';
-        }
-        else if (password !== confirm_password)
-        {
-            this.errorMsg.textContent = "Passwords do not match.";
-            this.password.style['borderColor'] = '#e74c3c';
-            this.password.style['borderWidth'] = '2px';
-            this.confirmPassword.style['borderColor'] = '#e74c3c';
-            this.confirmPassword.style['borderWidth'] = '2px';
-
-            this.confirmPassword.value = '';
-        }
-        else
-        {
-            const raw = JSON.stringify({
-                'first_name': first_name,
-                'last_name': last_name,
-                'email': email,
-                'password': password,
-                'notify_me': notify_me
-            });
-
-            var requestOptions = {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                credentials: 'include',
-                body: raw
-            };
+            waiting = true;
+            this.setState({ waiting });
     
-            const res = await fetch(`${REACT_APP_API_URL}/register`, requestOptions);
+            this.resetErrors();
+        
+            const { first_name, last_name, email, password, confirm_password, notify_me } = this.state;
+            const { REACT_APP_API_URL } = process.env;
+            event.preventDefault();
     
-            const status = res.status;
-            const data = await res.json();
-    
-            if (status === 200)
+            if (!this.validateEmail(email))
             {
-                this.props.getCookies().remove('Authorization');
-                this.props.setUser(null, null);
-                if (this.props.history.location.search)
-                {
-                    this.props.history.push('/login' + this.props.history.location.search);
-                }
-                else
-                {
-                    this.props.history.push('/login');
-                }
+                this.errorMsg.textContent = "Invalid email.";
+                this.email.style['borderColor'] = '#e74c3c';
+                this.email.style['borderWidth'] = '2px';
+    
+                this.confirmPassword.value = '';
+            }
+            else if (!this.passwordStrengthCheck(password))
+            {
+                this.errorMsg.textContent = "Password isn't strong enough.";
+                this.password.style['borderColor'] = '#e74c3c';
+                this.password.style['borderWidth'] = '2px';
+    
+                this.password.value = '';
+                this.confirmPassword.value = '';
+            }
+            else if (password !== confirm_password)
+            {
+                this.errorMsg.textContent = "Passwords do not match.";
+                this.password.style['borderColor'] = '#e74c3c';
+                this.password.style['borderWidth'] = '2px';
+                this.confirmPassword.style['borderColor'] = '#e74c3c';
+                this.confirmPassword.style['borderWidth'] = '2px';
+    
+                this.confirmPassword.value = '';
             }
             else
             {
-                this.errorMsg.textContent = data.message;
+                const raw = JSON.stringify({
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'email': email,
+                    'password': password,
+                    'notify_me': notify_me
+                });
+    
+                var requestOptions = {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: 'include',
+                    body: raw
+                };
+        
+                const res = await fetch(`${REACT_APP_API_URL}/register`, requestOptions);
+        
+                const status = res.status;
+                const data = await res.json();
+        
+                if (status === 200)
+                {
+                    this.props.getCookies().remove('Authorization');
+                    this.props.setUser(null, null);
+                    if (this.props.history.location.search)
+                    {
+                        this.props.history.push('/login' + this.props.history.location.search);
+                    }
+                    else
+                    {
+                        this.props.history.push('/login');
+                    }
+                }
+                else
+                {
+                    this.errorMsg.textContent = data.message;
+                }
+
+                waiting = false;
+                this.setState({ waiting });
             }
+        }
+        else
+        {
+            event.preventDefault();
         }
     }
 

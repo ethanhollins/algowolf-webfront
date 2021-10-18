@@ -36,18 +36,28 @@ class HolyGrailPromo extends Component
         tradingMonths: 12,
         strategies: [],
         is_graph_update: false,
-        isLoggedIn: true
+        isLoggedIn: true,
+        subscriber_lock: false
     }
 
     async componentDidMount()
     {
-        let { isLoggedIn } = this.state;
+        let { isLoggedIn, subscriber_lock } = this.state;
+        const subscriber_lock_res = await this.props.getMasterVariable("subscriber_lock");
+        if (subscriber_lock_res)
+        {
+            subscriber_lock = subscriber_lock_res.subscriber_lock.value;
+            this.setState({ subscriber_lock })
+        }
+        
         const user_id = await this.props.checkAuthorization();
         if (!user_id)
         {
             isLoggedIn = false;
             this.setState({ isLoggedIn });
         }
+
+        
 
         this.props.countPageVisit(window.location.pathname);
 
@@ -65,9 +75,8 @@ class HolyGrailPromo extends Component
     render()
     {
         const { REACT_APP_APP_BASE_URL } = process.env;
-        const { isLoaded, commsValues, equityValues, infoValues, totalBank, tradingMonths, isLoggedIn } = this.state;
+        const { isLoaded, commsValues, equityValues, infoValues, totalBank, tradingMonths, isLoggedIn, subscriber_lock } = this.state;
 
-        console.log(isLoggedIn);
         return (
             <React.Fragment>
 
@@ -311,7 +320,7 @@ class HolyGrailPromo extends Component
                             <div className="pricing parent pricing-page">
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div className="pricing body pricing-page">
-                                        <div className="pricing header-notice">Limited Time Offer</div>
+                                        {/* <div className="pricing header-notice">Limited Time Offer</div> */}
                                         <div className="pricing header-group">
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Kick Starter</div>
@@ -320,47 +329,19 @@ class HolyGrailPromo extends Component
                                             <div className="pricing header-circle discount-two">
                                                 
                                                 <div className="pricing price-group">
-                                                    <div className="pricing price">55</div>
+                                                    <div className="pricing price">85</div>
                                                     <div className="pricing price-currency">USD</div>
                                                 </div>
                                                 <div className="pricing price-period">
                                                     per month
                                                 </div>
-
-                                                {/* <div className="pricing price-group discount-slash-two">
-                                                    <div className="pricing price">85</div>
-                                                    <div className="pricing price-currency">USD</div>
-                                                    <div id="price-strikethrough"/>
-                                                </div> */}
                                                 
-                                                <div className="pricing price-group discount">
+                                                {/* <div className="pricing price-group discount">
                                                     <div id="price-discount-two"/>
                                                     <div className="pricing price two">85 <span className="price-currency">USD</span></div>
                                                     <div id="price-strikethrough-two"/>
-                                                </div>
+                                                </div> */}
                                             </div>
-
-                                            {/* <div className="pricing header-circle discount">
-                                                
-                                                <div className="pricing price-group discount-slash">
-                                                    <div className="pricing price">85</div>
-                                                    <div className="pricing price-currency">USD</div>
-                                                    <div id="price-strikethrough"/>
-                                                </div>
-
-                                                <div className="pricing price-group">
-                                                    <div className="pricing price">55</div>
-                                                    <div className="pricing price-currency">USD</div>
-                                                </div>
-                                                <div className="pricing price-period">
-                                                    per month
-                                                </div>
-                                                
-                                                <div className="pricing price-group discount">
-                                                    <div id="price-discount"/>
-                                                    <div className="pricing price">Save 35%</div>
-                                                </div>
-                                            </div> */}
                                         </div>
                                         <div className="pricing features-group">
                                             <div>Live Trade the HG Pro Algorithm</div>
@@ -372,34 +353,41 @@ class HolyGrailPromo extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <a href={"/checkout?plan=hgpro_kickstarter&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
-                                            <div className="pricing purchase-btn">
-                                                Subscribe Now
-                                            </div>
-                                        </a>
+                                        { subscriber_lock ?
+                                            <div className="pricing purchase-group disabled">
+                                                <div className="pricing purchase-btn">
+                                                    Spaces Currently Allocated
+                                                </div>
+                                            </div> :
+                                            <a href={"/checkout?plan=hgpro_kickstarter&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
+                                                <div className="pricing purchase-btn">
+                                                    Subscribe Now
+                                                </div>
+                                            </a>
+                                        }
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
                                     <div id="pricing-orange" className="pricing body pricing-page">
                                         {/* <div className="pricing header-notice">Initial Release Limited to 25 Places</div> */}
-                                        <div className="pricing header-notice"  style={{ backgroundColor: "#e67e22" }}>Limited Time Offer</div>
+                                        {/* <div className="pricing header-notice"  style={{ backgroundColor: "#e67e22" }}>Limited Time Offer</div> */}
                                         <div className="pricing header-group" style={{ backgroundColor: "#f7a50e" }}>
                                             <div className="pricing title-group">
                                                 <div className="pricing title">Standard</div>
                                             </div>
                                             <div className="pricing header-circle discount-two" style={{ backgroundColor: "#f7a50e" }}>
                                                 <div className="pricing price-group">
-                                                    <div className="pricing price">255</div>
+                                                    <div className="pricing price">295</div>
                                                     <div className="pricing price-currency">USD</div>
                                                 </div>
                                                 <div className="pricing price-period">
                                                     per month
                                                 </div>
-                                                <div className="pricing price-group discount">
+                                                {/* <div className="pricing price-group discount">
                                                     <div id="price-discount-two"/>
                                                     <div className="pricing price two">295 <span className="price-currency">USD</span></div>
                                                     <div id="price-strikethrough-two"/>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                         <div className="pricing features-group">
@@ -412,11 +400,18 @@ class HolyGrailPromo extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <a href={"/checkout?plan=hgpro_standard&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
-                                            <div className="pricing purchase-btn">
-                                                Subscribe Now
-                                            </div>
-                                        </a>
+                                        { subscriber_lock ?
+                                            <div className="pricing purchase-group disabled">
+                                                <div className="pricing purchase-btn">
+                                                    Spaces Currently Allocated
+                                                </div>
+                                            </div> :
+                                            <a href={"/checkout?plan=hgpro_standard&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
+                                                <div className="pricing purchase-btn">
+                                                    Subscribe Now
+                                                </div>
+                                            </a>
+                                        }
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
@@ -445,11 +440,18 @@ class HolyGrailPromo extends Component
                                             <div>No Lock-in Contracts</div>
                                             <div>14-Day Refund (see <a target="_blank" href="/tos">T&Cs</a>)</div>
                                         </div>
-                                        <a href={"/checkout?plan=hgpro_professional&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
-                                            <div className="pricing purchase-btn">
-                                                Subscribe Now
-                                            </div>
-                                        </a>
+                                        { subscriber_lock ?
+                                            <div className="pricing purchase-group disabled">
+                                                <div className="pricing purchase-btn">
+                                                    Spaces Currently Allocated
+                                                </div>
+                                            </div> :
+                                            <a href={"/checkout?plan=hgpro_professional&back=" + encodeURIComponent("/hgpro#pricing")} className="pricing purchase-group">
+                                                <div className="pricing purchase-btn">
+                                                    Subscribe Now
+                                                </div>
+                                            </a>
+                                        }
                                     </div>
                                 </div>
                                 <div className="col-lg-3 col-xs-12 col-xs-offset-0">
@@ -483,7 +485,17 @@ class HolyGrailPromo extends Component
                                 </div>
                             </div>
                         </div>
-                        {/* <span id="pricing_footnote"><strong id="gpr_info_asterisks">* </strong><strong>Not recommended for trading banks less than US$15,000.</strong></span> */}
+                        { 
+                            subscriber_lock ?
+                            <span id="pricing_footnote">
+                                <strong id="gpr_info_asterisks">* </strong>
+                                <strong>
+                                    IMPORTANT: Due to high demand we have temporarily disabled subscriptions to increase our maximum capacity.
+                                    Sorry for the inconvenience. Be sure to check back later.
+                                </strong>
+                            </span> :
+                            <React.Fragment/>
+                        }
                     </div>
                 </div>
             </section>
