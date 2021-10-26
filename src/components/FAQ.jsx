@@ -147,7 +147,7 @@ class FAQ extends Component
                                         <div id="collapse3-12" className="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3-12" aria-expanded="false">
                                             <div className="panel-body">
                                                 <p>Your subscription plan comes with a maximum allowable Tradable Bank.</p>
-                                                <p>The Standard Plan is US$50K @ 1% risk. This means the maximum $risk you may take on any one trade is 50,000 x 1% = $500</p>
+                                                <p>The Standard Plan is US$40K @ 1% risk. This means the maximum $risk you may take on any one trade is 40,000 x 1% = $400</p>
                                                 <p>The Professional Plan is US$100K @ 1% risk. This means the maximum $risk you may take on any one trade is 100,000 x 1% = $1,000</p>
                                             </div>
                                         </div>

@@ -149,7 +149,7 @@ class Tos extends Component
                         <p><strong>Further Client’s Warranties and Representations:</strong></p>
                         <p>The Client warrants and represents that You:</p>
                         <ul>
-                            <li>Will not use any broker account connected to our platform for any other trading purpose (to help prevent operational errors)</li>
+                            <li><strong>Will not use any broker account connected to our platform for any other trading purpose (to help prevent operational errors)</strong></li>
                             <li>Acknowledge and understand the impact the bid/ask spread of your broker can have on prematurely or incorrectly entering and exiting positions</li>
                             <li>At all times will carry out any use of algorithms on our platform in a well thought-out basis and not as gambling or a wager.</li>
                             <li>Have adequate and sufficient knowledge and understanding of the instruments and transactions to be carried on and is familiar with the regulations of the relevant markets, transactions and products;</li>

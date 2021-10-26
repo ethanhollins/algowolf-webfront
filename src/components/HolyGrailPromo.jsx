@@ -242,12 +242,12 @@ class HolyGrailPromo extends Component
                                             <td className="promo stat-value">{infoValues["equity_ret_pa_comms"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Net Compounded Equity Return % <span className="stat-type-small">per annum inc. Comms</span></td>
-                                            <td className="promo stat-value">{infoValues["equity_ret_pa_comp_comms"].toFixed(2)}</td>
+                                            <td className="promo stat-type">Net Maximum Drawdown % <span className="stat-type-small">inc. Comms</span></td>
+                                            <td className="promo stat-value">{infoValues["drawdown"].toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">GPR <strong>*</strong> <span className="stat-type-small">By Monthly Returns</span></td>
-                                            <td className="promo stat-value">{infoValues["gpr"].toFixed(2)}</td>
+                                            <td className="promo stat-type">Net Maximum End of Month Drawdown % <span className="stat-type-small">inc. Comms</span></td>
+                                            <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
                                         </tr>
                                         <tr>
                                             <td className="promo stat-type">Expectancy</td>
@@ -266,12 +266,8 @@ class HolyGrailPromo extends Component
                                             <td className="promo stat-value">{(infoValues["win_perc"] * 100).toFixed(2)}</td>
                                         </tr>
                                         <tr>
-                                            <td className="promo stat-type">Net Maximum Drawdown % <span className="stat-type-small">inc. Comms</span></td>
-                                            <td className="promo stat-value">{infoValues["drawdown"].toFixed(2)}</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="promo stat-type">Net Maximum End of Month Drawdown % <span className="stat-type-small">inc. Comms</span></td>
-                                            <td className="promo stat-value">{Math.abs(infoValues["monthly_drawdown"]).toFixed(2)}</td>
+                                            <td className="promo stat-type">GPR <strong>*</strong> <span className="stat-type-small">By Monthly Returns</span></td>
+                                            <td className="promo stat-value">{infoValues["gpr"].toFixed(2)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
