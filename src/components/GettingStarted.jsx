@@ -66,7 +66,11 @@ class GettingStarted extends Component
                                 </ol>
                                 <p><strong>Some of the brokers currently available include:</strong></p>
                                 <ul>
-                                    <li><a href="https://www.fxopen.com/" target="_blank">FX Open</a></li>
+                                    <li>
+                                        <a href="https://www.fxopen.com/" target="_blank">FX Open</a><br/>
+                                        The account you need is: <strong>TickTrader ECN GROSS</strong>. Currently the Australian Branch does not have this option.<br/> 
+                                        (MT4 ECN or MT5 ECN or TickTrader ECN (Net) accounts will NOT work)
+                                    </li>
                                     <li>
                                         Any CTrader account such as:
                                         <ul>
