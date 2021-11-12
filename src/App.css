@@ -1483,6 +1483,29 @@ section.checkout-result {
     justify-content: center;
 }
 
+.home.body.modify {
+    justify-content: flex-start;
+}
+
+#modify-submit > button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.4em;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    color: #fff;
+    padding: 12px 0;
+    background-color: #f7a50e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#modify-submit > button:hover {
+    border-color: #ce800b;
+    background-color: #ce800b;
+}
+
 .signup.background {
     position: fixed;
     width: 100vw;

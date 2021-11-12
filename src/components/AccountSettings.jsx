@@ -89,15 +89,19 @@ class AccountSettings extends Component
         confirm_password: '',
         delete_account: '',
         subscriptions: [],
-        cancelled: []
+        cancelled: [],
+        payment_details: null
     }
 
     async componentDidMount()
     {
-        let { account, subscriptions } = this.state;
+        let { account, subscriptions, payment_details } = this.state;
         account = await this.retrieveAccountInfo();
-        subscriptions = await this.getSubscriptions();
-        this.setState({ account, subscriptions });
+        const res = await this.getSubscriptions();
+        subscriptions = res.subscriptions;
+        payment_details = res.payment_details;
+
+        this.setState({ account, subscriptions, payment_details });
     }
 
     render()
@@ -290,7 +294,7 @@ class AccountSettings extends Component
             
         if (res.status === 200)
         {
-            return (await res.json()).subscriptions;
+            return await res.json();
         }
         else
         {
@@ -740,7 +744,9 @@ class AccountSettings extends Component
 
     generateSubscriptionsField = () =>
     {
-        const { subscriptions, is_cancel_subscription, cancelled } = this.state;
+        const { subscriptions, is_cancel_subscription, cancelled, payment_details } = this.state;
+
+        let card_elem;
         if (subscriptions.length === 0)
         {
             return (
@@ -796,7 +802,32 @@ class AccountSettings extends Component
                         );
                     }
                 }
+
+                if (payment_details)
+                {
+                    card_elem = (
+                        <React.Fragment>
+                        <div className="account-settings billing header-text">
+                            Card Details
+                        </div>
+                        <div className="account-settings billing small-text">
+                            <div>Ends in {payment_details.last4}</div>
+                            <a 
+                                className="account-settings change-btn" 
+                                href={"/account-settings/card?back=" + encodeURIComponent(window.location.href)}
+                                name={sub["name"]}
+                            >
+                                Change Card
+                            </a>
+                        </div>
+                        </React.Fragment>
+                    )
+                }
+                
             }
+            
+            
+
             return (
                 <React.Fragment>
                 
@@ -809,6 +840,7 @@ class AccountSettings extends Component
                     ref={this.setSubscriptionErrorMsgRef}
                     className="account-settings error-text" 
                 />
+                {card_elem}
                 
                 </React.Fragment>
             );

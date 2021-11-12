@@ -35,6 +35,7 @@ import Tos2 from './components/Tos2';
 import CheckoutPage2 from './components/CheckoutPage2';
 import Unsubscribe from './components/Unsubscribe';
 import WelcomeDemoPage from './components/WelcomeDemoPage';
+import ModifyCard from './components/ModifyCard';
 
 class App extends Component 
 {
@@ -123,6 +124,17 @@ class App extends Component
                             getFirstName={this.getFirstName}
                             getHeaders={this.getHeaders}
                             getScreenWidth={this.getScreenWidth}
+                        />
+                    </Route>
+                    <Route exact path="/account-settings/card">
+                        <ModifyCard
+                            checkAuthorization={this.checkAuthorization}
+                            getUserId={this.getUserId}
+                            getFirstName={this.getFirstName}
+                            getEmail={this.getEmail}
+                            getScreenWidth={this.getScreenWidth}
+                            countPageVisit={this.countPageVisit}
+                            getHeaders={this.getHeaders}
                         />
                     </Route>
                     <Route exact path="/strategies">
