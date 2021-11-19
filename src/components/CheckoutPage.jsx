@@ -516,14 +516,14 @@ class CheckoutPage extends Component
         {
             return "Professional";
         }
-        else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
-        {
-            return "Kick Starter";
-        }
-        else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
-        {
-            return "Standard";
-        }
+        // else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
+        // {
+        //     return "Kick Starter";
+        // }
+        // else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
+        // {
+        //     return "Standard";
+        // }
 
         window.location.href = "/";
     }
@@ -553,14 +553,14 @@ class CheckoutPage extends Component
         {
             return "495.00";
         }
-        else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
-        {
-            return "55.00";
-        }
-        else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
-        {
-            return "255.00";
-        }
+        // else if (plan_code === "7G5bonohg77cS6fLRZSQkg")
+        // {
+        //     return "55.00";
+        // }
+        // else if (plan_code === "cheuYCx4koYzZ3g42kfXWg")
+        // {
+        //     return "255.00";
+        // }
     }
 }
 
